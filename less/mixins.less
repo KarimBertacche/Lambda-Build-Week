@@ -5,3 +5,10 @@
     align-items: @align;
     flex-wrap: @wrap;
 }
+
+.absolute-position(@top: 50%, @left: 50%) {
+    position: absolute;
+    top: @top;
+    left: @left;
+    transform: translate(-50%, -50%);
+}

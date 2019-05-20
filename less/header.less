@@ -1,0 +1,30 @@
+header {
+    .flex(column, center, center);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)),url(../images/Header_image2_flip.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 99%, 0 95%);
+
+    .hero-content {
+        .absolute-position(40%);
+
+        .heading-primary {  
+            font-size: 12rem;
+            font-weight: bold;
+            background-image: linear-gradient(to right, @colorPrimary,@colorQuaternary);
+            color: transparent;
+            -webkit-background-clip: text;
+        }
+
+        .hero-text {
+            color: @white;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+    }
+}
