@@ -33,7 +33,7 @@
             color: @colorQuaternary;
 
             &:hover {
-                color: white;
+                color: @white;
             }
         }
     
@@ -51,4 +51,18 @@
             }
         }     
     }
+}
+
+.fixed {
+    width: 96%;
+    position: fixed;
+    top: 0; 
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    padding-right: 50px;
+    background-color: @black;
+    opacity: .9;
+    z-index: 100;
+    transition: all 1s;
 }
