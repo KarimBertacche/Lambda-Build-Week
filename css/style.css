@@ -522,3 +522,100 @@ header .hero-content .hero-text {
   border: 3px solid #f67280;
   border-bottom-right-radius: 40px;
 }
+.cta-section {
+  background-color: #f67280;
+  position: relative;
+  height: 600px;
+  margin-top: 100px;
+  clip-path: polygon(0 0, 50% 5%, 100% 0, 100% 95%, 50% 100%, 0 95%);
+}
+.cta-section .bg-video {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+.cta-section .bg-video__content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cta-section .cta-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.cta-card {
+  position: relative;
+  height: 500px;
+}
+.cta-card .card-side {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 150px;
+  width: 100%;
+  height: 500px;
+  transition: all 2s;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.cta-card .card-side__front {
+  background-color: #35477d;
+}
+.cta-card .card-side__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background-color: #c06c84;
+  transform: rotateY(-180deg);
+}
+.cta-card .card-side .cta-img {
+  padding: 25px 0;
+  width: 80%;
+  margin: 0 auto;
+}
+.cta-card .card-side .cta-img img {
+  width: 100%;
+  border-radius: 10px;
+}
+.cta-card:hover .card-side__back {
+  transform: rotateY(0);
+}
+.cta-card:hover .card-side__front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  transform: rotateY(180deg);
+}
+.cta-card .signUp-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: no-wrap;
+  padding: 30px;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.cta-card .signUp-form .heading-tertiary {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.cta-card .signUp-form .input,
+.cta-card .signUp-form .rating {
+  margin-bottom: 10px;
+}
+.cta-card .signUp-form .feedback {
+  margin-bottom: 10px;
+}
+footer {
+  height: 120px;
+}
