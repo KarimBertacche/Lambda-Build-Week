@@ -285,16 +285,24 @@ dropZone.addEventListener('dragleave', (event) => {
 })
 
 dropZone.addEventListener('drop', (event) => {
+    //Create div for favourite books 
     let favItem = document.createElement('div');
+    //Assign class to favourite book item
     favItem.classList.add('fav-item');
-    favItem.setAttribute('draggable', 'true');
 
+    //Creating heading for favourite book title
     let favBox = document.createElement('h3');
+    //Assign class to favourite book title
     favBox.classList.add('heading-tertiary');
+    //Give favourite book a title content 
     favBox.textContent = curBook.children[0].textContent;
     
-    favItem.append(favBox);
-    event.target.append(favItem);
+    //Append favourite book to favBox & favBox to dropzone
+    favItem.appendChild(favBox);
+    event.target.appendChild(favItem);
+
+    //Remove current book from main list after adding it to favourite collection
+    curBook.remove();
 })
 
 
