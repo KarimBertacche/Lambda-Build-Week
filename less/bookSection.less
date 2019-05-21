@@ -98,17 +98,21 @@
                 text-align: center;  
                 cursor: pointer;
                 z-index: 100;
-                transform: translateY(40px);
-                opacity: 0;
                 transition: all .5s;
+
+                &.hidden {
+                    transform: translateY(40px);
+                    opacity: 0;
+                }
+
+                &.shown {
+                    // display: block;
+                    transform: translateY(-40px);
+                    opacity: 1;   
+                }
             }
 
-            &:hover .rating {
-                // display: block;
-                transform: translateY(0);
-                opacity: 1;
-                
-            }
+            
 
             .book-info {
                 display: block;

@@ -437,12 +437,14 @@ header .hero-content .hero-text {
   text-align: center;
   cursor: pointer;
   z-index: 100;
-  transform: translateY(40px);
-  opacity: 0;
   transition: all 0.5s;
 }
-.main-section .main-content .book-box:hover .rating {
-  transform: translateY(0);
+.main-section .main-content .book-box .rating.hidden {
+  transform: translateY(40px);
+  opacity: 0;
+}
+.main-section .main-content .book-box .rating.shown {
+  transform: translateY(-40px);
   opacity: 1;
 }
 .main-section .main-content .book-box .book-info {
