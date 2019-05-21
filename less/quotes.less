@@ -6,7 +6,7 @@
     background-color: #35477d;
     clip-path: polygon(0 0, 50% 5%, 100% 0, 100% 95%, 50% 100%, 0 95%);
     margin-top: -35px;
-    overflow-x: hidden;
+    overflow-x: auto;
     background-image: url(../images/Quotes_image.jpg);
     background-size: cover;
     background-position: center;
@@ -26,31 +26,13 @@
         padding: 15px;
         text-align: center;
         box-shadow: 0 15px 20px rgba(0, 0, 0, .6);
-
-        .arrows {
-            color: #445ba1;
-            font-size: 8rem;
-            z-index: 15;
-            cursor: pointer;
-            text-shadow: 0 5px 10px #000;
-
-            &.back-arrow {
-                .absolute-position(50%, -10%);   
-            }
-
-            &.forward-arrow {
-                .absolute-position(50%, 110%);
-            }
-
-            &:hover {
-                color: #fcd2d6;
-            }
-        }
+        transform: translate(305%, -10%);
         
         &.active {
             .absolute-position(50%, 46%);
             height: 200px;
             background-color: #f67280;
+            // background-color: transparent;
             border: 3px solid #6c5b7b;
             z-index: 10;
             box-shadow: 0 20px 20px rgba(0, 0, 0, .8);
@@ -65,4 +47,24 @@
         }
 
     } 
+
+    .arrows {
+        color: #445ba1;
+        font-size: 8rem;
+        z-index: 15;
+        cursor: pointer;
+        text-shadow: 0 5px 10px #000;
+
+        &.back-arrow {
+            .absolute-position(50%, 27.5%);   
+        }
+
+        &.forward-arrow {
+            .absolute-position(50%, 72.5%);
+        }
+
+        &:hover {
+            color: #fcd2d6;
+        }
+    }
 }

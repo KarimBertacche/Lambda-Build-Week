@@ -12,7 +12,8 @@ window.addEventListener('scroll', event => {
 const quotes = document.querySelectorAll('.quote-card');
 const backArrow = document.querySelector('.back-arrow');
 const forwardArrow = document.querySelector('.forward-arrow');
-let counter = 0;
+let activeCard;
+let counter = 1;
 let quoteIdx;
 let quoteLength = quotes.length;
 let prevCount;
@@ -23,6 +24,7 @@ quotes.forEach((quote, index) => {
 
 
 backArrow.addEventListener('click', () => {
+    // counter = 
     if(counter === 0) 
     {
         //Hold previous counter
@@ -104,7 +106,6 @@ const removeActive = () => {
 const addActive = () => {
     let newActive = document.querySelector(`.quote-card[data-index="${counter}"]`);
     newActive.classList.add('active');
-
 }
 
 
