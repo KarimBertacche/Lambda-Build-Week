@@ -12,7 +12,6 @@ window.addEventListener('scroll', event => {
 const quotes = document.querySelectorAll('.quote-card');
 const backArrow = document.querySelector('.back-arrow');
 const forwardArrow = document.querySelector('.forward-arrow');
-let activeCard;
 let counter = 1;
 let quoteIdx;
 let quoteLength = quotes.length;
@@ -141,65 +140,110 @@ const bookStore = document.querySelector('.main-content');
 class GenerateBooks {
     constructor(data, index) {
         this.bookData = data;
+
+        //Create div for book-box
         let bookBox = document.createElement('div');
+        //Assign class to bookBox
         bookBox.classList.add('book-box');
-        bookBox.setAttribute('draggable', 'true');   
+        //Assign attribute to bookBox
+        bookBox.setAttribute('draggable', 'true');  
+
+        //Method for creating heading
         this.headingConstructor(bookBox);
+
+        //Method for creating image and figure container 
         this.imageConstructor(bookBox);
+
+        //Method for creating info section
         this.infoConstructor(bookBox);
+
+        //Method for creating popUp rating
         this.ratingConstructor(bookBox);
+
+        //Event listener for slide in rating
         bookBox.addEventListener('mouseenter', (event) => this.mouseOver());
+        //Event listener for slide out rating
         bookBox.addEventListener('mouseleave', (event) => this.mouseLeave());
 
+        //Append bookBox to DOM
         bookStore.appendChild(bookBox);
 
     }
 
     headingConstructor(bookBox) {
+        //Create new heading element
         let heading = document.createElement('h3');
+        //Assign class to heading
         heading.classList.add('heading-tertiary');
+        //Assign data content to heading
         heading.textContent = this.bookData.heading;
+        //Append heading to bookBox div
         bookBox.appendChild(heading);
     }
 
     imageConstructor(bookBox) {
+        //Create new figure container
         let figure = document.createElement('figure');
+        //Assign class to figure container
         figure.classList.add('book-figure');
+
+        //Create new img element 
         let image = document.createElement('img');
+        //Assign attributes to img element
         image.setAttribute('draggable', 'false');
         image.setAttribute('src', `./images/${this.bookData.img}`);
+
+        //Append image element to figure container
         figure.append(image);
+        //Append figure container to bookBox div
         bookBox.append(figure);
     }
 
     infoConstructor(bookBox) {
+        //Create p tag element
         let paragraph = document.createElement('p');
+        //Assign class to p tag element
         paragraph.classList.add('book-info');
+
+        //Create span element for rating
         let spanRate = document.createElement('span');
+        //Assign class to rating span element
         spanRate.classList.add('currentRate');
+        //Assign some content to rating span element
         spanRate.textContent = '4 ⭐️';
+
+        //Create span element for reviews
         let spanReview = document.createElement('span');
+        //Assign class to review span element
         spanReview.classList.add('reviews');
+        //Assign some content to the review span element
         spanReview.textContent = '5 💬';
 
+        //Append spans for rating and review to p tag
         paragraph.appendChild(spanRate);
         paragraph.appendChild(spanReview);
+        //Append p tag to bookBox div
         bookBox.append(paragraph);
     }
 
     ratingConstructor(bookBox) {
+        //Create p tag for current overall rating
         let rating = document.createElement('p');
+        //Assign class to overall rating p tag
         rating.classList.add('rating', 'hidden');
-
+        //Assign some content to overall rating p tag
         rating.textContent = '⭐️⭐️⭐️⭐️⭐️';
+        //Append overall rating p tag to bookBox div
         bookBox.append(rating);
     }
 
     mouseOver() {
+        //Added event listener to each book and toggle shown class on event triggered
         event.target.children[3].className = 'rating shown';
     }
 
     mouseLeave() {
+        //Added event listener to each book and toggle hidden class on event triggered
         event.target.children[3].className = 'rating hidden';
     }
 }
