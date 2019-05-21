@@ -285,8 +285,18 @@ dropZone.addEventListener('dragleave', (event) => {
 })
 
 dropZone.addEventListener('drop', (event) => {
-    event.target.append(curBook);
+    let favItem = document.createElement('div');
+    favItem.classList.add('fav-item');
+    favItem.setAttribute('draggable', 'true');
+
+    let favBox = document.createElement('h3');
+    favBox.classList.add('heading-tertiary');
+    favBox.textContent = curBook.children[0].textContent;
+    
+    favItem.append(favBox);
+    event.target.append(favItem);
 })
+
 
 
 

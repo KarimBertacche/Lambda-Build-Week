@@ -503,7 +503,7 @@ header .hero-content .hero-text {
   justify-content: center;
   align-items: center;
   flex-wrap: no-wrap;
-  width: 80%;
+  width: 90%;
   height: 45px;
   margin: 0 auto;
   background-color: #35477d;
@@ -511,6 +511,11 @@ header .hero-content .hero-text {
   border-radius: 10px;
   font-size: 2rem;
   color: #f67280;
+  text-align: center;
+  cursor: pointer;
+}
+.main-section .fav-box .fav-list .fav-item:hover {
+  border: 3px solid #fff;
 }
 .main-section .fav-box .drop-zone {
   width: 97%;
@@ -580,6 +585,7 @@ header .hero-content .hero-text {
 .cta-card .card-side .cta-img img {
   width: 100%;
   border-radius: 10px;
+  border: 3px solid #f67280;
 }
 .cta-card:hover .card-side__back {
   transform: rotateY(0);
