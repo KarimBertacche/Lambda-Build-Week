@@ -90,12 +90,12 @@
 
             .rating {
                 // display: none;
-                background-color: @colorQuaternary;
+                background-color: @colorPrimary;
                 height: 30px;
                 border-top: 3px solid @black;
                 border-bottom-right-radius: 20px;
                 border-bottom-left-radius: 20px;
-                padding-top: 7px;
+                padding-top: 4px;
                 font-size: 2rem;
                 text-align: center;  
                 cursor: pointer;
@@ -111,6 +111,16 @@
                     // display: block;
                     transform: translateY(-40px);
                     opacity: 1;   
+                }
+
+                .star {
+
+
+                    &:hover {
+                        background-color: gold;
+                        color: transparent;
+                        -webkit-background-clip: text;
+                    }
                 }
             }
 

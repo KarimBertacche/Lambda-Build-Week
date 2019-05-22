@@ -116,30 +116,35 @@ const booksData = [
         heading: 'Barking Up The Wrong Tree',
         img: 'Wrong-tree.jpg',
         rating: [3, 4, 5, 5],
+        givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: []
     },
     {
         heading: 'Outwitt The Devil',
         img: 'OutwittTheDevil.jpg',
         rating: [3, 4, 5, 3],
+        givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: []
     },
     {
         heading: 'The Power Of Now',
         img: 'ThePowerOfNow.jpg',
         rating: [3, 4, 5, 2],
+        givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: []
     },
     {
         heading: 'Breaking The Habit Of Being Yourself',
         img: 'BreakingHabitYourself.jpg',
         rating: [3, 4, 5, 1],
+        givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: []
     },
     {
         heading: 'Awaken The Giant Within',
         img: 'AwakenTheGiant.jpg',
         rating: [3, 4, 5, 5],
+        givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: []
     }
 ]
@@ -150,6 +155,8 @@ const bookStore = document.querySelector('.main-content');
 class GenerateBooks {
     constructor(data) {
         this.bookData = data;
+        //Assign the rating arrray to a variable
+        this.arrRatings = this.bookData.rating;
 
         //Create div for book-box
         let bookBox = document.createElement('div');
@@ -167,8 +174,16 @@ class GenerateBooks {
         //Method for creating info section
         this.infoConstructor(bookBox);
 
+        //Method to re-calculate overall rate everytime new rating is inserted 
+        this.calcOverAllRate();       
+
+        //Method to create stars to display on page
+        this.starsConstructor();
+        
         //Method for creating popUp rating
         this.ratingConstructor(bookBox);
+
+        console.log(this.arrRatings);
 
         //Event listener for slide in rating
         bookBox.addEventListener('mouseenter', (event) => this.mouseOver());
@@ -209,6 +224,74 @@ class GenerateBooks {
         bookBox.append(figure);
     }
 
+    calcOverAllRate() {
+        //Use reduce method to obtain array total rating
+        let rating = this.arrRatings.reduce((acc, currRate) => {
+            return acc + currRate;
+        }, 0);
+        //Divide the total rating by the number of elements present in the array
+        this.currRating = rating / this.arrRatings.length;
+
+        //Assign some content to rating span element
+        this.spanRate.textContent = this.currRating.toFixed(1) + '⭐️';
+    }
+
+    starsConstructor() {
+        this.star1 = document.createElement('span');
+        this.star2 = document.createElement('span');
+        this.star3 = document.createElement('span');
+        this.star4 = document.createElement('span');
+        this.star5 = document.createElement('span');
+
+        //Assign content to five stars
+        this.star1.textContent = this.bookData.givenRate[0];
+        this.star2.textContent = this.bookData.givenRate[1];
+        this.star3.textContent = this.bookData.givenRate[2];
+        this.star4.textContent = this.bookData.givenRate[3];
+        this.star5.textContent = this.bookData.givenRate[4];
+
+        //Assign class to five stars
+        this.star1.classList.add('star');
+        this.star2.classList.add('star');
+        this.star3.classList.add('star');
+        this.star4.classList.add('star');
+        this.star5.classList.add('star');
+
+
+        //Assign an event listener to each star
+        this.star1.addEventListener('click', () => {
+            console.log('I was clicked!');
+            console.log(event.target);
+            this.arrRatings.push(1);
+            this.calcOverAllRate();  
+            console.log(this.arrRatings);
+        })
+        this.star2.addEventListener('click', () => {
+            console.log('I was clicked!');
+            this.arrRatings.push(2);
+            this.calcOverAllRate(); 
+            console.log(this.arrRatings);
+        })
+        this.star3.addEventListener('click', () => {
+            console.log('I was clicked!');
+            this.arrRatings.push(3);
+            this.calcOverAllRate(); 
+            console.log(this.arrRatings);
+        })
+        this.star4.addEventListener('click', () => {
+            console.log('I was clicked!');
+            this.arrRatings.push(4);
+            this.calcOverAllRate(); 
+            console.log(this.arrRatings);
+        })
+        this.star5.addEventListener('click', () => {
+            console.log('I was clicked!');
+            this.arrRatings.push(5);
+            this.calcOverAllRate(); 
+            console.log(this.arrRatings);
+        })
+    }
+
     infoConstructor(bookBox) {
         //Create p tag element
         let paragraph = document.createElement('p');
@@ -216,29 +299,9 @@ class GenerateBooks {
         paragraph.classList.add('book-info');
 
         //Create span element for rating
-        let spanRate = document.createElement('span');
+        this.spanRate = document.createElement('span');
         //Assign class to rating span element
-        spanRate.classList.add('currentRate');
-
-
-
-
-        
-        //Assign the rating arrray to a variable
-        let arrRatings = this.bookData.rating;
-        //Use reduce method to obtain array total rating
-        let rating = arrRatings.reduce((acc, currRate) => {
-            return acc + currRate;
-        }, 0);
-        //Divide the total rating by the number of elements present in the array
-        let currRating = rating / arrRatings.length;
-        //Assign some content to rating span element
-        spanRate.textContent = currRating.toFixed(1) + '⭐️';
-
-
-
-
-
+        this.spanRate.classList.add('currentRate');
 
         //Create span element for reviews
         let spanReview = document.createElement('span');
@@ -248,19 +311,104 @@ class GenerateBooks {
         spanReview.textContent = '5 💬';
 
         //Append spans for rating and review to p tag
-        paragraph.appendChild(spanRate);
+        paragraph.appendChild(this.spanRate);
         paragraph.appendChild(spanReview);
         //Append p tag to bookBox div
         bookBox.append(paragraph);
     }
 
-    ratingConstructor(bookBox) {
+    ratingConstructor(bookBox, arrRatings) {
         //Create p tag for current overall rating
         let rating = document.createElement('p');
         //Assign class to overall rating p tag
         rating.classList.add('rating', 'hidden');
+
+        rating.style.fontSize = '3rem';
         //Assign some content to overall rating p tag
-        rating.textContent = '⭐️⭐️⭐️⭐️⭐️';
+
+        // //Create 5 stars
+        // let star1 = document.createElement('span');
+        // let star2 = document.createElement('span');
+        // let star3 = document.createElement('span');
+        // let star4 = document.createElement('span');
+        // let star5 = document.createElement('span');
+
+        // //Assign content to five stars
+        // star1.textContent = this.bookData.givenRate[0];
+        // star2.textContent = this.bookData.givenRate[1];
+        // star3.textContent = this.bookData.givenRate[2];
+        // star4.textContent = this.bookData.givenRate[3];
+        // star5.textContent = this.bookData.givenRate[4];
+
+        // //Assign class to five stars
+        // star1.classList.add('star');
+        // star2.classList.add('star');
+        // star3.classList.add('star');
+        // star4.classList.add('star');
+        // star5.classList.add('star');
+
+
+        // //Assign an event listener to each star
+        // star1.addEventListener('click', () => {
+        //     console.log('I was clicked!');
+        //     console.log(event.target);
+        //     this.arrRatings.push(1);
+        //     console.log(this.arrRatings);
+        // })
+        // star2.addEventListener('click', () => {
+        //     console.log('I was clicked!');
+        //     this.arrRatings.push(2);
+        //     console.log(this.arrRatings);
+        // })
+        // star3.addEventListener('click', () => {
+        //     console.log('I was clicked!');
+        //     this.arrRatings.push(3);
+        //     console.log(this.arrRatings);
+        // })
+        // star4.addEventListener('click', () => {
+        //     console.log('I was clicked!');
+        //     this.arrRatings.push(4);
+        //     console.log(this.arrRatings);
+        // })
+        // star5.addEventListener('click', () => {
+        //     console.log('I was clicked!');
+        //     this.arrRatings.push(5);
+        //     console.log(this.arrRatings);
+        // })
+
+        rating.append(this.star1);
+        rating.append(this.star2);
+        rating.append(this.star3);
+        rating.append(this.star4);
+        rating.append(this.star5);
+
+
+        // newRating.map((star, index) => {
+        //     console.log(star, index);
+        //     star.addEventListener('mouseenter', () => {
+        //         // switch(index){
+        //         //     case 0:
+        //         //         star[0].style.backgroundColor= 'red';
+        //         //         break;
+        //         //     case 1:
+        //         //         star[0].style.backgroundColor= 'red';
+        //         //         break;
+        //         //     case 2:
+        //         //         star[0].style.backgroundColor= 'red';
+        //         //         break;
+        //         //     case 3:
+        //         //         star[0].style.backgroundColor= 'red';
+        //         //         break;
+        //         //     case 4:
+        //         //         star[0].style.backgroundColor= 'red';
+        //         //         break;
+        //         // }
+        //     })
+        //     rating.textContent = star + star + star + star + star;
+        // });
+
+
+
         //Append overall rating p tag to bookBox div
         bookBox.append(rating);
     }

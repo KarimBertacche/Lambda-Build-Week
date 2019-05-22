@@ -435,12 +435,12 @@ header .hero-content .hero-text {
   height: 265px;
 }
 .main-section .main-content .book-box .rating {
-  background-color: #f67280;
+  background-color: #35477d;
   height: 30px;
   border-top: 3px solid #000;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  padding-top: 7px;
+  padding-top: 4px;
   font-size: 2rem;
   text-align: center;
   cursor: pointer;
@@ -454,6 +454,11 @@ header .hero-content .hero-text {
 .main-section .main-content .book-box .rating.shown {
   transform: translateY(-40px);
   opacity: 1;
+}
+.main-section .main-content .book-box .rating .star:hover {
+  background-color: gold;
+  color: transparent;
+  -webkit-background-clip: text;
 }
 .main-section .main-content .book-box .book-info {
   display: block;
