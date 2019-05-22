@@ -557,9 +557,9 @@ header .hero-content .hero-text {
 }
 .popUp-screen .closeBtn {
   position: absolute;
-  top: 3%;
-  right: 3%;
-  font-size: 3rem;
+  top: 1%;
+  right: 1%;
+  font-size: 4rem;
   cursor: pointer;
 }
 .popUp-screen .closeBtn:hover {
@@ -608,12 +608,13 @@ header .hero-content .hero-text {
 }
 .popUp-screen .sides .right-side .heading-tertiary {
   background-color: #c06c84;
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   font-weight: bold;
   text-align: center;
   border-bottom: 3px solid #000;
   color: #f67280;
   text-shadow: 1px 1px 5px #000;
+  padding-right: 20px;
 }
 .popUp-screen .sides .right-side .review {
   width: 90%;
@@ -637,7 +638,7 @@ header .hero-content .hero-text {
   background-color: #fff;
   border: 3px solid #f67280;
 }
-.popUp-screen .sides .right-side .btn-box input {
+.popUp-screen .sides .right-side .btn-box .input-field {
   width: 250px;
   height: 30px;
   font-size: 2.5rem;
