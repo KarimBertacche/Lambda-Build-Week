@@ -114,23 +114,33 @@ const addNext = (prevCount) => {
 const booksData = [
     {
         heading: 'Barking Up The Wrong Tree',
-        img: 'Wrong-tree.jpg'
+        img: 'Wrong-tree.jpg',
+        rating: [3, 4, 5, 5],
+        reviews: []
     },
     {
         heading: 'Outwitt The Devil',
-        img: 'OutwittTheDevil.jpg'
+        img: 'OutwittTheDevil.jpg',
+        rating: [3, 4, 5, 3],
+        reviews: []
     },
     {
         heading: 'The Power Of Now',
-        img: 'ThePowerOfNow.jpg'
+        img: 'ThePowerOfNow.jpg',
+        rating: [3, 4, 5, 2],
+        reviews: []
     },
     {
         heading: 'Breaking The Habit Of Being Yourself',
-        img: 'BreakingHabitYourself.jpg'
+        img: 'BreakingHabitYourself.jpg',
+        rating: [3, 4, 5, 1],
+        reviews: []
     },
     {
         heading: 'Awaken The Giant Within',
-        img: 'AwakenTheGiant.jpg'
+        img: 'AwakenTheGiant.jpg',
+        rating: [3, 4, 5, 5],
+        reviews: []
     }
 ]
 
@@ -138,7 +148,7 @@ const bookStore = document.querySelector('.main-content');
 
 //Class constructor for generating new books
 class GenerateBooks {
-    constructor(data, index) {
+    constructor(data) {
         this.bookData = data;
 
         //Create div for book-box
@@ -209,8 +219,26 @@ class GenerateBooks {
         let spanRate = document.createElement('span');
         //Assign class to rating span element
         spanRate.classList.add('currentRate');
+
+
+
+
+        
+        //Assign the rating arrray to a variable
+        let arrRatings = this.bookData.rating;
+        //Use reduce method to obtain array total rating
+        let rating = arrRatings.reduce((acc, currRate) => {
+            return acc + currRate;
+        }, 0);
+        //Divide the total rating by the number of elements present in the array
+        let currRating = rating / arrRatings.length;
         //Assign some content to rating span element
-        spanRate.textContent = '4 ⭐️';
+        spanRate.textContent = currRating.toFixed(1) + '⭐️';
+
+
+
+
+
 
         //Create span element for reviews
         let spanReview = document.createElement('span');
@@ -249,7 +277,7 @@ class GenerateBooks {
 }
 
 
-booksData.forEach((book, index) => new GenerateBooks(book, index));
+booksData.forEach(book => new GenerateBooks(book));
 
 
 
@@ -266,11 +294,12 @@ books.forEach(book => {
     book.addEventListener('dragstart', dragStart);
 });
 
-const dropZone = document.querySelector('.drop-zone');
+const favBox = document.querySelector('.fav-list');
+const dropZone = favBox.querySelector('.drop-zone');
 
 dropZone.addEventListener('dragenter', (event) => {
     if(event.target.className === "drop-zone"){
-        dropZone.style.border = "3px solid #fff";  
+        favBox.style.border = "3px solid #fff";  
     }
 })
 
@@ -281,7 +310,7 @@ dropZone.addEventListener('dragover', (event) => {
 
 dropZone.addEventListener('dragleave', (event) => {
     event.preventDefault();
-    dropZone.style.border = "3px solid #f67280"; 
+    favBox.style.border = "3px solid #000"; 
 })
 
 dropZone.addEventListener('drop', (event) => {
@@ -297,14 +326,31 @@ dropZone.addEventListener('drop', (event) => {
     //Give favourite book a title content 
     favBox.textContent = curBook.children[0].textContent;
     
-    //Append favourite book to favBox & favBox to dropzone
+    //Append favBox to favItem
     favItem.appendChild(favBox);
-    event.target.appendChild(favItem);
+
+    //Select dropzone div
+    const dropZone = document.querySelector('.drop-zone');
+
+    //Append favItem to dropzone
+    dropZone.appendChild(favItem);
 
     //Remove current book from main list after adding it to favourite collection
     curBook.remove();
 })
 
 
+// document.maxWidth = '100wv';
 
 
+// console.log(window.innerWidth = '100wv');
+
+// const docWidth = document.documentElement.offsetWidth;
+// [].forEach.call(document.querySelectorAll('*'), (el) => {
+//   if (el.offsetWidth > docWidth) {
+//     console.log(el);
+//   }
+// });
+
+
+// document.documentElement.offsetWidth = 0;

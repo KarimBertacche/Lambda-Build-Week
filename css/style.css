@@ -127,7 +127,7 @@ html {
 }
 body {
   box-sizing: border-box;
-  background-color: #35477d;
+  background-color: #c06c84;
 }
 .navigation {
   display: flex;
@@ -231,7 +231,7 @@ header .hero-content .hero-text {
   background-color: #35477d;
   clip-path: polygon(0 0, 50% 5%, 100% 0, 100% 95%, 50% 100%, 0 95%);
   margin-top: -35px;
-  overflow-x: auto;
+  overflow-x: hidden;
   background-image: url(../images/Quotes_image.jpg);
   background-size: cover;
   background-position: center;
@@ -311,15 +311,15 @@ header .hero-content .hero-text {
   align-items: center;
   flex-wrap: no-wrap;
   background-color: #c06c84;
-  border: 3px solid #000;
 }
 .feature-section .feature-box .featureImg {
-  width: 80%;
+  width: 70%;
   min-width: 300px;
   height: 400px;
   min-height: 300px;
-  border-right: 3px solid #000;
-  border-left: 3px solid #000;
+}
+.feature-section .feature-box .featureImg .feature-img {
+  width: 110%;
 }
 .feature-section .feature-box .feature-content {
   display: flex;
@@ -333,8 +333,14 @@ header .hero-content .hero-text {
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
+.feature-section .feature-box .feature-content .heading-secondary:first-child {
+  margin-top: 150px;
+}
+.feature-section .feature-box .feature-content .heading-secondary:last-child {
+  margin-top: -100px;
+}
 .feature-section .feature-box .feature-content .feature-text {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 .feature-section .feature-box.reverse {
   display: flex;
@@ -344,13 +350,17 @@ header .hero-content .hero-text {
   flex-wrap: no-wrap;
   text-align: right;
 }
+.feature-section .feature-box.reverse .featureImg {
+  margin-right: 50px;
+}
 .main-section {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: no-wrap;
-  margin-top: 10px;
+  position: relative;
+  margin-top: 100px;
   height: 90vh;
 }
 .main-section .select-subject {
@@ -370,14 +380,14 @@ header .hero-content .hero-text {
   color: #fff;
 }
 .main-section .select-subject .nav-list:hover {
-  background-color: #c06c84;
+  background-color: #35477d;
   transform: translateX(5px);
   border: 3px solid #000;
-  border-right: 5px solid #c06c84;
+  border-right: 5px solid #35477d;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   padding-left: 20px;
-  color: #35477d;
+  color: #f67280;
 }
 .main-section .main-content {
   display: flex;
@@ -386,19 +396,17 @@ header .hero-content .hero-text {
   align-items: space-evenly;
   flex-wrap: wrap;
   width: 74%;
-  height: 80vh;
-  background-color: #c06c84;
+  height: 89vh;
+  background-color: #35477d;
   border: 3px solid #000;
   border-radius: 22px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   overflow-y: scroll;
-  padding: 40px 0;
 }
 .main-section .main-content .book-box {
   background-color: #000;
-  width: 20%;
-  min-width: 200px;
-  height: 300px;
+  width: 200px;
+  height: 350px;
   border: 3px solid #000;
   border-radius: 20px;
   overflow: hidden;
@@ -419,12 +427,12 @@ header .hero-content .hero-text {
 }
 .main-section .main-content .book-box .book-figure {
   width: 100%;
-  height: 215px;
+  height: 265px;
   object-fit: cover;
 }
 .main-section .main-content .book-box .book-figure img {
   width: 100%;
-  height: 215px;
+  height: 265px;
 }
 .main-section .main-content .book-box .rating {
   background-color: #f67280;
@@ -470,7 +478,7 @@ header .hero-content .hero-text {
 }
 .main-section .fav-box .fav-list {
   height: 70vh;
-  background-color: #c06c84;
+  background-color: #35477d;
   border-top: 3px solid #000;
   border-right: 3px solid #000;
   border-bottom: 3px solid #000;
@@ -520,8 +528,132 @@ header .hero-content .hero-text {
 .main-section .fav-box .drop-zone {
   width: 97%;
   height: 61.5vh;
-  border: 3px solid #f67280;
   border-bottom-right-radius: 40px;
+  overflow: scroll;
+}
+.popUp-screen {
+  display: none;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #35477d;
+  width: 80%;
+  height: 80vh;
+  z-index: 100;
+  border-radius: 20px;
+  padding: 30px;
+}
+.popUp-screen .heading-quaternary {
+  text-align: center;
+  font-size: 7rem;
+  color: #f67280;
+  text-shadow: 1px 1px 5px #000;
+}
+.popUp-screen .closeBtn {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.popUp-screen .closeBtn:hover {
+  color: #f67280;
+}
+.popUp-screen .sides {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: no-wrap;
+  height: 550px;
+  border: 3px solid #000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.popUp-screen .sides .left-side {
+  width: 70%;
+  height: 100%;
+  background-color: #c06c84;
+  border-right: 3px solid #000;
+  padding: 10px;
+  overflow: scroll;
+}
+.popUp-screen .sides .left-side .bookImg {
+  width: 40%;
+  height: 400px;
+  border: 3px solid #000;
+  border-radius: 5px;
+  object-fit: cover;
+  float: left;
+  margin-right: 15px;
+}
+.popUp-screen .sides .left-side .bookImg img {
+  width: 100%;
+  height: 100%;
+}
+.popUp-screen .sides .left-side .book-content {
+  font-size: 2.2rem;
+}
+.popUp-screen .sides .right-side {
+  position: relative;
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+}
+.popUp-screen .sides .right-side .heading-tertiary {
+  background-color: #c06c84;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 3px solid #000;
+  color: #f67280;
+  text-shadow: 1px 1px 5px #000;
+}
+.popUp-screen .sides .right-side .review {
+  width: 90%;
+  height: 30px;
+  background-color: #c06c84;
+  margin: 0 auto;
+  border: 3px solid #000;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  overflow: hidden;
+  padding: 5px;
+}
+.popUp-screen .sides .right-side .review.open {
+  height: 100px;
+  overflow: scroll;
+}
+.popUp-screen .sides .right-side .btn-box {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 3px solid #f67280;
+}
+.popUp-screen .sides .right-side .btn-box input {
+  width: 250px;
+  height: 30px;
+  font-size: 2.5rem;
+  padding-right: 80px;
+}
+.popUp-screen .sides .right-side .btn-box .postBtn {
+  position: absolute;
+  background-color: #c06c84;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 36px;
+  border: 3px solid #f67280;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.popUp-screen .sides .right-side .btn-box .postBtn:hover {
+  background-color: #f67280;
 }
 .cta-section {
   background-color: #f67280;
