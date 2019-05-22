@@ -168,7 +168,7 @@ const bookStore = document.querySelector('.main-content');
 class GenerateBooks {
     constructor(data) {
         this.bookData = data;
-        console.log(this.bookData)
+
         //Assign the rating arrray to a variable
         this.arrRatings = this.bookData.rating;
 
@@ -296,9 +296,9 @@ class GenerateBooks {
 
     infoConstructor(bookBox) {
         //Create p tag element
-        let paragraph = document.createElement('p');
+        this.paragraph = document.createElement('p');
         //Assign class to p tag element
-        paragraph.classList.add('book-info');
+        this.paragraph.classList.add('book-info');
 
         //Create span element for rating
         this.spanRate = document.createElement('span');
@@ -306,17 +306,18 @@ class GenerateBooks {
         this.spanRate.classList.add('currentRate');
 
         //Create span element for reviews
-        let spanReview = document.createElement('span');
+        this.spanReview = document.createElement('span');
         //Assign class to review span element
-        spanReview.classList.add('reviews');
-        //Assign some content to the review span element
-        spanReview.textContent = '5 💬';
+        this.spanReview.classList.add('reviews');
 
+        //Assign some content to the review span element
+        this.spanReview.textContent = `${this.bookData.reviews.length} 💬`;
+        
         //Append spans for rating and review to p tag
-        paragraph.appendChild(this.spanRate);
-        paragraph.appendChild(spanReview);
+        this.paragraph.appendChild(this.spanRate);
+        this.paragraph.appendChild(this.spanReview);
         //Append p tag to bookBox div
-        bookBox.append(paragraph);
+        bookBox.append(this.paragraph);
     }
 
     ratingConstructor(bookBox, arrRatings) {
@@ -324,10 +325,10 @@ class GenerateBooks {
         let rating = document.createElement('p');
         //Assign class to overall rating p tag
         rating.classList.add('rating', 'hidden');
-
+        //Increase font size of rating stars
         rating.style.fontSize = '3rem';
-        //Assign some content to overall rating p tag
-
+        
+        //Append stars to rating p tag
         rating.append(this.star1);
         rating.append(this.star2);
         rating.append(this.star3);
@@ -353,9 +354,10 @@ class GenerateBooks {
 class GenerateReviewPopUpPage extends GenerateBooks {
     constructor(data) {
         super(data);
-        console.log(this.image);
 
+        //Create new div container for popUp screen
         this.popUpScreen = document.createElement('div');
+        //Assign class to popUp screen container
         this.popUpScreen.classList.add('popUp-screen');
 
         //Method to generate heading
@@ -443,16 +445,14 @@ class GenerateReviewPopUpPage extends GenerateBooks {
         h3Heading.classList.add('heading-tertiary');
         h3Heading.textContent = 'Reviews';
 
-        this.reviews = document.createElement('p');
-        this.reviews.classList.add('review');   
-        //this.reviews.textContent = this.textInput.value!!!!!!
+        this.reviewsBox = document.createElement('div');
+        this.reviewsBox.classList.add('reviews-box');
 
         this.buttonBoxConstructor();
 
         this.rightSide.append(h3Heading);
-        //this.rightSide.append(reviews);
-        this.rightSide.append(this.btnBox);
-
+        this.rightSide.append(this.reviewsBox);
+        this.rightSide.append(this.btnBox); 
     }
 
     buttonBoxConstructor() {
@@ -462,12 +462,14 @@ class GenerateReviewPopUpPage extends GenerateBooks {
         this.textInput = document.createElement('input');
         this.textInput.classList.add('input-field');
 
-        let btn = document.createElement('button');
-        btn.classList.add('postBtn');
-        btn.textContent = 'Post';
+        this.btn = document.createElement('button');
+        this.btn.classList.add('postBtn');
+        this.btn.textContent = 'Post';
+
+        this.postReviews();
 
         this.btnBox.append(this.textInput);
-        this.btnBox.appendChild(btn);
+        this.btnBox.appendChild(this.btn);
     }
 
     sidesConstructor() {
@@ -489,6 +491,22 @@ class GenerateReviewPopUpPage extends GenerateBooks {
     closeReviewPage() {
         this.closeBtn.addEventListener('click', () => {
             this.popUpScreen.style.display= 'none';
+        })
+    }
+
+    postReviews() {
+        this.btn.addEventListener('click', () => {
+            if(this.textInput.value === ''){
+                alert('Invalid text!!!');
+            } else {
+                this.bookData.reviews.push(this.textInput.value);
+                this.reviews = document.createElement('p');
+                this.reviews.classList.add('review');     
+                this.reviews.textContent = this.textInput.value;
+                this.reviewsBox.append(this.reviews);
+                this.spanReview.textContent = `${this.bookData.reviews.length} 💬`;
+            }  
+            this.textInput.value = '';   
         })
     }
 }

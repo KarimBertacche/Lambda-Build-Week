@@ -296,21 +296,28 @@
                 padding-right: 20px;
             } 
 
-            .review {
-                width: 90%;
-                height: 30px;
-                background-color: @colorTertiary;
-                margin: 0 auto;
-                border: 3px solid @black;
-                border-radius: 5px;
-                font-size: 1.5rem;
-                overflow: hidden;
-                padding: 5px;
+            .reviews-box {
+                width: 100%;
+                height: 100%;
+                overflow: scroll;
 
-                &.open {
-                    height: 100px;
-                    overflow: scroll;
+                .review {
+                    width: 90%;
+                    height: 30px;
+                    background-color: @colorTertiary;
+                    margin: 0 auto;
+                    border: 3px solid @black;
+                    border-radius: 5px;
+                    font-size: 1.5rem;
+                    overflow: hidden;
+                    padding: 5px;
+    
+                    &.open {
+                        height: 100px;
+                        overflow: scroll;
+                    }
                 }
+
             }
 
             .btn-box {
