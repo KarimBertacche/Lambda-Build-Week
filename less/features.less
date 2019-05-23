@@ -3,7 +3,7 @@
 
     .feature-box {
         .flex(row, space-between, center);
-        background-color: @colorTertiary;
+        background-color: transparent;
 
         .featureImg {
             width: 70%;
@@ -19,6 +19,7 @@
         .feature-content {
             .flex(column, center, center); 
             padding: 30px;
+            margin-bottom: -50px;
 
             .heading-secondary {
                 font-size: 2.5rem;
@@ -35,6 +36,7 @@
 
             .feature-text {
                 font-size: 2rem;
+                line-height: 1.1;
             }
         }
 
@@ -44,6 +46,13 @@
 
             .featureImg {
                 margin-right: 50px;
+                margin-bottom: -100px;
+            }
+
+            .feature-text {
+                .flex(column, center, center);
+                margin-bottom: 100px;
+                line-height: 1.1;
             }
         }
     }

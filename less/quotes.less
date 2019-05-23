@@ -20,7 +20,7 @@
         height: 180px;
         min-width: 500px;
         font-size: 3rem;
-        border: 3px solid #000;
+        border: 3px solid @black;
         border-radius: 20px;
         margin: 0 60px;
         padding: 15px;
@@ -49,18 +49,18 @@
     } 
 
     .arrows {
-        color: #445ba1;
+        color: @colorPrimary;
         font-size: 8rem;
         z-index: 15;
         cursor: pointer;
-        text-shadow: 0 5px 10px #000;
+        text-shadow: 0 5px 10px @black;
 
         &.back-arrow {
             .absolute-position(50%, 27.5%);   
         }
 
         &.forward-arrow {
-            .absolute-position(50%, 72.5%);
+            .absolute-position(50%, 74%);
         }
 
         &:hover {

@@ -1,11 +1,13 @@
 .main-section {
-    .flex();
+    .flex(row);
     position: relative;
     margin-top: 100px;
+    width: 100%;
     height: 90vh;
 
     .select-subject {
-        width: 11%;
+        width: 13%;
+        padding-left: 30px;
     
         .main-nav {
             padding-top: 80px;
@@ -24,6 +26,10 @@
             
 
             &:hover {
+                color: @colorPrimary;      
+            }
+
+            &.active {
                 background-color: @colorPrimary;
                 transform: translateX(5px);
                 border: 3px solid @black;
@@ -31,27 +37,125 @@
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;
                 padding-left: 20px;
-                color: @colorQuaternary;      
+                color: @colorQuaternary;  
+            }
+        }
+
+        .addBook-box {
+            width: 150px;
+            position: absolute;
+            top: 3%;
+            left: 25px;
+            margin: 0 auto;
+
+            .addBook-btn {
+                background-color: @colorPrimary;      
+                width: 150px;
+                padding: 10px;
+                border: 3px solid @black;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 1.4rem;
+                color: @colorQuaternary;
+                transition: all .2s;
+
+                &:hover { 
+                    transform: translateY(-5px) scale(1.005); 
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, .4); 
+                }
+
+                &:active {
+                    transform: translateY(-2px) scale(1);
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);  
+                }
+            }
+        }
+
+        .menu-newBook {
+            width: 300px;
+            height: 80vh;
+            background-color: @black;
+            position: fixed;
+            top: 10vh;
+            left: 0;
+            z-index: 100;
+            padding: 50px 10px;
+            color: @colorQuaternary;
+            // transform: translate(-100%, 0);
+
+            .close-menu {
+                font-size: 4rem;
+                position: absolute;
+                top: 2%;
+                right: 2%;
+                cursor: pointer;
+
+                &:hover {
+                    color: @colorQuaternary;       
+                }
             }
 
-            // &:visited {
-            //     background-color: @colorPrimary;
-            //     transform: translateX(5px);
-            //     border: 3px solid @black;
-            //     border-right: 5px solid @colorPrimary;
-            //     border-top-left-radius: 20px;
-            //     border-bottom-left-radius: 20px;
-            //     padding-left: 20px;
-            //     color: @colorQuaternary;    
-            // }
+            .book-title,
+            .book-image,
+            .book-category,
+            .book-intro {
+                width: 100%;
+                font-size: 3rem;
+
+                .input-title,
+                .input-image,
+                .selection {
+                    width: 90%;
+                    height: 30px;
+                    font-size: 1.8rem;
+                    margin-top: 5px;
+                    margin-bottom: 15px;
+                    border: 3px solid @colorTertiary;
+                    border-radius: 10px;
+                }
+
+                .input-intro {
+                    width: 90%;
+                    height: 230px;
+                    font-size: 1.8rem;
+                    margin-top: 5px;
+                    margin-bottom: 10px;  
+                    border: 3px solid @colorTertiary;
+                    border-radius: 10px;
+                }
+            }
+
+            .submit-btn {
+                width: 50%;
+                padding: 10px; 
+                margin-left: 60px;  
+                background-color: @colorQuaternary;
+                border: 3px solid @white;  
+                border-radius: 25px; 
+                color: @white;
+                font-size: 1.8rem;
+                cursor: pointer;
+
+                &:hover {
+                    transform: translateY(-5px) scale(1.05);
+                    box-shadow: 0 10px 20px rgba(255, 255, 255, .4);
+                }
+
+                &:active {
+                    transform: translateY(-2px) scale(1);  
+                    box-shadow: 0 5px 10px rgba(255, 255, 255, .4);
+                }
+            }
+
         }
     }
 
     .main-content {
         .flex(row, space-evenly, space-evenly, wrap);
-        width: 74%;
+        width: 65%;
         height: 89vh;
-        background-color: @colorPrimary;
+        background-image: radial-gradient(circle at left top, @colorPrimary 30%, @colorQuaternary);
+        // background-color: @colorPrimary;
         border: 3px solid @black;
         border-radius: 22px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
@@ -60,7 +164,7 @@
         .book-box {
             background-color: @black;
             width: 200px;
-            height: 350px;
+            height: 310px;
             border: 3px solid @black;
             border-radius: 20px;
             overflow: hidden;
@@ -78,13 +182,12 @@
 
             .book-figure {
                 width: 100%;
-                height: 265px;
+                height: 225px;
                 object-fit: cover;
 
                 & img {
                     width: 100%;
-                    height: 265px;
-                    
+                    height: 225px;          
                 }
             }
 
@@ -108,13 +211,11 @@
                 }
 
                 &.shown {
-                    // display: block;
                     transform: translateY(-40px);
                     opacity: 1;   
                 }
 
                 .star {
-
 
                     &:hover {
                         background-color: gold;
@@ -148,13 +249,13 @@
     }
 
     .fav-box {
-        width: 16%;
+        width: 19%;
         overflow-y: scroll;
         padding-top: 80px;
 
         .fav-list {
             height: 70vh;
-            background-color: @colorPrimary;
+            background-image: radial-gradient(circle at right top, @colorPrimary, @colorQuaternary);
             border-top: 3px solid @black;
             border-right: 3px solid @black;
             border-bottom: 3px solid @black;
@@ -177,6 +278,7 @@
                 padding: 10px 0;
                 margin: 0 auto;
                 color: @colorQuaternary;
+                text-shadow: 1px 1px 0 rgba(255, 255, 255, .6);
             }
 
             .fav-item {
@@ -218,10 +320,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: @colorPrimary;
-    width: 80%;
-    height: 80vh;
+    width: 96%;
+    height: 82vh;
     z-index: 100;
-    border-radius: 20px;
     padding: 30px;
 
     .heading-quaternary {
@@ -229,6 +330,8 @@
         font-size: 7rem;
         color: @colorQuaternary;
         text-shadow: 1px 1px 5px @black;
+        margin-bottom: 10px;
+        padding-right: 20px;
     }
 
     .closeBtn {
@@ -245,7 +348,7 @@
 
     .sides {
         .flex();
-        height: 550px;
+        height: 500px;
         border: 3px solid @black;
         border-radius: 20px;
         overflow: hidden;
@@ -259,7 +362,8 @@
             overflow: scroll;
 
             .bookImg {
-                width: 40%;
+                width: 35%;
+                min-width: 300px;
                 height: 400px;
                 border: 3px solid @black;
                 border-radius: 5px;
@@ -293,7 +397,7 @@
                 border-bottom: 3px solid @black;
                 color: @colorQuaternary;
                 text-shadow: 1px 1px 5px @black;
-                padding-right: 20px;
+                padding: 10px;
             } 
 
             .reviews-box {
@@ -308,7 +412,7 @@
                     margin: 0 auto;
                     border: 3px solid @black;
                     border-radius: 5px;
-                    font-size: 1.5rem;
+                    font-size: 2rem;
                     overflow: hidden;
                     padding: 5px;
     
@@ -355,4 +459,11 @@
             }        
         }
     }   
+}
+
+.main-container {
+    .flex(column);
+    position: relative;
+    width: 100%;
+    height: 100%;
 }

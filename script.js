@@ -114,55 +114,54 @@ const addNext = (prevCount) => {
 const booksData = [
     {
         heading: 'Barking Up The Wrong Tree',
-        img: 'Wrong-tree.jpg',
+        img: './images/Wrong-tree.jpg',
         rating: [3, 4, 5, 5],
         givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: [],
+        category: 'Growth',
         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi maiores facilis nemo odit harum laudantium aperiam voluptatibus aliquam laborum nulla optio consectetur eligendi dignissimos magni, impedit aut excepturi! Nulla veritatis animi odio, cum libero amet in possimus soluta alias ab molestiae, tempora illum. Illo, error. Deleniti aliquid ut voluptates recusandae saepe exercitationem nesciunt ullam vero debitis? Ad, sequi ducimus, iste nostrum dolorum impedit reiciendis sed maxime, nam laborum temporibus repellat repudiandae magnam nesciunt amet fugit explicabo ullam libero atque sapiente. Quis fuga aperiam et libero nihil saepe ad possimus iste laudantium! Nostrum et, temporibus, ex placeat pariatur non quibusdam sint corporis maiores odit in ea vel voluptate? Perferendis harum saepe molestias perspiciatis necessitatibus officiis iste nulla quaerat, similique dolorum ullam ipsum in deleniti dolores illum fugit ipsam et ea adipisci vel dolorem. Itaque reiciendis consequatur delectus molestiae quos eum aspernatur recusandae eveniet assumenda, rem dolor autem labore. Nisi modi pariatur ut dicta blanditiis deleniti, distinctio placeat voluptates ex impedit labore veniam corporis dolores soluta, error exercitationem amet? Quae, magnam blanditiis, ex in doloremque modi voluptas quidem asperiores excepturi facilis reiciendis earum, aliquam consectetur deserunt assumenda? Consectetur ab soluta accusamus inventore nemo, aliquid recusandae consequatur expedita iusto magnam eveniet, enim eius sapiente exercitationem earum molestiae nisi laboriosam eum, nam rerum quod alias voluptate assumenda dolores. Qui laudantium, quasi libero et dolorem omnis commodi aperiam tempore fugit maiores consequuntur, vero soluta id dolorum veritatis tempora, in adipisci odit architecto nostrum. Ducimus non vel quidem velit obcaecati necessitatibus cum pariatur impedit blanditiis dolores in voluptatem reiciendis, maiores nisi quae culpa adipisci enim odio. Explicabo doloribus iure suscipit cum est animi molestiae error voluptatem facilis, modi tempore repellat a numquam eligendi quia magni ratione optio asperiores. Soluta libero, molestiae fugit perferendis amet quod blanditiis cumque assumenda ab nesciunt possimus omnis voluptatibus repellendus repellat?'
     },
     {
         heading: 'Outwitt The Devil',
-        img: 'OutwittTheDevil.jpg',
+        img: './images/OutwittTheDevil.jpg',
         rating: [3, 4, 5, 3],
         givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: [],
+        category: 'Growth',
         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi maiores facilis nemo odit harum laudantium aperiam voluptatibus aliquam laborum nulla optio consectetur eligendi dignissimos magni, impedit aut excepturi! Nulla veritatis animi odio, cum libero amet in possimus soluta alias ab molestiae, tempora illum. Illo, error. Deleniti aliquid ut voluptates recusandae saepe exercitationem nesciunt ullam vero debitis? Ad, sequi ducimus, iste nostrum dolorum impedit reiciendis sed maxime, nam laborum temporibus repellat repudiandae magnam nesciunt amet fugit explicabo ullam libero atque sapiente. Quis fuga aperiam et libero nihil saepe ad possimus iste laudantium! Nostrum et, temporibus, ex placeat pariatur non quibusdam sint corporis maiores odit in ea vel voluptate? Perferendis harum saepe molestias perspiciatis necessitatibus officiis iste nulla quaerat, similique dolorum ullam ipsum in deleniti dolores illum fugit ipsam et ea adipisci vel dolorem. Itaque reiciendis consequatur delectus molestiae quos eum aspernatur recusandae eveniet assumenda, rem dolor autem labore. Nisi modi pariatur ut dicta blanditiis deleniti, distinctio placeat voluptates ex impedit labore veniam corporis dolores soluta, error exercitationem amet? Quae, magnam blanditiis, ex in doloremque modi voluptas quidem asperiores excepturi facilis reiciendis earum, aliquam consectetur deserunt assumenda? Consectetur ab soluta accusamus inventore nemo, aliquid recusandae consequatur expedita iusto magnam eveniet, enim eius sapiente exercitationem earum molestiae nisi laboriosam eum, nam rerum quod alias voluptate assumenda dolores. Qui laudantium, quasi libero et dolorem omnis commodi aperiam tempore fugit maiores consequuntur, vero soluta id dolorum veritatis tempora, in adipisci odit architecto nostrum. Ducimus non vel quidem velit obcaecati necessitatibus cum pariatur impedit blanditiis dolores in voluptatem reiciendis, maiores nisi quae culpa adipisci enim odio. Explicabo doloribus iure suscipit cum est animi molestiae error voluptatem facilis, modi tempore repellat a numquam eligendi quia magni ratione optio asperiores. Soluta libero, molestiae fugit perferendis amet quod blanditiis cumque assumenda ab nesciunt possimus omnis voluptatibus repellendus repellat?'
     },
     {
         heading: 'The Power Of Now',
-        img: 'ThePowerOfNow.jpg',
+        img: './images/ThePowerOfNow.jpg',
         rating: [3, 4, 5, 2],
         givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: [],
+        category: 'Growth',
         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi maiores facilis nemo odit harum laudantium aperiam voluptatibus aliquam laborum nulla optio consectetur eligendi dignissimos magni, impedit aut excepturi! Nulla veritatis animi odio, cum libero amet in possimus soluta alias ab molestiae, tempora illum. Illo, error. Deleniti aliquid ut voluptates recusandae saepe exercitationem nesciunt ullam vero debitis? Ad, sequi ducimus, iste nostrum dolorum impedit reiciendis sed maxime, nam laborum temporibus repellat repudiandae magnam nesciunt amet fugit explicabo ullam libero atque sapiente. Quis fuga aperiam et libero nihil saepe ad possimus iste laudantium! Nostrum et, temporibus, ex placeat pariatur non quibusdam sint corporis maiores odit in ea vel voluptate? Perferendis harum saepe molestias perspiciatis necessitatibus officiis iste nulla quaerat, similique dolorum ullam ipsum in deleniti dolores illum fugit ipsam et ea adipisci vel dolorem. Itaque reiciendis consequatur delectus molestiae quos eum aspernatur recusandae eveniet assumenda, rem dolor autem labore. Nisi modi pariatur ut dicta blanditiis deleniti, distinctio placeat voluptates ex impedit labore veniam corporis dolores soluta, error exercitationem amet? Quae, magnam blanditiis, ex in doloremque modi voluptas quidem asperiores excepturi facilis reiciendis earum, aliquam consectetur deserunt assumenda? Consectetur ab soluta accusamus inventore nemo, aliquid recusandae consequatur expedita iusto magnam eveniet, enim eius sapiente exercitationem earum molestiae nisi laboriosam eum, nam rerum quod alias voluptate assumenda dolores. Qui laudantium, quasi libero et dolorem omnis commodi aperiam tempore fugit maiores consequuntur, vero soluta id dolorum veritatis tempora, in adipisci odit architecto nostrum. Ducimus non vel quidem velit obcaecati necessitatibus cum pariatur impedit blanditiis dolores in voluptatem reiciendis, maiores nisi quae culpa adipisci enim odio. Explicabo doloribus iure suscipit cum est animi molestiae error voluptatem facilis, modi tempore repellat a numquam eligendi quia magni ratione optio asperiores. Soluta libero, molestiae fugit perferendis amet quod blanditiis cumque assumenda ab nesciunt possimus omnis voluptatibus repellendus repellat?'
     },
     {
         heading: 'Breaking The Habit Of Being Yourself',
-        img: 'BreakingHabitYourself.jpg',
+        img: './images/BreakingHabitYourself.jpg',
         rating: [3, 4, 5, 1],
         givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: [],
+        category: 'Psychology',
         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi maiores facilis nemo odit harum laudantium aperiam voluptatibus aliquam laborum nulla optio consectetur eligendi dignissimos magni, impedit aut excepturi! Nulla veritatis animi odio, cum libero amet in possimus soluta alias ab molestiae, tempora illum. Illo, error. Deleniti aliquid ut voluptates recusandae saepe exercitationem nesciunt ullam vero debitis? Ad, sequi ducimus, iste nostrum dolorum impedit reiciendis sed maxime, nam laborum temporibus repellat repudiandae magnam nesciunt amet fugit explicabo ullam libero atque sapiente. Quis fuga aperiam et libero nihil saepe ad possimus iste laudantium! Nostrum et, temporibus, ex placeat pariatur non quibusdam sint corporis maiores odit in ea vel voluptate? Perferendis harum saepe molestias perspiciatis necessitatibus officiis iste nulla quaerat, similique dolorum ullam ipsum in deleniti dolores illum fugit ipsam et ea adipisci vel dolorem. Itaque reiciendis consequatur delectus molestiae quos eum aspernatur recusandae eveniet assumenda, rem dolor autem labore. Nisi modi pariatur ut dicta blanditiis deleniti, distinctio placeat voluptates ex impedit labore veniam corporis dolores soluta, error exercitationem amet? Quae, magnam blanditiis, ex in doloremque modi voluptas quidem asperiores excepturi facilis reiciendis earum, aliquam consectetur deserunt assumenda? Consectetur ab soluta accusamus inventore nemo, aliquid recusandae consequatur expedita iusto magnam eveniet, enim eius sapiente exercitationem earum molestiae nisi laboriosam eum, nam rerum quod alias voluptate assumenda dolores. Qui laudantium, quasi libero et dolorem omnis commodi aperiam tempore fugit maiores consequuntur, vero soluta id dolorum veritatis tempora, in adipisci odit architecto nostrum. Ducimus non vel quidem velit obcaecati necessitatibus cum pariatur impedit blanditiis dolores in voluptatem reiciendis, maiores nisi quae culpa adipisci enim odio. Explicabo doloribus iure suscipit cum est animi molestiae error voluptatem facilis, modi tempore repellat a numquam eligendi quia magni ratione optio asperiores. Soluta libero, molestiae fugit perferendis amet quod blanditiis cumque assumenda ab nesciunt possimus omnis voluptatibus repellendus repellat?'
     },
     {
         heading: 'Awaken The Giant Within',
-        img: 'AwakenTheGiant.jpg',
+        img: './images/AwakenTheGiant.jpg',
         rating: [3, 4, 5, 5],
         givenRate: ['✩', '✩', '✩', '✩', '✩'],
         reviews: [],
-        paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi maiores facilis nemo odit harum laudantium aperiam voluptatibus aliquam laborum nulla optio consectetur eligendi dignissimos magni, impedit aut excepturi! Nulla veritatis animi odio, cum libero amet in possimus soluta alias ab molestiae, tempora illum. Illo, error. Deleniti aliquid ut voluptates recusandae saepe exercitationem nesciunt ullam vero debitis? Ad, sequi ducimus, iste nostrum dolorum impedit reiciendis sed maxime, nam laborum temporibus repellat repudiandae magnam nesciunt amet fugit explicabo ullam libero atque sapiente. Quis fuga aperiam et libero nihil saepe ad possimus iste laudantium! Nostrum et, temporibus, ex placeat pariatur non quibusdam sint corporis maiores odit in ea vel voluptate? Perferendis harum saepe molestias perspiciatis necessitatibus officiis iste nulla quaerat, similique dolorum ullam ipsum in deleniti dolores illum fugit ipsam et ea adipisci vel dolorem. Itaque reiciendis consequatur delectus molestiae quos eum aspernatur recusandae eveniet assumenda, rem dolor autem labore. Nisi modi pariatur ut dicta blanditiis deleniti, distinctio placeat voluptates ex impedit labore veniam corporis dolores soluta, error exercitationem amet? Quae, magnam blanditiis, ex in doloremque modi voluptas quidem asperiores excepturi facilis reiciendis earum, aliquam consectetur deserunt assumenda? Consectetur ab soluta accusamus inventore nemo, aliquid recusandae consequatur expedita iusto magnam eveniet, enim eius sapiente exercitationem earum molestiae nisi laboriosam eum, nam rerum quod alias voluptate assumenda dolores. Qui laudantium, quasi libero et dolorem omnis commodi aperiam tempore fugit maiores consequuntur, vero soluta id dolorum veritatis tempora, in adipisci odit architecto nostrum. Ducimus non vel quidem velit obcaecati necessitatibus cum pariatur impedit blanditiis dolores in voluptatem reiciendis, maiores nisi quae culpa adipisci enim odio. Explicabo doloribus iure suscipit cum est animi molestiae error voluptatem facilis, modi tempore repellat a numquam eligendi quia magni ratione optio asperiores. Soluta libero, molestiae fugit perferendis amet quod blanditiis cumque assumenda ab nesciunt possimus omnis voluptatibus repellendus repellat?'
-    },
-    {
-        heading: 'Awaken The Giant Within',
-        img: 'AwakenTheGiant.jpg',
-        rating: [3, 4, 5, 5],
-        givenRate: ['✩', '✩', '✩', '✩', '✩'],
-        reviews: [],
+        category: 'Growth',
         paragraph: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim modi maiores facilis nemo odit harum laudantium aperiam voluptatibus aliquam laborum nulla optio consectetur eligendi dignissimos magni, impedit aut excepturi! Nulla veritatis animi odio, cum libero amet in possimus soluta alias ab molestiae, tempora illum. Illo, error. Deleniti aliquid ut voluptates recusandae saepe exercitationem nesciunt ullam vero debitis? Ad, sequi ducimus, iste nostrum dolorum impedit reiciendis sed maxime, nam laborum temporibus repellat repudiandae magnam nesciunt amet fugit explicabo ullam libero atque sapiente. Quis fuga aperiam et libero nihil saepe ad possimus iste laudantium! Nostrum et, temporibus, ex placeat pariatur non quibusdam sint corporis maiores odit in ea vel voluptate? Perferendis harum saepe molestias perspiciatis necessitatibus officiis iste nulla quaerat, similique dolorum ullam ipsum in deleniti dolores illum fugit ipsam et ea adipisci vel dolorem. Itaque reiciendis consequatur delectus molestiae quos eum aspernatur recusandae eveniet assumenda, rem dolor autem labore. Nisi modi pariatur ut dicta blanditiis deleniti, distinctio placeat voluptates ex impedit labore veniam corporis dolores soluta, error exercitationem amet? Quae, magnam blanditiis, ex in doloremque modi voluptas quidem asperiores excepturi facilis reiciendis earum, aliquam consectetur deserunt assumenda? Consectetur ab soluta accusamus inventore nemo, aliquid recusandae consequatur expedita iusto magnam eveniet, enim eius sapiente exercitationem earum molestiae nisi laboriosam eum, nam rerum quod alias voluptate assumenda dolores. Qui laudantium, quasi libero et dolorem omnis commodi aperiam tempore fugit maiores consequuntur, vero soluta id dolorum veritatis tempora, in adipisci odit architecto nostrum. Ducimus non vel quidem velit obcaecati necessitatibus cum pariatur impedit blanditiis dolores in voluptatem reiciendis, maiores nisi quae culpa adipisci enim odio. Explicabo doloribus iure suscipit cum est animi molestiae error voluptatem facilis, modi tempore repellat a numquam eligendi quia magni ratione optio asperiores. Soluta libero, molestiae fugit perferendis amet quod blanditiis cumque assumenda ab nesciunt possimus omnis voluptatibus repellendus repellat?'
     }
-]
+];
 
 const bookStore = document.querySelector('.main-content');
+
+let bookBox;
 
 //Class constructor for generating new books
 class GenerateBooks {
@@ -173,11 +172,14 @@ class GenerateBooks {
         this.arrRatings = this.bookData.rating;
 
         //Create div for book-box
-        let bookBox = document.createElement('div');
+        bookBox = document.createElement('div');
         //Assign class to bookBox
         bookBox.classList.add('book-box');
         //Assign attribute to bookBox
         bookBox.setAttribute('draggable', 'true');  
+        //Assign data set for category
+        let dataCategory = bookBox.dataset.category = this.bookData.category;
+        console.log(dataCategory);
 
         //Method for generate heading
         this.headingConstructor(bookBox);
@@ -228,7 +230,9 @@ class GenerateBooks {
         this.image = document.createElement('img');
         //Assign attributes to img element
         this.image.setAttribute('draggable', 'false');
-        this.image.setAttribute('src', `./images/${this.bookData.img}`);
+        this.image.setAttribute('src', this.bookData.img);
+
+        // this.image.setAttribute('src', `./images/${this.bookData.img}`);
 
         //Append image element to figure container
         figure.append(this.image);
@@ -420,7 +424,7 @@ class GenerateReviewPopUpPage extends GenerateBooks {
         //Create img tag for the image
         let bookImg = document.createElement('img');
         //Assign attribute to img tag
-        bookImg.setAttribute('src', `./images/${this.bookData.img}`);
+        bookImg.setAttribute('src', this.bookData.img);
 
         //Create new paragraph element
         let paragraph = document.createElement('p');
@@ -491,6 +495,7 @@ class GenerateReviewPopUpPage extends GenerateBooks {
     closeReviewPage() {
         this.closeBtn.addEventListener('click', () => {
             this.popUpScreen.style.display= 'none';
+            document.querySelector('.main-container').style.opacity = '1';
         })
     }
 
@@ -511,10 +516,14 @@ class GenerateReviewPopUpPage extends GenerateBooks {
     }
 }
 
+const generateBooks = () => {
+    booksData.forEach(book => {
+        new GenerateReviewPopUpPage(book)     
+    });  
+};
 
-booksData.forEach(book => {
-    new GenerateReviewPopUpPage(book)     
-});
+generateBooks();
+
 
 
 //Book section drag & drop functionality
@@ -574,3 +583,157 @@ dropZone.addEventListener('drop', (event) => {
     //Remove current book from main list after adding it to favourite collection
     curBook.remove();
 })
+
+
+//Sidebar navigation for corresponding book category
+let all = document.querySelectorAll('.main-link');
+
+class NavLInks {
+    constructor(link){
+        this.link = link;
+
+        //Assign dataset to each link
+        this.dataCategory = this.link.dataset.category = this.link.textContent;
+
+        //If dataset for category is equal to all display all of them
+        if(this.dataCategory === 'All') {
+            this.books = document.querySelectorAll('.book-box');
+        //Else display only the one corresponding to dataset
+        } else {
+            this.books = document.querySelectorAll(`.book-box[data-category=${this.dataCategory}]`);
+        }
+
+        this.link.addEventListener('click', (event) => {
+            //Prevent default behaviour to stop page reload
+            event.preventDefault();
+            //Select all li tags within the side bar navigation
+            let list = document.querySelectorAll('.nav-list');
+            //Iterate through them and removes active class
+            list.forEach(link => {
+                link.className = 'nav-list';
+            });
+
+            //Select all books
+            let allBooks = document.querySelectorAll('.book-box');
+            //Iterate through all books and remove them from the screen
+            allBooks.forEach(book => {
+                book.style.display = 'none';
+            });
+
+            //Add class active to currently selected tab
+            if(this.link.textContent === this.dataCategory) {
+                this.link.children[0].className += ' active';
+            }
+
+            //Create an array from returned nodelist and loop over each to make them visible
+            Array.from(this.books).map(book => {
+                book.style.display = 'block';
+            })
+        });
+    }
+}
+
+all.forEach(navLink => {
+    //Pass links and newly created dataset to the class constructor
+    new NavLInks(navLink);  
+});
+
+
+//Generate Book functionality
+const closeMenuBtn = document.querySelector('.close-menu');
+const addNewBook = document.querySelector('.addBook-btn');
+const menu = document.querySelector('.menu-newBook');
+
+//Toggle menu for book generator
+menu.style.transform = 'translateX(-100%)';
+
+addNewBook.addEventListener('click', () => {
+    menu.style.transform = 'translateX(0)';
+    menu.style.transition = '2s'; 
+});
+
+closeMenuBtn.addEventListener('click', () => {
+    menu.style.transform = 'translateX(-100%)';
+    menu.style.transition = '2s';
+});
+
+//Pass values to array of objects and generate new book 
+//Cashing all input
+const inputTitle = document.querySelector('.input-title');
+const inputImage = document.querySelector('.input-image');
+const inputCategory = document.querySelector('.selection');
+const inputIntro = document.querySelector('.input-intro');
+
+//Cashing submit button
+const submitBtn = document.querySelector('.submit-btn');
+
+function BookContainer(title, image, category, intro) {
+    this.heading = title;
+    this.img = image;
+    this.rating = [3, 4, 5, 2];
+    this.givenRate = ['✩', '✩', '✩', '✩', '✩'];
+    this.reviews = [];
+    this.category = category;
+    this.paragraph = intro;
+}
+
+booksData2 = [];
+
+submitBtn.addEventListener('click', (event) => {
+    // event.preventDefault();
+    const newBook = new BookContainer(inputTitle.value, inputImage.value, inputCategory.value, inputIntro.value)
+    let newlyGenBook = new GenerateReviewPopUpPage(newBook);
+    // booksData.push(newBook);     
+});
+
+//Generate quotes 
+const quoteCards = [
+    {
+        quote: 'All that we are is the result of what we have thought.',
+        author: 'Buddha'
+    },
+    {
+        quote: 'I have no special talent. I am only passionately curious.',
+        author: 'Albert Einstein'
+    },
+    {
+        quote: 'If you judge people, you have no time to love them.',
+        author: 'other Teresa'
+    }
+];
+
+const quoteSection = document.querySelector('.quote-section');
+
+class QuotesGenerator {
+    constructor(quote) {
+        this.quote = quote;
+
+        this.card = document.createElement('div');
+        this.card.classList.add('quote-card');
+
+        this.paragraphConstructor();
+
+        this.authorConstructor();
+
+        quoteSection.append(this.card);
+
+    }
+
+    paragraphConstructor() {
+        let paragraph = document.createElement('p');
+        paragraph.classList.add('quote');
+        paragraph.textContent = this.quote.quote;
+
+        this.card.append(paragraph);
+    }
+
+    authorConstructor() {
+        let h3 = document.createElement('h3');
+        h3.classList.add('author');
+        h3.textContent = this.quote.author;
+
+        this.card.append(h3);
+    }
+}
+
+quoteCards.forEach(quote => new QuotesGenerator(quote));
