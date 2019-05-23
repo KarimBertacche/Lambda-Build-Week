@@ -407,6 +407,11 @@
         padding: 40px;
     }
 
+    @media @mobile {
+        height: 70vh;
+        top: 60%;
+    }
+
     .heading-quaternary {
         text-align: center;
         font-size: 7rem;
@@ -414,6 +419,10 @@
         text-shadow: 1px 1px 5px @black;
         margin-bottom: 10px;
         padding-right: 20px;
+
+        @media @mobile {
+            font-size: 5rem;
+        }
     }
 
     .closeBtn {
@@ -428,6 +437,11 @@
             right: 3.5%;
         }
 
+        @media @mobile {
+            top: 3%;
+            right: 7%;
+        }
+
         &:hover {
             color: @colorQuaternary;
         }
@@ -440,6 +454,12 @@
         border-radius: 20px;
         overflow: hidden;
 
+        @media @mobile {
+            height: 400px;
+            .flex(column, center, center);
+        }
+    
+
         .left-side {
             width: 70%;
             height: 100%;
@@ -447,6 +467,11 @@
             border-right: 3px solid @black;
             padding: 10px;
             overflow: scroll;
+
+            @media @mobile {
+                width: 100%;
+                padding: 0;
+            }
 
             .bookImg {
                 width: 35%;
@@ -458,6 +483,11 @@
                 float: left;
                 margin-right: 15px;  
 
+                @media @mobile {
+                    min-width: 100px;
+                    height: 200px;
+                }
+
                 img {
                     width: 100%;
                     height: 100%;         
@@ -466,6 +496,11 @@
 
             .book-content {
                 font-size: 2.2rem;
+
+                @media @mobile {
+                    padding: 5px 10px;
+                    font-size: 2rem;
+                }
             }
         }
     
@@ -475,6 +510,9 @@
             height: 100%;
             overflow: hidden;
 
+            @media @mobile {
+                width: 100%;
+            }
 
             .heading-tertiary {
                 background-color: @colorTertiary;
@@ -485,6 +523,11 @@
                 color: @colorQuaternary;
                 text-shadow: 1px 1px 5px @black;
                 padding: 10px;
+
+                @media @mobile {
+                    border-top: 3px solid @black;
+                    font-size: 2.5rem;
+                }
             } 
 
             .reviews-box {
@@ -502,6 +545,10 @@
                     font-size: 2rem;
                     overflow: hidden;
                     padding: 5px;
+
+                    @media @mobile {
+                        overflow: scroll;
+                    }
     
                     &.open {
                         height: 100px;
@@ -523,6 +570,11 @@
                     height: 30px;
                     font-size: 2.5rem;
                     padding-right: 80px;
+
+                    @media @mobile {
+                        width: 385px;
+                        padding-right: 15px;
+                    }
                 }
     
                 .postBtn {

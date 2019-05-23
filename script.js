@@ -516,30 +516,21 @@ class GenerateReviewPopUpPage extends GenerateBooks {
     }
 }
 
-const generateBooks = () => {
-    booksData.forEach(book => {
-        new GenerateReviewPopUpPage(book)     
-    });  
-};
-
-generateBooks();
-
-
+booksData.forEach(book => {
+    new GenerateReviewPopUpPage(book)     
+});  
 
 //Book section drag & drop functionality
-const books = document.querySelectorAll('.book-box');
+let books = document.querySelectorAll('.book-box');
 let curBook;
 
-const dragStart = event => {
-    curBook = event.target;
-};
-
-
 books.forEach(book => {
-    book.addEventListener('dragstart', dragStart);
+    book.addEventListener('dragstart', event => {
+        curBook = event.target;
+    });
 });
 
-const favBox = document.querySelector('.fav-list');
+let favBox = document.querySelector('.fav-list');
 const dropZone = favBox.querySelector('.drop-zone');
 
 dropZone.addEventListener('dragenter', (event) => {
@@ -591,7 +582,7 @@ let all = document.querySelectorAll('.main-link');
 class NavLInks {
     constructor(link){
         this.link = link;
-
+        console.log(link);
         //Assign dataset to each link
         this.dataCategory = this.link.dataset.category = this.link.textContent;
 
@@ -626,8 +617,9 @@ class NavLInks {
             }
 
             //Create an array from returned nodelist and loop over each to make them visible
-            Array.from(this.books).map(book => {
+            this.books.forEach(book => {
                 book.style.display = 'block';
+                console.log('Ciao');
             })
         });
     }
@@ -680,10 +672,24 @@ function BookContainer(title, image, category, intro) {
 booksData2 = [];
 
 submitBtn.addEventListener('click', (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     const newBook = new BookContainer(inputTitle.value, inputImage.value, inputCategory.value, inputIntro.value)
-    let newlyGenBook = new GenerateReviewPopUpPage(newBook);
-    // booksData.push(newBook);     
+    booksData.push(newBook);  
+        
+    new GenerateReviewPopUpPage(newBook);
+    
+    all.forEach(navLink => {
+        //Pass links and newly created dataset to the class constructor
+        new NavLInks(navLink);  
+    });
+
+    books = document.querySelectorAll('.book-box');
+
+    books.forEach(book => {
+        book.addEventListener('dragstart', event => {
+            curBook = event.target;
+        });
+    });
 });
 
 //Generate quotes 
@@ -737,3 +743,12 @@ class QuotesGenerator {
 }
 
 quoteCards.forEach(quote => new QuotesGenerator(quote));
+
+//Add prevent default to footer Icons
+let icons = document.querySelectorAll('.icon');
+
+icons.forEach(icon => {
+    icon.addEventListener('click', event => {
+        event.preventDefault();
+    });
+});

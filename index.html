@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookr</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/ionicons.min.css">
 </head>
 <body>
     <div class="container">
@@ -17,7 +18,7 @@
                 <a href="#" class="nav-links">About</a>
                 <div class="logs">
                     <a href="#" class="nav-links">Login</a>
-                    <a href="#" class="nav-links">Create account</a>
+                    <a href="#signUp" class="nav-links">Create account</a>
                 </div>   
             </nav>
         </div>
@@ -133,7 +134,7 @@
                         <!-- <source src="" type="video/mp4"/> -->
                         <!-- This video is not supported by your browser, please upgrade
                         -->
-                <div class="cta-box">
+                <div class="cta-box" id="signUp">
                     <div class="cta-card">
                         <div class="card-side card-side__front">
                             <figure class="cta-img">
@@ -185,9 +186,16 @@
             </section>
         </main>
         <footer class="footer">
-            <p>&copy;Copyright Karim Bertacche</p>
+            <ul class="social-links">
+                <li><a href="#"><i class="icon ion-social-facebook"></i></a></li>
+                <li><a href="#"><i class="icon ion-social-instagram"></i></a></li>
+                <li><a href="#"><i class="icon ion-social-twitter"></i></a></li>
+                <li><a href="#"><i class="icon ion-social-googleplus"></i></a></li>
+                <li><a href="#"><i class="icon ion-social-linkedin"></i></a></li>
+            </ul> 
+            <p class="footer-content">&copy;Copyright Karim Bertacche</p>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>
