@@ -5,6 +5,10 @@
     margin-top: 100px;
     clip-path: polygon(0 0, 50% 5%, 100% 0, 100% 95%, 50% 100%, 0 95%);
 
+    @media @mobile {
+        height: 550px;
+    }
+
     .bg-video {
         width: 100%;
         height: 100%;
@@ -22,6 +26,10 @@
         width: 60%;
         margin: 0 auto;
         overflow: hidden;  
+
+        @media @mobile {
+            width: 90%;
+        }
     
     }    
 }
@@ -29,6 +37,10 @@
 .cta-card {
     position: relative; 
     height: 500px;  
+
+    @media @mobile {
+        height: 400px; 
+    }
     
     .card-side { 
         .absolute-position(50%, 50%); 
@@ -39,10 +51,18 @@
         backface-visibility: hidden;
         border-radius: 20px;
         overflow: hidden;
+
+        @media @mobile {
+            height: 400px; 
+        }
         
 
         &__front {
             background-color: @colorPrimary; 
+
+            @media @tablet {
+                .flex(row, center, center);
+            }
         }
 
         &__back {
@@ -79,9 +99,25 @@
         font-size: 2.5rem;
         text-align: center;
 
+        @media @tablet {
+            font-size: 2rem;
+        }
+
+        @media @mobile {
+            font-size: 1.8rem; 
+        }
+
         .heading-tertiary {
             font-size: 3rem;
             margin-bottom: 20px;
+
+            @media @tablet {
+                font-size: 2.3rem;
+            }
+
+            @media @mobile {
+                font-size: 1.9rem; 
+            }
         }
 
         .input,
@@ -91,6 +127,10 @@
 
         label {
             margin-right: 35px;
+
+            @media @mobile {
+                margin-right: 26px;
+            }
         }
 
         .surname-label {
@@ -101,9 +141,15 @@
             margin-right: 0;
         }
 
-        .rating-label {
-            margin-right: 0;
-        }
+        .rating {
+            @media @tablet {
+                padding: 0 15%;
+            }
+
+            .rating-label {
+                margin-right: 0;
+            }
+        }  
 
         input {
             width: 150px;
@@ -115,15 +161,37 @@
             width: 150px;
             height: 30px;
             font-size: 1.5rem;
+
+            @media @tablet {
+                margin-top: 5px;
+            }
+
+            @media @mobile {
+                height: 20px;
+            }
         }
 
         .feedback-label {
             margin-bottom: 20px;
+
+            @media @tablet {
+                margin-left: 35px;
+                text-align: center;
+            }
         }
 
         textarea {
             margin-top: 10px;
             border-radius: 10px;
+
+            @media @tablet {
+                width: 400px;
+                padding: 10px;
+            }
+
+            @media @mobile {
+                height: 40px;
+            }
         }
 
         .submit-btn {
@@ -132,18 +200,30 @@
             padding: 10px 40px;
             border-radius: 25px;
             font-size: 1.7rem;
+            font-weight: bold;
             border: 3px solid @colorTertiary;
             background-color: @colorQuaternary;
             color: @black;
             cursor: pointer;
 
+            @media @tablet {
+                margin-top: 15px;
+                font-size: 1.3rem;
+            }
+
+            @media @mobile {
+                margin-top: 3px;
+                padding: 5px 20px;
+            }
+
             &:hover {
-                transform: translateY(-5px);
+                transform: translateY(-5px) scale(1.05);
                 box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+                color: @white;
             }
 
             &:active {
-                transform: translateY(-2px);
+                transform: translateY(-2px) scale(1);
                 box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
             }
         }

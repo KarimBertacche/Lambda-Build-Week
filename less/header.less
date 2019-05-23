@@ -9,8 +9,19 @@ header {
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 99%, 0 95%);
 
+    @media @mobile {
+        background-color: @black;
+        height: 45vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
     .hero-content {
         .absolute-position(40%);
+
+        @media @tablet {
+            .absolute-position(35%, 53%);
+        }
 
         .heading-primary {  
             font-size: 12rem;
@@ -18,12 +29,20 @@ header {
             background-image: linear-gradient(to right, @colorPrimary,@colorQuaternary);
             color: transparent;
             -webkit-background-clip: text;
+
+            @media @mobile {
+                font-size: 8rem;
+            }
         }
 
         .hero-text {
             color: @white;
             font-size: 3rem;
             text-align: center;
+
+            @media @mobile {
+                font-size: 2.3rem;
+            }
         }
 
     }

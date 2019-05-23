@@ -1,9 +1,18 @@
 .feature-section {
     height: 100vh;
 
+    @media @mobile {
+        height: 200vh;
+    }
+
     .feature-box {
         .flex(row, space-between, center);
         background-color: transparent;
+
+        @media @mobile {
+            .flex(column, space-between, center);  
+            text-align: justify;
+        }
 
         .featureImg {
             width: 70%;
@@ -13,6 +22,10 @@
 
             .feature-img {
                 width: 110%;
+
+                @media @mobile {
+                    width: 100%; 
+                }
             }
         }
 
@@ -21,9 +34,19 @@
             padding: 30px;
             margin-bottom: -50px;
 
+            @media @mobile {
+                margin-top: -50px;
+                color: @lighterWhite;
+            }
+
             .heading-secondary {
                 font-size: 2.5rem;
                 margin-bottom: 20px;
+
+                @media @mobile { 
+                    text-align: center;
+                    color: @white;
+                }
 
                 &:first-child {
                     margin-top: 150px;
@@ -44,9 +67,18 @@
             .flex(row-reverse, space-between, center); 
             text-align: right;
 
+            @media @mobile {
+                .flex(column, space-between, center);  
+                text-align: justify;
+            }
+
             .featureImg {
                 margin-right: 50px;
                 margin-bottom: -100px;
+
+                @media @mobile {
+                    margin-right: 0;
+                }
             }
 
             .feature-text {

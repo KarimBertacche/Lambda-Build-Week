@@ -12,7 +12,12 @@
     background-position: center;
     background-attachment: fixed;
     //REMOVE HORIZONTAL SCROLLING BAR
-    padding: 200px 0;
+    padding: 200px 0;  
+
+    @media @mobile {
+        height: 15vh;
+        overflow-y: hidden;
+    }
 
     .quote-card {
         .flex(column, space-around, center);
@@ -27,6 +32,10 @@
         text-align: center;
         box-shadow: 0 15px 20px rgba(0, 0, 0, .6);
         transform: translate(305%, -10%);
+
+        @media @mobile {
+            min-width: 400px;
+        }
         
         &.active {
             .absolute-position(50%, 46%);
@@ -36,14 +45,26 @@
             border: 3px solid #6c5b7b;
             z-index: 10;
             box-shadow: 0 20px 20px rgba(0, 0, 0, .8);
+
+            @media @mobile {
+                .absolute-position(50%, 38%);
+            }
         }
 
         &.prev {
             .absolute-position(45%, 2%);
+
+            @media @mobile {
+                display: none;
+            }
         }
 
         &.next {
             .absolute-position(45%, 90%);
+
+            @media @mobile {
+                display: none;
+            }
         }
 
     } 
@@ -57,10 +78,26 @@
 
         &.back-arrow {
             .absolute-position(50%, 27.5%);   
+
+            @media @tablet {
+                .absolute-position(50%, 19.5%);   
+            }
+
+            @media @mobile {
+                .absolute-position(50%, 5%);   
+            }
         }
 
         &.forward-arrow {
             .absolute-position(50%, 74%);
+
+            @media @tablet {
+                .absolute-position(50%, 86%);   
+            }
+
+            @media @mobile {
+                .absolute-position(50%, 95%);   
+            }
         }
 
         &:hover {

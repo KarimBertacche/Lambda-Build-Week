@@ -5,9 +5,27 @@
     width: 100%;
     height: 90vh;
 
+    @media @tablet {
+        margin-top: 130px;
+    }
+
+    @media @mobile {
+        margin-top: 0;
+        margin-bottom: -100px;
+    }
+
     .select-subject {
         width: 13%;
         padding-left: 30px;
+
+        @media @tablet {
+            width: 17%;
+        }
+
+        @media @mobile {
+            width: 25%;
+            padding-left: 5px;
+        }
     
         .main-nav {
             padding-top: 80px;
@@ -23,7 +41,10 @@
             border: 3px solid transparent;
             font-size: 2rem;
             color: @white;
-            
+
+            @media @tablet {
+                font-size: 1.7rem;
+            }
 
             &:hover {
                 color: @colorPrimary;      
@@ -48,6 +69,14 @@
             left: 25px;
             margin: 0 auto;
 
+            @media @tablet {
+                left: 15px;
+            }
+
+            @media @mobile {
+                left: 5px;
+            }
+
             .addBook-btn {
                 background-color: @colorPrimary;      
                 width: 150px;
@@ -56,8 +85,14 @@
                 border-radius: 20px;
                 cursor: pointer;
                 font-size: 1.4rem;
+                font-weight: bold;
                 color: @colorQuaternary;
                 transition: all .2s;
+
+                @media @mobile {
+                    width: 120px;
+                    font-size: 1.2rem;
+                }
 
                 &:hover { 
                     transform: translateY(-5px) scale(1.005); 
@@ -81,7 +116,11 @@
             z-index: 100;
             padding: 50px 10px;
             color: @colorQuaternary;
-            // transform: translate(-100%, 0);
+
+            @media @mobile {
+                height: 70vh;
+                margin-top: 65px;
+            }
 
             .close-menu {
                 font-size: 4rem;
@@ -101,6 +140,14 @@
             .book-intro {
                 width: 100%;
                 font-size: 3rem;
+
+                @media @tablet {
+                    font-size: 2.5rem;
+                }
+
+                @media @mobile {
+                    font-size: 2rem;
+                }
 
                 .input-title,
                 .input-image,
@@ -122,6 +169,10 @@
                     margin-bottom: 10px;  
                     border: 3px solid @colorTertiary;
                     border-radius: 10px;
+
+                    @media @mobile {
+                        height: 200px;
+                    } 
                 }
             }
 
@@ -135,6 +186,10 @@
                 color: @white;
                 font-size: 1.8rem;
                 cursor: pointer;
+
+                @media @mobile {
+                    font-size: 1.5rem;
+                } 
 
                 &:hover {
                     transform: translateY(-5px) scale(1.05);
@@ -152,14 +207,24 @@
 
     .main-content {
         .flex(row, space-evenly, space-evenly, wrap);
-        width: 65%;
+        width: 75%;
         height: 89vh;
-        background-image: radial-gradient(circle at left top, @colorPrimary 30%, @colorQuaternary);
+        background-image: linear-gradient( to right bottom, @colorPrimary 30%, @colorQuaternary);
         // background-color: @colorPrimary;
         border: 3px solid @black;
         border-radius: 22px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
         overflow-y: scroll;
+
+        @media @tablet {
+            width: 55%;
+            background-image: linear-gradient( to right bottom, @colorPrimary 40%, @colorQuaternary);
+        }
+
+        @media @mobile {
+            width: 75%;
+            height: 80vh;
+        }
 
         .book-box {
             background-color: @black;
@@ -253,6 +318,14 @@
         overflow-y: scroll;
         padding-top: 80px;
 
+        @media @tablet {
+            width: 30%;
+        }
+
+        @media @mobile {
+            display: none;
+        }
+
         .fav-list {
             height: 70vh;
             background-image: radial-gradient(circle at right top, @colorPrimary, @colorQuaternary);
@@ -279,6 +352,11 @@
                 margin: 0 auto;
                 color: @colorQuaternary;
                 text-shadow: 1px 1px 0 rgba(255, 255, 255, .6);
+
+                @media @tablet {
+                    width: 70%;
+                    font-size: 2.1rem;
+                }
             }
 
             .fav-item {
@@ -325,6 +403,10 @@
     z-index: 100;
     padding: 30px;
 
+    @media @tablet {
+        padding: 40px;
+    }
+
     .heading-quaternary {
         text-align: center;
         font-size: 7rem;
@@ -340,6 +422,11 @@
         right: 1%;
         font-size: 4rem;
         cursor: pointer;
+
+        @media @tablet {
+            top: 2.5%;
+            right: 3.5%;
+        }
 
         &:hover {
             color: @colorQuaternary;
