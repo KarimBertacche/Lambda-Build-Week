@@ -26,9 +26,14 @@ header {
         .heading-primary {  
             font-size: 12rem;
             font-weight: bold;
-            background-image: linear-gradient(to right, @colorPrimary,@colorQuaternary);
+            // background-image: linear-gradient(to right, @colorTertiary ,@colorQuaternary);
+            background-image: linear-gradient(to right, @purple, @colorQuaternary ,@colorTertiary);
             color: transparent;
             -webkit-background-clip: text;
+
+            // animation-name: slideToTop;
+            // animation-duration: 3s;
+            // animation-timing-function: ease-out;
 
             @media @mobile {
                 font-size: 8rem;
@@ -36,8 +41,8 @@ header {
         }
 
         .hero-text {
-            color: @white;
-            font-size: 3rem;
+            color: @colorQuaternary;
+            font-size: 3.3rem;
             text-align: center;
 
             @media @mobile {
@@ -47,3 +52,4 @@ header {
 
     }
 }
+

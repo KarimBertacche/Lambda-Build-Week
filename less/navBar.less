@@ -3,10 +3,13 @@
     display: flex;
     justify-content: space-between;
     padding: 15px 30px;
-    background-color: @black;
-    opacity: .9;
+    background-color: #000;
     z-index: 100;
     transition: all 1s;
+
+    &.border {
+        border-bottom: 3px solid @colorQuaternary;
+    }
 
     @media @mobile {
         .flex(column, center, center);
@@ -36,9 +39,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 200;
 
         @media @mobile {
             .flex(row, baseline, space-between);
+            width: 100%;
+            margin-left: -30px;
         }
 
         & a {
@@ -75,8 +81,97 @@
     justify-content: space-between;
     padding: 15px 30px;
     padding-right: 50px;
-    background-color: @black;
+    background-color: @purple;
     opacity: .9;
     z-index: 100;
     transition: all 1s;
+}
+
+.logIn {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    .flex(column, center, center);
+    background-color: #000;
+    // border-top: 3px solid @colorQuaternary;
+    border-bottom: 3px solid @colorQuaternary;
+    border-left: 3px solid @colorQuaternary;
+    border-bottom-left-radius: 20px;
+    // border-bottom-right-radius: 20px;
+    z-index: 1;
+    width: 380px;
+    padding: 15px 20px 10px;
+    font-size: 2rem;
+    opacity: 0;
+    color: @colorQuaternary;
+    transform: translateX(100%);
+    transition: all 1s;
+
+    .input {
+        margin-bottom: 20px;
+
+        label {
+            margin-right: 25px;
+        }
+
+        .name-label {
+            margin-top: 10px;
+        }
+
+        .surname-label {
+            margin-right: 0;
+        }
+
+        .password-label {
+            margin-right: 0;
+        }
+
+        input {
+            height: 20px;
+            border-radius: 20px;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:invalid {
+                border: 3px solid @red;
+            }
+
+            &:valid {
+                border: 3px solid @colorQuaternary;
+            }
+        }
+    }
+
+    .logIn-btn {
+        margin-left: -20px;
+        padding: 5px 20px;
+        border-radius: 25px;
+        font-size: 1.7rem;
+        font-weight: bold;
+        border: 2px solid @colorQuaternary;
+        background-color: @black;
+        color: @colorQuaternary;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+            border: 2px solid @colorTertiary;
+            color: @colorTertiary;
+        }
+
+        &:active {
+            transform: translateY(-2px) scale(1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+        }
+    }
+
+    &.active {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 1s;
+    }
 }

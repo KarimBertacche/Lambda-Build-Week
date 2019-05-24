@@ -7,7 +7,7 @@
     clip-path: polygon(0 0, 50% 5%, 100% 0, 100% 95%, 50% 100%, 0 95%);
     margin-top: -35px;
     overflow-x: hidden;
-    background-image: url(../images/Quotes_image.jpg);
+    background-image: linear-gradient(to right, rgba(@colorTertiary, .3), rgba(@colorQuaternary, .15)), url(../images/Quotes_image.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -31,7 +31,7 @@
         padding: 15px;
         text-align: center;
         box-shadow: 0 15px 20px rgba(0, 0, 0, .6);
-        transform: translate(305%, -10%);
+        transform: translate(905%, -10%);
 
         @media @mobile {
             min-width: 400px;
@@ -40,11 +40,17 @@
         &.active {
             .absolute-position(50%, 46%);
             height: 200px;
-            background-color: #f67280;
+            background-image: linear-gradient(to bottom right, @colorTertiary, @colorQuaternary);
             // background-color: transparent;
-            border: 3px solid #6c5b7b;
+            border: 3px solid @purple;
             z-index: 10;
             box-shadow: 0 20px 20px rgba(0, 0, 0, .8);
+            transition: all .5s;
+            color: @purple;
+
+            @media @tablet {
+                .absolute-position(50%, 38%);
+            }
 
             @media @mobile {
                 .absolute-position(50%, 38%);
@@ -53,6 +59,7 @@
 
         &.prev {
             .absolute-position(45%, 2%);
+            transition: all .5s;
 
             @media @mobile {
                 display: none;
@@ -61,6 +68,7 @@
 
         &.next {
             .absolute-position(45%, 90%);
+            transition: all .5s;
 
             @media @mobile {
                 display: none;
@@ -70,7 +78,7 @@
     } 
 
     .arrows {
-        color: @colorPrimary;
+        color: @purple;
         font-size: 8rem;
         z-index: 15;
         cursor: pointer;
@@ -101,7 +109,7 @@
         }
 
         &:hover {
-            color: #fcd2d6;
+            color: @colorQuaternary;
         }
     }
 }

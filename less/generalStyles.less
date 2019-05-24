@@ -5,4 +5,14 @@ html {
 body {
     box-sizing: border-box;
     background-image: linear-gradient(to bottom right, @colorTertiary, @colorQuaternary);
+
+    &::-webkit-scrollbar{
+        width: 0; 
+        height: 0; 
+    }
 }
+
+.container {
+    position: relative;
+}
+

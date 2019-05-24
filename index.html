@@ -11,42 +11,64 @@
     <div class="container">
         <div class="navigation">
             <figure class="logo">
-                <img src="./images/logo2.png" alt="Bookr Logo" class="logoImg">
+                <img src="./images/logo.png" alt="Bookr Logo" class="logoImg">
             </figure>
             <nav class="nav-bar">
-                <a href="#" class="nav-links">Features</a>
+                <a href="#features" class="nav-links">Features</a>
+                <!-- <a href="#books" class="nav-links">Books</a> -->
                 <a href="#" class="nav-links">About</a>
                 <div class="logs">
-                    <a href="#" class="nav-links">Login</a>
+                    <a href="#" class="nav-links login">Login</a>
                     <a href="#signUp" class="nav-links">Create account</a>
                 </div>   
             </nav>
         </div>
+        <div class="logIn">
+            <div class="input">
+                <label class="name-label" for="name">Name</label>    
+                <input type="text" name="name" id="name" placeholder="Your Name" required>   
+            </div>
+            <div class="input">
+                <label class="surname-label" for="Surname">Surname</label>     
+                <input type="text" name="Surname" id="Surname" placeholder="Your Surname" required>  
+            </div>
+            <div class="input">
+                <label class="email-label" for="email">Email</label>     
+                <input type="email" name="email" id="email" placeholder="Your Email" required>   
+            </div>
+            <div class="input">
+                <label class="password-label" for="password">Password</label> 
+                <input type="password" name="pass" id="password" required/> 
+            </div>
+            <button class="logIn-btn">Log In</button>  
+        </div>
         <header>
             <div class="hero-content">
-                <h1 class="heading-primary">BOOKR</h1>
-                <p class="hero-text">Knowledge is Power</p>
+                <div class="hero-box">
+                    <h1 class="heading-primary">BOOKR</h1>
+                    <p class="hero-text">Knowledge is Power</p>
+                </div>  
                 <!-- <button class="btn hero-btn">Sign Up</button> -->
             </div> 
         </header>
         <main class="main-container">
             <section class="quote-section">
-                <div class="quote-card prev">
+                <div class="quote-card prev" data-index="0">
                     <p class="quote">All that we are is the result of what we have thought.</p>
                     <h3 class="author">Buddha</h3>
                 </div> 
                 <span class="arrows back-arrow">&lt;</span> 
-                <div class="quote-card active"> 
+                <div class="quote-card active" data-index="1"> 
                     <p class="quote">I have no special talent. I am only passionately curious.</p>
                     <h3 class="author">Albert Einstein</h3> 
                 </div> 
-                <span class="arrows forward-arrow">&gt;</span>
+                <span class="arrows forward-arrow" data-index="2">&gt;</span>
                 <div class="quote-card next">
                     <p class="quote">If you judge people, you have no time to love them.</p>
                     <h3 class="author">Mother Teresa</h3>
                 </div>  
             </section>
-            <section class="feature-section">
+            <section class="feature-section" id="features">
                 <div class="feature-box">
                     <figure class="featureImg">
                         <img class="feature-img" src="./images/girlEmbracingTree.png" alt="">
@@ -65,7 +87,7 @@
                     <div class="feature-content">
                         <h2 class="heading-secondary">Review & Rate Your Favourite Books</h2>
                         <p class="feature-text">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, iste voluptatibus. Incidunt iste reiciendis eos ut provident et earum totam maiores suscipit illo minima explicabo consequatur minus aliquam quibusdam similique impedit, quam quod velit ab dolorum facere atque. Recusandae, at. Provident repudiandae fugit ipsam minima rem velit nulla, inventore ipsa nesciunt nihil iure sed porro!
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, iste voluptatibus. Incidunt iste reiciendis eos ut provident et earum totam maiores suscipit illo minima explicabo consequatur minus aliquam quibusdam similique impedit, quam quod velit ab dolorum facere atque.
                         </p>
                     </div>
                 </div>
@@ -74,11 +96,14 @@
                 <div class="select-subject">
                     <ul class="main-nav">
                         <a href="#" class="main-link"><li class="nav-list active" >All</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Action</li></a>
                         <a href="#" class="main-link"><li class="nav-list">Fiction</li></a>
                         <a href="#" class="main-link"><li class="nav-list">Psychology</li></a>
                         <a href="#" class="main-link"><li class="nav-list">Growth</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Spiritual</li></a>
+                        <a href="#" class="main-link"><li class="nav-list">Fantasy</li></a>
+                        <a href="#" class="main-link"><li class="nav-list">Mistery</li></a>
+                        <a href="#" class="main-link"><li class="nav-list">Thriller</li></a> 
+                        <a href="#" class="main-link"><li class="nav-list">Romance</li></a>
+                        <a href="#" class="main-link"><li class="nav-list">Poetry</li></a>
                     </ul>
                     <div class="addBook-box">
                         <button class="addBook-btn">Add New Book</button>
@@ -87,32 +112,35 @@
                         <span class="close-menu">⬅</span>
                         <div class="book-title">
                             <label for="title">Book Title</label><br>
-                            <input class="input-title" type="text" id="title" placeholder="Write Title" autofocus="true">
+                            <input class="input-title" type="text" id="title" placeholder="Write Title" autofocus="true" required>
                         </div>
                         <div class="book-image">
                             <label for="image">Book Image</label><br>
-                            <input class="input-image" type="text" id="image" placeholder="Insert URL">
+                            <input class="input-image" type="text" id="image" placeholder="Insert URL" required>
                         </div>
                         <div class="book-category">
                             <label for="category">Choose Book Category</label><br>
                             <select class="selection" name="category" id="category">
                                     <option value="Psychology">Psychology</option>
-                                    <option value="Arts">Arts</option>
+                                    <option value="Fiction">Fiction</option>
                                     <option value="Growth">Growth</option>
-                                    <option value="Action">Action</option>
                                     <option value="Poetry">Poetry</option>
+                                    <option value="Mistery">Mistery</option>
+                                    <option value="Thriller">Thriller</option>
+                                    <option value="Romance">Romance</option>
+                                    <option value="Fantasy">Fantasy</option>
                             </select>
                         </div>
                         <div class="book-intro">
                             <label for="intro">Add Book Intro</label><br>
-                            <textarea class="input-intro" name="intro" id="intro" cols="30" rows="10" placeholder="Book introduction"></textarea>
+                            <textarea class="input-intro" name="intro" id="intro" cols="30" rows="10" placeholder="Book introduction"></textarea required>
                             <!-- <input  type="text" id="intro" placeholder=""> -->
                         </div>
                         <input class="submit-btn" type="submit" value="Generate Book">
                     </div>
 
                 </div>
-                <div class="main-content">
+                <div class="main-content" id="books">
 
                 </div>
                 <div class="fav-box">    
@@ -128,7 +156,7 @@
             <section class="cta-section">
                 <div class="bg-video">
                     <video class="bg-video__content" autoplay muted loop>
-                        <source src="images/Horse-Shoe-Bend.mp4" type="video/mp4"/>
+                        <source src="images/forest.mp4" type="video/mp4"/>
                     </video> 
                 </div>
                         <!-- <source src="" type="video/mp4"/> -->
@@ -138,12 +166,12 @@
                     <div class="cta-card">
                         <div class="card-side card-side__front">
                             <figure class="cta-img">
-                                <img src="./images/Join_us_3.jpg" alt="">
+                                <img src="./images/Join_us.jpg" alt="">
                             </figure>
                         </div>
                         <div class="card-side card-side__back">
                             <div class="signUp-form">
-                                <h3 class="heading-tertiary">Join Us and become one of our amazing members!</h3> 
+                                <h3 class="heading-tertiary">Become one of our amazing members!</h3> 
                                 <form action="#" method="POST">
                                     <div class="input">
                                         <label class="name-label" for="name">Name</label>    
@@ -171,9 +199,8 @@
                                         </select>
                                     </div>
                                     <div class="textArea">
-                                        <label class="feedback-label">Leave us a comment, any feedback is appreciated</label>   
-                                        <textarea rows="7" cols="120" name="message" placeholder="Your message">
-                                        </textarea>
+                                        <label class="feedback-label">Leave us a comment, any feedback is appreciated</label> 
+                                        <textarea class="input-area" name="feedback" id="feedback" cols="30" rows="10" placeholder="Any feedback is appreciated"></textarea required>
                                     </div>                     
                                     <label>&nbsp;</label>     
                                     
@@ -197,5 +224,10 @@
         </footer>
     </div>
     <script defer src="script.js"></script>
+    <script defer src="./javascript/scroll.js"></script>
+    <script defer src="./javascript/bookGenerator.js"></script>
+    <script defer src="./javascript/drag&dropFav.js"></script>
+    <script defer src="./javascript/filterTabs.js"></script>
+    <script defer src="./javascript/quotesGenerator.js"></script>
 </body>
 </html>

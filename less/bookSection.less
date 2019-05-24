@@ -40,20 +40,21 @@
             padding: 8px 0 8px 10px;
             border: 3px solid transparent;
             font-size: 2rem;
-            color: @white;
+            color: @purple;
+            cursor: pointer;
 
             @media @tablet {
                 font-size: 1.7rem;
             }
 
             &:hover {
-                color: @colorPrimary;      
+                color: @black;      
             }
 
             &.active {
                 background-color: @colorPrimary;
                 transform: translateX(5px);
-                border: 3px solid @black;
+                border: 3px solid @purple;
                 border-right: 5px solid @colorPrimary;
                 border-top-left-radius: 20px;
                 border-bottom-left-radius: 20px;
@@ -81,7 +82,7 @@
                 background-color: @colorPrimary;      
                 width: 150px;
                 padding: 10px;
-                border: 3px solid @black;
+                border: 3px solid @purple;
                 border-radius: 20px;
                 cursor: pointer;
                 font-size: 1.4rem;
@@ -109,7 +110,7 @@
         .menu-newBook {
             width: 300px;
             height: 80vh;
-            background-color: @black;
+            background-color: @purple;
             position: fixed;
             top: 10vh;
             left: 0;
@@ -159,6 +160,18 @@
                     margin-bottom: 15px;
                     border: 3px solid @colorTertiary;
                     border-radius: 10px;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:invalid {
+                        border: 3px solid @black;
+                    }
+
+                    &:valid {
+                        border: 3px solid @colorQuaternary;
+                    }
                 }
 
                 .input-intro {
@@ -173,6 +186,18 @@
                     @media @mobile {
                         height: 200px;
                     } 
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:invalid {
+                        border: 3px solid @black;
+                    }
+
+                    &:valid {
+                        border: 3px solid @colorQuaternary;
+                    }
                 }
             }
 
@@ -180,10 +205,10 @@
                 width: 50%;
                 padding: 10px; 
                 margin-left: 60px;  
-                background-color: @colorQuaternary;
-                border: 3px solid @white;  
+                background-color: @purple;
+                border: 3px solid @colorQuaternary;  
                 border-radius: 25px; 
-                color: @white;
+                color: @colorQuaternary;
                 font-size: 1.8rem;
                 cursor: pointer;
 
@@ -209,16 +234,16 @@
         .flex(row, space-evenly, space-evenly, wrap);
         width: 75%;
         height: 89vh;
-        background-image: linear-gradient( to right bottom, @colorPrimary 30%, @colorQuaternary);
+        background-image: linear-gradient( to right bottom, @colorPrimary 30%, @colorTertiary, @colorQuaternary);
         // background-color: @colorPrimary;
-        border: 3px solid @black;
+        border: 3px solid @purple;
         border-radius: 22px;
         box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
         overflow-y: scroll;
 
         @media @tablet {
             width: 55%;
-            background-image: linear-gradient( to right bottom, @colorPrimary 40%, @colorQuaternary);
+            background-image: linear-gradient( to right bottom, @colorPrimary 40%, @colorTertiary, @colorQuaternary);
         }
 
         @media @mobile {
@@ -226,20 +251,25 @@
             height: 80vh;
         }
 
+        &::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+
         .book-box {
-            background-color: @black;
+            background-color: @purple;
             width: 200px;
             height: 310px;
-            border: 3px solid @black;
+            border: 3px solid @purple;
             border-radius: 20px;
             overflow: hidden;
             cursor: pointer;
 
             .heading-tertiary {
                 .flex(row, center, center);
-                background-color: @colorPrimary;
+                background-color: @purple;
                 height: 45px;
-                border-bottom: 3px solid @black;
+                border-bottom: 3px solid @purple;
                 font-size: 2rem;
                 text-align: center;
                 color: @colorQuaternary;
@@ -257,10 +287,9 @@
             }
 
             .rating {
-                // display: none;
                 background-color: @colorPrimary;
                 height: 30px;
-                border-top: 3px solid @black;
+                border-top: 3px solid @purple;
                 border-bottom-right-radius: 20px;
                 border-bottom-left-radius: 20px;
                 padding-top: 4px;
@@ -289,8 +318,6 @@
                     }
                 }
             }
-
-            
 
             .book-info {
                 display: block;
@@ -326,12 +353,17 @@
             display: none;
         }
 
+        &::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+
         .fav-list {
             height: 70vh;
-            background-image: radial-gradient(circle at right top, @colorPrimary, @colorQuaternary);
-            border-top: 3px solid @black;
-            border-right: 3px solid @black;
-            border-bottom: 3px solid @black;
+            background-image: linear-gradient(to bottom right, @colorTertiary, @colorQuaternary);
+            border-top: 3px solid @purple;
+            border-right: 3px solid @purple;
+            border-bottom: 3px solid @purple;
             border-top-right-radius: 40px;
             border-bottom-right-radius: 40px;
             
@@ -341,9 +373,9 @@
                 width: 80%;
                 height: 40px;
                 background-color: @colorPrimary;
-                border-right: 3px solid @black;
-                border-bottom: 3px solid @black;
-                border-left: 3px solid @black;
+                border-right: 3px solid @purple;
+                border-bottom: 3px solid @purple;
+                border-left: 3px solid @purple;
                 border-bottom-right-radius: 20px;
                 border-bottom-left-radius: 20px;
                 font-size: 2.8rem;
@@ -365,7 +397,7 @@
                 height: 45px;
                 margin: 0 auto;
                 background-color: @colorPrimary;
-                border: 3px solid @black;
+                border: 3px solid @purple;
                 border-radius: 10px;
                 font-size: 2rem;
                 color: @colorQuaternary;
@@ -408,8 +440,9 @@
     }
 
     @media @mobile {
-        height: 70vh;
+        height: 80vh;
         top: 60%;
+        padding: 10px;
     }
 
     .heading-quaternary {
@@ -427,9 +460,11 @@
 
     .closeBtn {
         position: absolute;
-        top: 1%;
-        right: 1%;
+        top: 3%;
+        right: 2%;
         font-size: 4rem;
+        color: @purple;
+        text-shadow: .5px .5px 1px @colorQuaternary;
         cursor: pointer;
 
         @media @tablet {
@@ -439,7 +474,7 @@
 
         @media @mobile {
             top: 3%;
-            right: 7%;
+            right: 3%;
         }
 
         &:hover {
@@ -450,12 +485,12 @@
     .sides {
         .flex();
         height: 500px;
-        border: 3px solid @black;
+        border: 3px solid @purple;
         border-radius: 20px;
         overflow: hidden;
 
         @media @mobile {
-            height: 400px;
+            height: 450px;
             .flex(column, center, center);
         }
     
@@ -464,7 +499,7 @@
             width: 70%;
             height: 100%;
             background-color: @colorTertiary;
-            border-right: 3px solid @black;
+            border-right: 3px solid @purple;
             padding: 10px;
             overflow: scroll;
 
@@ -477,7 +512,7 @@
                 width: 35%;
                 min-width: 300px;
                 height: 400px;
-                border: 3px solid @black;
+                border: 3px solid @purple;
                 border-radius: 5px;
                 object-fit: cover;
                 float: left;
@@ -496,6 +531,7 @@
 
             .book-content {
                 font-size: 2.2rem;
+                padding-bottom: 20px;
 
                 @media @mobile {
                     padding: 5px 10px;
@@ -516,16 +552,15 @@
 
             .heading-tertiary {
                 background-color: @colorTertiary;
-                font-size: 3.3rem;
+                font-size: 3rem;
                 font-weight: bold;
                 text-align: center;
-                border-bottom: 3px solid @black;
-                color: @colorQuaternary;
-                text-shadow: 1px 1px 5px @black;
+                border-bottom: 3px solid @purple;
+                color: @purple;
                 padding: 10px;
 
                 @media @mobile {
-                    border-top: 3px solid @black;
+                    border-top: 3px solid @purple;
                     font-size: 2.5rem;
                 }
             } 
@@ -535,24 +570,60 @@
                 height: 100%;
                 overflow: scroll;
 
+                @media @mobile {
+                    height: 120px;
+                }
+
                 .review {
+                    position: relative;
                     width: 90%;
                     height: 30px;
                     background-color: @colorTertiary;
                     margin: 0 auto;
-                    border: 3px solid @black;
+                    border: 3px solid @purple;
                     border-radius: 5px;
                     font-size: 2rem;
                     overflow: hidden;
                     padding: 5px;
+                    padding-left: 20px;
 
-                    @media @mobile {
-                        overflow: scroll;
+                    &::-webkit-scrollbar{
+                        width: 0;
+                        height: 0;
                     }
     
                     &.open {
                         height: 100px;
                         overflow: scroll;
+                    }
+
+                    .closeBtn {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        border-bottom: 3px solid @purple;
+                        border-left: 3px solid @purple;
+                        border-bottom-left-radius: 5px;
+                        font-size: 20px;
+                        color: @purple;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: @red;
+                        }
+
+                    }
+
+                    .expandBtn {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        cursor: pointer;
+                        color: @purple;
+
+                        &:hover {
+                            color: @colorQuaternary;
+                        }
                     }
                 }
 
@@ -563,13 +634,13 @@
                 bottom: 0;
                 width: 100%;
                 background-color: @white;
-                border: 3px solid @colorQuaternary;
+                border: 3px solid @purple;
 
                 .input-field {
-                    width: 250px;
+                    width: 270px;
                     height: 30px;
                     font-size: 2.5rem;
-                    padding-right: 80px;
+                    padding-right: 100px;
 
                     @media @mobile {
                         width: 385px;
@@ -584,7 +655,7 @@
                     right: 0;
                     width: 80px;
                     height: 36px;
-                    border: 3px solid @colorQuaternary;
+                    border: 3px solid @purple;
                     border-top-left-radius: 20px;
                     border-bottom-left-radius: 20px;
                     font-size: 2rem;
@@ -593,6 +664,10 @@
 
                     &:hover {
                         background-color: @colorQuaternary;
+                    }
+
+                    &:focus {
+                        outline: none;
                     }
                 }
             }        
