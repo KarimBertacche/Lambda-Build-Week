@@ -30,6 +30,8 @@ dropZone.addEventListener('dragleave', (event) => {
     favBox.style.border = "3px solid #000"; 
 })
 
+let favBok;
+
 dropZone.addEventListener('drop', (event) => {
     //Create div for favourite books 
     let favItem = document.createElement('div');
@@ -37,12 +39,12 @@ dropZone.addEventListener('drop', (event) => {
     favItem.classList.add('fav-item');
 
     //Creating heading for favourite book title
-    let favBox = document.createElement('h3');
+    favBox = document.createElement('h3');
     //Assign class to favourite book title
     favBox.classList.add('heading-tertiary');
     //Give favourite book a title content 
     favBox.textContent = curBook.children[0].textContent;
-    
+
     //Append favBox to favItem
     favItem.appendChild(favBox);
 
@@ -54,4 +56,20 @@ dropZone.addEventListener('drop', (event) => {
 
     //Remove current book from main list after adding it to favourite collection
     curBook.remove();
-})
+});
+
+let popUpReview = document.querySelectorAll('.popUp-screen');
+let reviewHeading = document.querySelectorAll('.heading-quaternary');
+
+favBox.addEventListener('click', (event) => {
+
+    reviewHeading.forEach(heading => {
+        if(heading.textContent === event.target.textContent){
+            heading.parentNode.style.display = 'block';
+        }
+    });
+    console.log(popUpReview.children[0].textContent);
+    // if(event.target.textContent){
+    //     this.popUpScreen.style.display= 'block';
+    // } === 
+});
