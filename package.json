@@ -1,0 +1,19 @@
+{
+  "name": "lambda-build-week",
+  "version": "1.0.0",
+  "description": "Bookr project for Lambda Build Week",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarimBertacche/Lambda-Build-Week.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarimBertacche/Lambda-Build-Week/issues"
+  },
+  "homepage": "https://github.com/KarimBertacche/Lambda-Build-Week#readme"
+}

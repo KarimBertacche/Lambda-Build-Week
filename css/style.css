@@ -242,7 +242,7 @@ body::-webkit-scrollbar {
   font-size: 2rem;
   opacity: 0;
   color: #ffce76;
-  transform: translateX(100%);
+  transform: translateY(-200%);
   transition: all 1s;
 }
 .logIn .input {
@@ -296,9 +296,20 @@ body::-webkit-scrollbar {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 .logIn.active {
-  transform: translateX(0);
+  transform: translateY(0);
   opacity: 1;
   transition: all 1s;
+}
+.about-section {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  display: none;
+  z-index: 10;
+  height: 50vh;
+  width: 90%;
+  margin: 0 auto;
+  border: 3px solid red;
 }
 header {
   display: flex;
