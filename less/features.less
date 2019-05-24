@@ -27,6 +27,17 @@
                 @media @mobile {
                     width: 100%; 
                 }
+
+                &:last-child {
+
+                    @media @mediumMobile {
+                        margin-top: 30px;
+                    } 
+
+                    @media @smallMobile {
+                        margin-top: 100px;
+                    }
+                }
             }
         }
 
@@ -48,6 +59,11 @@
                 @media @mobile { 
                     text-align: center;
                     text-shadow: .5px .5px 1px @black;
+                    margin-top: 100px;
+                    background-color: @purple;
+                    padding: 10px;
+                    border-radius: 20px;
+                    color: @colorQuaternary;
                 }
 
                 &:first-child {
@@ -56,6 +72,10 @@
 
                 &:last-child {
                     margin-top: -100px;
+
+                    @media @mediumMobile {
+                        margin-top: -70px;
+                    }   
                 }
             }
 
@@ -66,6 +86,17 @@
                 text-shadow: .5px .5px 0 @colorQuaternary;
                 letter-spacing: 1px;
                 // font-weight: bold;
+
+                &:last-child {
+
+                    @media @mediumMobile {
+                        margin-bottom: -50px;
+                    }
+
+                    @media @smallMobile {
+                        margin-bottom: -100px;
+                    }
+                }
 
             }
         }
@@ -92,6 +123,7 @@
 
                 @media @mobile {
                     margin-right: 0;
+                    margin-bottom: -25px;
                 }
             }
 

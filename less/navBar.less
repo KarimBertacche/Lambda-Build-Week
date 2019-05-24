@@ -85,11 +85,15 @@
     opacity: .9;
     z-index: 100;
     transition: all 1s;
+
+    @media @mobile {
+        padding: 15px 20px; 
+    }
 }
 
 .logIn {
     position: absolute;
-    top: 80px;
+    top: 78px;
     right: 0;
     .flex(column, center, center);
     background-color: #000;
@@ -106,6 +110,10 @@
     color: @colorQuaternary;
     transform: translateY(-200%);
     transition: all 1s;
+
+    @media @mobile {
+        top: 140px;
+    }
 
     .input {
         margin-bottom: 20px;

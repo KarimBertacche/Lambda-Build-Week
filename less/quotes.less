@@ -36,6 +36,11 @@
         @media @mobile {
             min-width: 400px;
         }
+
+        @media @smallMobile {
+            min-width: 350px; 
+            padding: 30px;   
+        }
         
         &.active {
             .absolute-position(50%, 46%);
@@ -48,9 +53,22 @@
             transition: all .5s;
             color: @purple;
 
-            @media @mobile {
-                .absolute-position(50%, 38%);
+            @media @smallTablet {
+                .absolute-position(50%, 44.5%); 
             }
+
+            @media @mobile {
+                .absolute-position(50%, 40%);
+            }
+
+            @media @mediumMobile {
+                .absolute-position(50%, 38%); 
+            }
+
+            @media @smallMobile {
+                .absolute-position(50%, 37%);  
+            }
+
         }
 
         &.prev {
@@ -90,6 +108,10 @@
             @media @mobile {
                 .absolute-position(50%, 5%);   
             }
+
+            @media @smallMobile {
+                .absolute-position(80%, 43%); 
+            }
         }
 
         &.forward-arrow {
@@ -101,6 +123,10 @@
 
             @media @mobile {
                 .absolute-position(50%, 95%);   
+            }
+
+            @media @smallMobile {
+                .absolute-position(80%, 57%); 
             }
         }
 

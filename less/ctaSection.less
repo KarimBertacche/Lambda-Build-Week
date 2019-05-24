@@ -109,6 +109,10 @@
             font-size: 2rem;
         }
 
+        @media @smallTablet {
+            font-size: 1.6rem;
+        }
+
         @media @mobile {
             font-size: 1.8rem; 
             padding: 20px;
@@ -177,6 +181,11 @@
             &:valid {
                 border: 3px solid @colorQuaternary;
             }
+
+            @media @smallTablet {
+                font-size: 1.5rem;
+                height: 13px;
+            }
         }
 
         .selection {
@@ -213,6 +222,11 @@
                 text-align: center;
             }
 
+            @media @smallTablet {
+                margin-left: 20px;
+                // text-align: left;
+            }
+
             @media @mobile {
                 margin-bottom: 10px;
             }
@@ -230,6 +244,11 @@
             @media @tablet {
                 width: 400px;
                 padding: 10px;
+            }
+
+            @media @smallTablet {
+                width: 350px;
+                height: 80px;
             }
 
             @media @mobile {
@@ -265,6 +284,10 @@
             @media @tablet {
                 margin-top: 0;
                 font-size: 1.3rem;
+            }
+
+            @media @smallTablet {
+                margin-top: 5px;
             }
 
             @media @mobile {
