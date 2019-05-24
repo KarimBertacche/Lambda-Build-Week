@@ -1,0 +1,711 @@
+.main-section {
+    .flex(row);
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    height: 90vh;
+
+    @media @tablet {
+        margin-top: 130px;
+    }
+
+    @media @mobile {
+        margin-top: 0;
+        margin-bottom: -100px;
+    }
+
+    .select-subject {
+        width: 13%;
+        padding-left: 30px;
+
+        @media @tablet {
+            width: 17%;
+        }
+
+        @media @mobile {
+            width: 25%;
+            padding-left: 5px;
+        }
+    
+        .main-nav {
+            padding-top: 80px;
+        }
+
+        .main-link {
+            text-decoration: none;
+            color: @colorPrimary;
+        }
+
+        .nav-list {
+            padding: 8px 0 8px 10px;
+            border: 3px solid transparent;
+            font-size: 2rem;
+            color: @purple;
+            cursor: pointer;
+
+            @media @tablet {
+                font-size: 1.7rem;
+            }
+
+            &:hover {
+                color: @black;      
+            }
+
+            &.active {
+                background-color: @colorPrimary;
+                transform: translateX(5px);
+                border: 3px solid @purple;
+                border-right: 5px solid @colorPrimary;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                padding-left: 20px;
+                color: @colorQuaternary;  
+            }
+        }
+
+        .addBook-box {
+            width: 150px;
+            position: absolute;
+            top: 3%;
+            left: 25px;
+            margin: 0 auto;
+
+            @media @tablet {
+                left: 15px;
+            }
+
+            @media @mobile {
+                left: 5px;
+            }
+
+            .addBook-btn {
+                background-color: @colorPrimary; 
+                width: 150px;
+                padding: 10px;
+                border: 3px solid @purple;
+                border-radius: 20px;
+                cursor: pointer;
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: @colorQuaternary;
+                transition: all .2s;
+
+                @media @smallTablet {
+                    width: 120px;
+                    font-size: 1.2rem;
+                }
+
+                @media @smallMobile {
+                    width: 100px;
+                    font-size: 1rem;
+                    padding: 3px 7px;
+                }
+
+                &:hover { 
+                    transform: translateY(-5px) scale(1.005); 
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, .4); 
+                }
+
+                &:active {
+                    transform: translateY(-2px) scale(1);
+                    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);  
+                }
+            }
+        }
+
+        .menu-newBook {
+            width: 300px;
+            height: 80vh;
+            background-color: @purple;
+            position: fixed;
+            top: 10vh;
+            left: 0;
+            z-index: 100;
+            padding: 50px 10px;
+            color: @colorQuaternary;
+
+            @media @mobile {
+                height: 70vh;
+                margin-top: 65px;
+            }
+
+            .close-menu {
+                font-size: 4rem;
+                position: absolute;
+                top: 2%;
+                right: 2%;
+                cursor: pointer;
+
+                &:hover {
+                    color: @colorQuaternary;       
+                }
+            }
+
+            .book-title,
+            .book-image,
+            .book-category,
+            .book-intro {
+                width: 100%;
+                font-size: 3rem;
+
+                @media @tablet {
+                    font-size: 2.5rem;
+                }
+
+                @media @mobile {
+                    font-size: 2rem;
+                }
+
+                .input-title,
+                .input-image,
+                .selection {
+                    width: 90%;
+                    height: 30px;
+                    font-size: 1.8rem;
+                    margin-top: 5px;
+                    margin-bottom: 15px;
+                    border: 3px solid @colorTertiary;
+                    border-radius: 10px;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:invalid {
+                        border: 3px solid @black;
+                    }
+
+                    &:valid {
+                        border: 3px solid @colorQuaternary;
+                    }
+                }
+
+                .input-intro {
+                    width: 90%;
+                    height: 230px;
+                    font-size: 1.8rem;
+                    margin-top: 5px;
+                    margin-bottom: 10px;  
+                    border: 3px solid @colorTertiary;
+                    border-radius: 10px;
+
+                    @media @mobile {
+                        height: 200px;
+                    } 
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &:invalid {
+                        border: 3px solid @black;
+                    }
+
+                    &:valid {
+                        border: 3px solid @colorQuaternary;
+                    }
+                }
+            }
+
+            .submit-btn {
+                width: 50%;
+                padding: 10px; 
+                margin-left: 60px;  
+                background-color: @purple;
+                border: 3px solid @colorQuaternary;  
+                border-radius: 25px; 
+                color: @colorQuaternary;
+                font-size: 1.8rem;
+                cursor: pointer;
+
+                @media @mobile {
+                    font-size: 1.5rem;
+                } 
+
+                &:hover {
+                    transform: translateY(-5px) scale(1.05);
+                    box-shadow: 0 10px 20px rgba(255, 255, 255, .4);
+                }
+
+                &:active {
+                    transform: translateY(-2px) scale(1);  
+                    box-shadow: 0 5px 10px rgba(255, 255, 255, .4);
+                }
+            }
+
+        }
+    }
+
+    .main-content {
+        .flex(row, space-evenly, space-evenly, wrap);
+        width: 75%;
+        height: 89vh;
+        background-image: linear-gradient( 135deg, @colorPrimary 30%, @colorTertiary, @colorQuaternary);
+        // background-color: @colorPrimary;
+        border: 3px solid @purple;
+        border-radius: 22px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+        overflow-y: scroll;
+
+        @media @tablet {
+            width: 55%;
+            background-image: linear-gradient( to right bottom, @colorPrimary 40%, @colorTertiary, @colorQuaternary);
+        }
+
+        @media @mobile {
+            width: 75%;
+            height: 80vh;
+        }
+
+        &::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+
+        .book-box {
+            background-color: @purple;
+            width: 200px;
+            height: 310px;
+            border: 3px solid @purple;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+
+            .heading-tertiary {
+                .flex(row, center, center);
+                background-color: @purple;
+                height: 45px;
+                border-bottom: 3px solid @purple;
+                font-size: 2rem;
+                text-align: center;
+                color: @colorQuaternary;
+            }
+
+            .book-figure {
+                width: 100%;
+                height: 225px;
+                object-fit: cover;
+
+                & img {
+                    width: 100%;
+                    height: 225px;          
+                }
+            }
+
+            .rating {
+                background-color: @colorPrimary;
+                height: 30px;
+                border-top: 3px solid @purple;
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                padding-top: 4px;
+                font-size: 2rem;
+                text-align: center;  
+                cursor: pointer;
+                z-index: 100;
+                transition: all .5s;
+
+                &.hidden {
+                    transform: translateY(40px);
+                    opacity: 0;
+                }
+
+                &.shown {
+                    transform: translateY(-40px);
+                    opacity: 1;   
+                }
+
+                .star {
+
+                    &:hover {
+                        background-color: gold;
+                        color: transparent;
+                        -webkit-background-clip: text;
+                    }
+                }
+            }
+
+            .book-info {
+                display: block;
+                height: 30px;
+                border-top: 3px solid @black;
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                padding-top: 7px;
+                font-size: 2rem; 
+
+                & .currentRate {
+                    margin: 0 30px 0 50px;
+                    color: @colorQuaternary;
+                }
+
+                & .reviews {
+                    color: @colorQuaternary;
+                }
+            }
+        }
+    }
+
+    .fav-box {
+        width: 19%;
+        overflow-y: scroll;
+        padding-top: 80px;
+
+        @media @tablet {
+            width: 30%;
+        }
+
+        @media @mobile {
+            display: none;
+        }
+
+        &::-webkit-scrollbar{
+            width: 0;
+            height: 0;
+        }
+
+        .fav-list {
+            height: 70vh;
+            background-image: linear-gradient(to bottom right, @colorTertiary, @colorQuaternary);
+            border-top: 3px solid @purple;
+            border-right: 3px solid @purple;
+            border-bottom: 3px solid @purple;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+            
+
+            .fav-title {
+                .flex(row, center, center);
+                width: 80%;
+                height: 40px;
+                background-color: @colorPrimary;
+                border-right: 3px solid @purple;
+                border-bottom: 3px solid @purple;
+                border-left: 3px solid @purple;
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+                font-size: 2.8rem;
+                font-weight: bold;
+                padding: 10px 0;
+                margin: 0 auto;
+                color: @colorQuaternary;
+                text-shadow: 1px 1px 0 rgba(255, 255, 255, .6);
+
+                @media @tablet {
+                    width: 70%;
+                    font-size: 2.1rem;
+                }
+            }
+
+            .fav-item {
+                .flex(row, center, center);
+                width: 90%;
+                height: 45px;
+                margin: 0 auto;
+                background-color: @colorPrimary;
+                border: 3px solid @purple;
+                border-radius: 10px;
+                font-size: 2rem;
+                color: @colorQuaternary;
+                text-align: center;
+                cursor: pointer;
+                
+                &:hover {
+                    border: 3px solid @white; 
+                }
+                
+            }
+        }
+
+        .drop-zone {
+            width: 97%;
+            height: 61.5vh;
+            border-bottom-right-radius: 40px;
+            overflow: scroll;
+        }
+        
+    }
+}
+
+
+//PopUp screen for reviews
+.popUp-screen {
+    display: none;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: @colorPrimary;
+    width: 96%;
+    height: 82vh;
+    z-index: 100;
+    padding: 30px;
+
+    @media @tablet {
+        padding: 40px;
+    }
+
+    @media @mobile {
+        height: 80vh;
+        top: 60%;
+        padding: 10px;
+    }
+
+    .heading-quaternary {
+        text-align: center;
+        font-size: 7rem;
+        color: @colorQuaternary;
+        text-shadow: 1px 1px 5px @black;
+        margin-bottom: 10px;
+        padding-right: 20px;
+
+        @media @mobile {
+            font-size: 5rem;
+        }
+    }
+
+    .closeBtn {
+        position: absolute;
+        top: 3%;
+        right: 2%;
+        font-size: 4rem;
+        color: @purple;
+        text-shadow: .5px .5px 1px @colorQuaternary;
+        cursor: pointer;
+
+        @media @tablet {
+            top: 2.5%;
+            right: 3.5%;
+        }
+
+        @media @smallTablet {
+            top: 4%;
+            right: 5%;
+        }
+
+        @media @mobile {
+            top: 3%;
+            right: 3%;
+        }
+
+        &:hover {
+            color: @colorQuaternary;
+        }
+    }
+
+    .sides {
+        .flex();
+        height: 500px;
+        border: 3px solid @purple;
+        border-radius: 20px;
+        overflow: hidden;
+
+        @media @smallTablet {
+            height: 450px;
+        }
+
+        @media @mobile {
+            .flex(column, center, center);
+        }
+    
+
+        .left-side {
+            width: 70%;
+            height: 100%;
+            background-color: @colorTertiary;
+            border-right: 3px solid @purple;
+            padding: 10px;
+            overflow: scroll;
+
+            @media @mobile {
+                width: 100%;
+                padding: 0;
+            }
+
+            .bookImg {
+                width: 35%;
+                min-width: 300px;
+                height: 400px;
+                border: 3px solid @purple;
+                border-radius: 5px;
+                object-fit: cover;
+                float: left;
+                margin-right: 15px;  
+
+                @media @smallTablet {
+                    min-width: 100px;
+                    height: 200px;
+                }
+
+                @media @mobile {
+                    min-width: 100px;
+                    height: 200px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;         
+                }
+            }
+
+            .book-content {
+                font-size: 2.2rem;
+                padding-bottom: 20px;
+
+                @media @mobile {
+                    padding: 5px 10px;
+                    font-size: 2rem;
+                }
+            }
+        }
+    
+        .right-side {
+            position: relative;
+            width: 30%;
+            height: 100%;
+            overflow: hidden;
+
+            @media @mobile {
+                width: 100%;
+            }
+
+            .heading-tertiary {
+                background-color: @colorTertiary;
+                font-size: 3rem;
+                font-weight: bold;
+                text-align: center;
+                border-bottom: 3px solid @purple;
+                color: @purple;
+                padding: 10px;
+
+                @media @mobile {
+                    border-top: 3px solid @purple;
+                    font-size: 2.5rem;
+                }
+            } 
+
+            .reviews-box {
+                width: 100%;
+                height: 100%;
+                overflow: scroll;
+
+                @media @mobile {
+                    height: 120px;
+                }
+
+                .review {
+                    position: relative;
+                    width: 90%;
+                    height: 30px;
+                    background-color: @colorTertiary;
+                    margin: 0 auto;
+                    border: 3px solid @purple;
+                    border-radius: 5px;
+                    font-size: 2rem;
+                    overflow: hidden;
+                    padding: 5px;
+                    padding-left: 20px;
+
+                    &::-webkit-scrollbar{
+                        width: 0;
+                        height: 0;
+                    }
+    
+                    &.open {
+                        height: 100px;
+                        overflow: scroll;
+                    }
+
+                    .closeBtn {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        border-bottom: 3px solid @purple;
+                        border-left: 3px solid @purple;
+                        border-bottom-left-radius: 5px;
+                        font-size: 20px;
+                        color: @purple;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: @red;
+                        }
+
+                    }
+
+                    .expandBtn {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        cursor: pointer;
+                        color: @purple;
+
+                        &:hover {
+                            color: @colorQuaternary;
+                        }
+                    }
+                }
+
+            }
+
+            .btn-box {
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                background-color: @white;
+                border: 3px solid @purple;
+
+                .input-field {
+                    width: 270px;
+                    height: 30px;
+                    font-size: 2.5rem;
+                    padding-right: 100px;
+
+                    @media @smallTablet {
+                        width: 100px;
+                    }
+
+                    @media @mobile {
+                        width: 480px;
+                        padding-right: 50px;
+                    }
+
+                    @media @smallMobile {
+                        width: 410px;
+                        padding-right: 50px;
+                    }
+                }
+    
+                .postBtn {
+                    position: absolute;
+                    background-color: @colorTertiary;
+                    bottom: 0;
+                    right: 0;
+                    width: 80px;
+                    height: 36px;
+                    border: 3px solid @purple;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: @colorQuaternary;
+                    }
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }        
+        }
+    }   
+}
+
+.main-container {
+    .flex(column);
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

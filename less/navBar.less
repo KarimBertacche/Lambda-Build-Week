@@ -1,0 +1,197 @@
+.navigation {
+    // width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: #000;
+    z-index: 100;
+    transition: all 1s;
+
+    &.border {
+        border-bottom: 3px solid @colorQuaternary;
+    }
+
+    @media @mobile {
+        .flex(column, center, center);
+    }
+
+    .logo {
+        width: 40%;
+   
+        .logoImg {
+            width: 100px;
+
+            @media @mobile {
+                width: 130px;
+                margin-bottom: 10px;
+                margin-left: 15px;
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .nav-bar {
+        width: 35%;
+        min-width: 400px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 200;
+
+        @media @mobile {
+            .flex(row, baseline, space-between);
+            width: 100%;
+            margin-left: 10px;
+        }
+
+        & a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            color: @colorQuaternary;
+
+            &:hover {
+                color: @white;
+            }
+        }
+    
+        .logs {
+            border: 2px solid @colorQuaternary;
+            border-radius: 5px;
+            padding: 8px 3px;
+
+            & a {
+                padding: 0 20px 0 5px;
+            }
+
+            & a:first-child {    
+                border-right: 1px solid @colorQuaternary;
+            }
+        }     
+    }
+}
+
+.fixed {
+    width: 96%;
+    position: fixed;
+    top: 0; 
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    padding-right: 50px;
+    background-color: @purple;
+    opacity: .9;
+    z-index: 100;
+    transition: all 1s;
+
+    @media @mobile {
+        padding: 15px 20px; 
+    }
+}
+
+.logIn {
+    position: absolute;
+    top: 78px;
+    right: 0;
+    .flex(column, center, center);
+    background-color: #000;
+    // border-top: 3px solid @colorQuaternary;
+    border-bottom: 3px solid @colorQuaternary;
+    border-left: 3px solid @colorQuaternary;
+    border-bottom-left-radius: 20px;
+    // border-bottom-right-radius: 20px;
+    z-index: 1;
+    width: 380px;
+    padding: 15px 20px 10px;
+    font-size: 2rem;
+    opacity: 0;
+    color: @colorQuaternary;
+    transform: translateY(-200%);
+    transition: all 1s;
+
+    @media @mobile {
+        top: 140px;
+    }
+
+    .input {
+        margin-bottom: 20px;
+
+        label {
+            margin-right: 25px;
+        }
+
+        .name-label {
+            margin-top: 10px;
+        }
+
+        .surname-label {
+            margin-right: 0;
+        }
+
+        .password-label {
+            margin-right: 0;
+        }
+
+        input {
+            height: 20px;
+            border-radius: 20px;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:invalid {
+                border: 3px solid @red;
+            }
+
+            &:valid {
+                border: 3px solid @colorQuaternary;
+            }
+        }
+    }
+
+    .logIn-btn {
+        margin-left: -20px;
+        padding: 5px 20px;
+        border-radius: 25px;
+        font-size: 1.7rem;
+        font-weight: bold;
+        border: 2px solid @colorQuaternary;
+        background-color: @black;
+        color: @colorQuaternary;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+            border: 2px solid @colorTertiary;
+            color: @colorTertiary;
+        }
+
+        &:active {
+            transform: translateY(-2px) scale(1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+        }
+    }
+
+    &.active {
+        transform: translateY(0);
+        opacity: 1;
+        transition: all 1s;
+    }
+}
+
+.about-section {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: none;
+    z-index: 10;
+    height: 50vh;
+    width: 90%;
+    margin: 0 auto;
+    border: 3px solid red;
+}

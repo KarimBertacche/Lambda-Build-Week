@@ -1,0 +1,55 @@
+header {
+    .flex(column, center, center);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)),url(../images/Header_image2_flip.jpg);
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 99%, 0 95%);
+
+    @media @mobile {
+        background-color: @black;
+        height: 45vh;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .hero-content {
+        .absolute-position(40%);
+
+        @media @tablet {
+            .absolute-position(35%, 53%);
+        }
+
+        .heading-primary {  
+            font-size: 12rem;
+            font-weight: bold;
+            // background-image: linear-gradient(to right, @colorTertiary ,@colorQuaternary);
+            background-image: linear-gradient(to right, @purple, @colorQuaternary ,@colorTertiary);
+            color: transparent;
+            -webkit-background-clip: text;
+
+            // animation-name: slideToTop;
+            // animation-duration: 3s;
+            // animation-timing-function: ease-out;
+
+            @media @mobile {
+                font-size: 8rem;
+            }
+        }
+
+        .hero-text {
+            color: @colorQuaternary;
+            font-size: 3.3rem;
+            text-align: center;
+
+            @media @mobile {
+                font-size: 2.3rem;
+            }
+        }
+
+    }
+}
+
