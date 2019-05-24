@@ -127,7 +127,7 @@ html {
 }
 body {
   box-sizing: border-box;
-  background-image: linear-gradient(to bottom right, #defcfc, #ffce76);
+  background-color: black;
 }
 body::-webkit-scrollbar {
   width: 0;
@@ -135,6 +135,10 @@ body::-webkit-scrollbar {
 }
 .container {
   position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  background-image: linear-gradient(to bottom right, #defcfc, #ffce76);
 }
 .navigation {
   display: flex;
