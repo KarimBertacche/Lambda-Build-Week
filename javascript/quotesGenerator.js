@@ -8,13 +8,34 @@ let counter = 1;
 let quoteIdx;
 let quoteLength = quotes.length;
 let prevCount;
-let timer = 5000;
 
 quotes.forEach((quote, index) => {
     quoteIdx = quote.dataset.index = index;
 })
 
+let backwardsCycle = setInterval(() => {
+    if(counter === 0) {
+        //Hold previous counter
+        prevCount = counter;
+        //Update the counter
+        counter = quoteLength - 1;
+    } else {
+        //Hold previous counter
+        prevCount = counter;
+        //Update the counter
+        --counter;  
+    }
+    //Remove Active class & prev/next
+    removeActive();
+    //Add active class to current count
+    addActive();
+    //Add previous and next class dynamically
+    addPrev(prevCount);
+    addNext(prevCount);
+}, 3000); 
+
 backArrow.addEventListener('click', () => {
+    clearInterval(backwardsCycle);
     if(counter === 0) {
         //Hold previous counter
         prevCount = counter;
@@ -37,9 +58,7 @@ backArrow.addEventListener('click', () => {
 })
 
 forwardArrow.addEventListener('click', () => {
-    setTimeout(() => {
-        timer;
-    }, 5000)
+    clearInterval(backwardsCycle);
     if(counter === quoteLength -1) {
         //Hold previous counter
         prevCount = counter;
@@ -59,6 +78,8 @@ forwardArrow.addEventListener('click', () => {
     //Add previous and next class dynamically
     addPrev(prevCount);
     addNext(prevCount);
+
+    setInterval(backwardsCycle, 3000);
 })
 
 let removeActive = () => {
@@ -418,30 +439,3 @@ removeActive = () => {
         quote.className = "quote-card";
     })
 }
-
-
-setInterval(() => {
-    if(counter === quoteLength -1) {
-        //Hold previous counter
-        prevCount = counter;
-        //Update the counter
-        counter = 0;
-    } else {
-        //Hold previous counter
-        prevCount = counter;
-        //Update the counter
-        ++counter;
-    }
-
-    //Remove Active class & prev/next
-    removeActive();
-    //Add active class to current count
-    addActive();
-    //Add previous and next class dynamically
-    addPrev(prevCount);
-    addNext(prevCount);
-}, timer);  
-
-
-
-
