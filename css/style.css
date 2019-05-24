@@ -1341,6 +1341,8 @@ header .hero-content .hero-text {
 .popUp-screen .sides .left-side .book-content {
   font-size: 2.2rem;
   padding-bottom: 20px;
+  color: #1d1919;
+  font-weight: lighter;
 }
 @media (max-width: 600px) {
   .popUp-screen .sides .left-side .book-content {
