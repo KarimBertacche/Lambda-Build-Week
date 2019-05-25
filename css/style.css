@@ -142,6 +142,7 @@ body::-webkit-scrollbar {
   background-image: linear-gradient(to bottom right, #defcfc, #ffce76);
 }
 .navigation {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding: 15px 30px;
@@ -163,7 +164,7 @@ body::-webkit-scrollbar {
 }
 .navigation .nav-bar {
   width: 35%;
-  min-width: 200px;
+  min-width: 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -178,6 +179,7 @@ body::-webkit-scrollbar {
     flex-wrap: no-wrap;
     width: 100%;
     margin-left: 10px;
+    display: none;
   }
 }
 .navigation .nav-bar a {
@@ -209,6 +211,94 @@ body::-webkit-scrollbar {
     padding: 0 5px;
   }
 }
+.menu {
+  display: none;
+}
+@media (max-width: 600px) {
+  .menu {
+    display: flex;
+  }
+}
+.menu .menu-btn {
+  position: absolute;
+  top: 45%;
+  right: 20px;
+  width: 50px;
+  height: 0;
+  border: 3px solid #ffce76;
+  border-radius: 10px;
+  z-index: 200;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.menu .menu-btn::before,
+.menu .menu-btn::after {
+  width: 50px;
+  height: 0;
+  content: "";
+  position: absolute;
+  left: -3px;
+  border: 3px solid #ffce76;
+  border-radius: 10px;
+  transition: all 0.4s;
+}
+.menu .menu-btn::before {
+  top: -15px;
+}
+.menu .menu-btn::after {
+  top: 10px;
+}
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: no-wrap;
+  display: none;
+  position: absolute;
+  top: 99.6%;
+  right: 0;
+  background-color: #000;
+  border-bottom: 3px solid #ffce76;
+  border-left: 3px solid #ffce76;
+  border-bottom-left-radius: 20px;
+  height: 200px;
+  width: 200px;
+  transform: translateX(100%);
+  transition: all 1s;
+}
+.menu-list .menu-links {
+  width: 140px;
+  text-align: center;
+  color: #ffce76;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 2.3rem;
+  padding: 3px;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #900048 50%);
+  background-size: 225%;
+  transition: all 0.5s;
+}
+.menu-list .menu-links:hover {
+  border-bottom: 2px solid #ffce76;
+  background-position: 100%;
+}
+.clicked {
+  transition: all 0.4s;
+}
+.clicked .menu-btn {
+  border: 3px solid transparent;
+}
+.clicked .menu-btn::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.clicked .menu-btn::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
 .fixed {
   width: 96%;
   position: fixed;
@@ -224,7 +314,7 @@ body::-webkit-scrollbar {
 }
 @media (max-width: 600px) {
   .fixed {
-    width: 92%;
+    width: 93.5%;
     padding: 15px 20px;
   }
 }

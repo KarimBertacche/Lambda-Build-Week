@@ -34,3 +34,22 @@ logInBtn.addEventListener('click', () => {
     logInMenu.classList.toggle('active');
     bar.classList.toggle('border');
 })
+
+
+//Toggle menu bar with smaller screen sizes
+const menuBtn = document.querySelector('.menu-btn');
+const menuBar = document.querySelector('.menu');
+const menuList = document.querySelector('.menu-list');
+
+menuBtn.addEventListener('click', () => {
+    menuBar.classList.toggle('clicked');
+    if(menuBar.className === 'menu clicked') {
+        menuList.style.transform = 'translateX(0)';
+        menuList.style.display= 'flex';
+        bar.classList.add('border');
+    } else {
+        menuList.style.transform = 'translateX(100%)';
+        menuList.style.display= 'none'; 
+        bar.classList.remove('border');
+    }
+});
