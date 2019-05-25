@@ -13,29 +13,29 @@ quotes.forEach((quote, index) => {
     quoteIdx = quote.dataset.index = index;
 })
 
-let backwardsCycle = setInterval(() => {
-    if(counter === 0) {
-        //Hold previous counter
-        prevCount = counter;
-        //Update the counter
-        counter = quoteLength - 1;
-    } else {
-        //Hold previous counter
-        prevCount = counter;
-        //Update the counter
-        --counter;  
-    }
-    //Remove Active class & prev/next
-    removeActive();
-    //Add active class to current count
-    addActive();
-    //Add previous and next class dynamically
-    addPrev(prevCount);
-    addNext(prevCount);
-}, 3000); 
+// let backwardsCycle = setInterval(() => {
+//     if(counter === 0) {
+//         //Hold previous counter
+//         prevCount = counter;
+//         //Update the counter
+//         counter = quoteLength - 1;
+//     } else {
+//         //Hold previous counter
+//         prevCount = counter;
+//         //Update the counter
+//         --counter;  
+//     }
+//     //Remove Active class & prev/next
+//     removeActive();
+//     //Add active class to current count
+//     addActive();
+//     //Add previous and next class dynamically
+//     addPrev(prevCount);
+//     addNext(prevCount);
+// }, 3000); 
 
 backArrow.addEventListener('click', () => {
-    clearInterval(backwardsCycle);
+    // clearInterval(backwardsCycle);
     if(counter === 0) {
         //Hold previous counter
         prevCount = counter;
@@ -58,7 +58,7 @@ backArrow.addEventListener('click', () => {
 })
 
 forwardArrow.addEventListener('click', () => {
-    clearInterval(backwardsCycle);
+    // clearInterval(backwardsCycle);
     if(counter === quoteLength -1) {
         //Hold previous counter
         prevCount = counter;
@@ -79,49 +79,60 @@ forwardArrow.addEventListener('click', () => {
     addPrev(prevCount);
     addNext(prevCount);
 
-    setInterval(backwardsCycle, 3000);
+    // setInterval(backwardsCycle, 3000);
 })
 
 let removeActive = () => {
     quotes.forEach(quote => {
-        quote.className = "quote-card";
+        quote.className = "quote-card inactive";
+        // quote.className += " inactive";
     })
 }
 
 let addActive = () => {
     let newActive = document.querySelector(`.quote-card[data-index="${counter}"]`);
+    newActive.classList.remove('inactive');
     newActive.classList.add('active');
 }
 
 let addPrev = (prevCount) => {
     if(counter === 0){
         let prevQuote = document.querySelector(`.quote-card[data-index="${quoteLength - 1}`);
+        prevQuote.classList.remove('inactive');
         prevQuote.className += " prev";   
     } else if(counter === quoteLength -1) {
         let prevQuote = document.querySelector(`.quote-card[data-index="${counter -1}`);
+        prevQuote.classList.remove('inactive');
         prevQuote.className += " prev";   
     } else if(counter < prevCount){
         let prevQuote = document.querySelector(`.quote-card[data-index="${counter - 1}`);
+        prevQuote.classList.remove('inactive');
         prevQuote.className += " prev";  
     } else if(counter > prevCount) {
         let prevQuote = document.querySelector(`.quote-card[data-index="${prevCount}`);
+        prevQuote.classList.remove('inactive');
+        prevQuote.className = "quote-card";  
         prevQuote.className += " prev";  
     }
 } 
 
 let addNext = (prevCount) => {
     if(counter === quoteLength - 1){
-        let prevQuote = document.querySelector(`.quote-card[data-index="0"]`);
-        prevQuote.className += " next";   
+        let nextQuote = document.querySelector(`.quote-card[data-index="0"]`);
+        nextQuote.classList.remove('inactive');
+        nextQuote.className += " next";   
     } else if(counter === 0) {
-        let prevQuote = document.querySelector(`.quote-card[data-index="${counter + 1}`);
-        prevQuote.className += " next";   
+        let nextQuote = document.querySelector(`.quote-card[data-index="${counter + 1}`);
+        nextQuote.classList.remove('inactive');
+        nextQuote.className += " next";   
     } else if(counter > prevCount){
-        let prevQuote = document.querySelector(`.quote-card[data-index="${counter + 1}`);
-        prevQuote.className += " next";  
-    } else if(counter < prevCount) {
-        let prevQuote = document.querySelector(`.quote-card[data-index="${prevCount}`);
-        prevQuote.className += " next";  
+        let nextQuote = document.querySelector(`.quote-card[data-index="${counter + 1}`);
+        nextQuote.classList.remove('inactive');
+        nextQuote.className += " next";  
+    } else if(counter < prevCount) { 
+        let nextQuote = document.querySelector(`.quote-card[data-index="${prevCount}`);
+        nextQuote.classList.remove('inactive');
+        nextQuote.className += " next";  
     }
 }
 
@@ -387,7 +398,7 @@ const quoteCards = [
     },
 ];
 
-let quoteSection = document.querySelector('.quote-section');
+let quoteSection = document.querySelector('.quotes-box');
 
 class QuotesGenerator {
     constructor(quote, index) {
@@ -395,8 +406,8 @@ class QuotesGenerator {
 
         this.card = document.createElement('div');
         this.card.classList.add('quote-card');
+        this.card.className += ' inactive';
         this.card.dataset.index = index + 3;
-
 
         this.paragraphConstructor();
 
@@ -423,8 +434,8 @@ class QuotesGenerator {
     }
 }
 
-quoteCards.forEach((quote, indexX) => {
-    new QuotesGenerator(quote, indexX)
+quoteCards.forEach((quote, index) => {
+    new QuotesGenerator(quote, index)
 });
 
 quotes = document.querySelectorAll('.quote-card');
@@ -436,6 +447,7 @@ quotes.forEach((quote) => {
 
 removeActive = () => {
     quotes.forEach(quote => {
-        quote.className = "quote-card";
+        quote.className = "quote-card inactive";
+        // quote.className += " inactive";
     })
 }

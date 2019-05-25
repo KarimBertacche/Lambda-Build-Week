@@ -17,17 +17,17 @@
 
     .book-section {
         .flex();
-        width: 88%;
+        width: 85%;
         height: 100%;
+
+        @media @mobile {
+            width: 100%;
+        }
 
         .select-subject {
             width: 15%;
     
             @media @tablet {
-                width: 17%;
-            }
-    
-            @media @mobile {
                 width: 25%;
             }
         
@@ -50,7 +50,11 @@
                 @media @tablet {
                     font-size: 1.7rem;
                 }
-    
+
+                @media @mediumMobile {
+                    padding-left: 0;
+                }
+                
                 &:hover {
                     color: @black;      
                 }
@@ -70,6 +74,14 @@
             .addBook-box {
                 width: 80%;
                 margin: 0 auto;
+
+                @media @smallDesktop {
+                    width: 100%;
+                }
+
+                @media @tablet {
+                    width: 100%;
+                }
     
                 .addBook-btn {
                     background-color: @colorPrimary; 
@@ -83,16 +95,24 @@
                     font-weight: bold;
                     color: @colorQuaternary;
                     transition: all .2s;
-    
-                    @media @smallTablet {
+
+                    @media @tablet {
                         width: 120px;
-                        font-size: 1.2rem;
+                        font-size: 1rem;  
+                        padding: 3px;
                     }
-    
-                    @media @smallMobile {
+
+                    @media @mobile {
                         width: 100px;
                         font-size: 1rem;
                         padding: 3px 7px;
+                        margin-left: 5px;
+                    }
+
+                    @media @smallMobile {
+                        width: 80px;
+                        font-size: .8rem;
+                        padding: 2px 5px;
                     }
     
                     &:hover { 
@@ -182,6 +202,10 @@
                         margin-bottom: 10px;  
                         border: 3px solid @colorTertiary;
                         border-radius: 10px;
+
+                        @media @smallDesktop {
+                            height: 180px;
+                        }
     
                         @media @mobile {
                             height: 200px;
@@ -241,12 +265,14 @@
             overflow-y: scroll;
     
             @media @tablet {
+                width: 75%;
                 background-image: linear-gradient( to right bottom, @colorPrimary 40%, @colorTertiary, @colorQuaternary);
             }
     
             @media @mobile {
-                width: 75%;
+                width: 85%;
                 height: 80vh;
+                margin-top: 30px;
             }
     
             &::-webkit-scrollbar{
@@ -262,6 +288,10 @@
                 border-radius: 20px;
                 overflow: hidden;
                 cursor: pointer;
+
+                @media @tablet {
+                    width: 170px;
+                }
     
                 .heading-tertiary {
                     .flex(row, center, center);
@@ -329,6 +359,10 @@
                     & .currentRate {
                         margin: 0 30px 0 50px;
                         color: @colorQuaternary;
+
+                        @media @tablet {
+                            margin: 0 30px 0 30px;
+                        }
                     }
     
                     & .reviews {
@@ -373,7 +407,6 @@
             text-shadow: 1px 1px 0 rgba(255, 255, 255, .6);
 
             @media @tablet {
-                width: 70%;
                 font-size: 2.1rem;
             }
         }
