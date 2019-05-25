@@ -152,34 +152,18 @@ body::-webkit-scrollbar {
 .navigation.border {
   border-bottom: 3px solid #ffce76;
 }
-@media (max-width: 600px) {
-  .navigation {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: no-wrap;
-  }
-}
 .navigation .logo {
   width: 40%;
 }
 .navigation .logo .logoImg {
   width: 100px;
 }
-@media (max-width: 600px) {
-  .navigation .logo .logoImg {
-    width: 130px;
-    margin-bottom: 10px;
-    margin-left: 15px;
-  }
-}
 .navigation .logo:hover {
   cursor: pointer;
 }
 .navigation .nav-bar {
   width: 35%;
-  min-width: 400px;
+  min-width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -201,6 +185,11 @@ body::-webkit-scrollbar {
   font-size: 1.8rem;
   color: #ffce76;
 }
+@media (max-width: 600px) {
+  .navigation .nav-bar a {
+    font-size: 1.3rem;
+  }
+}
 .navigation .nav-bar a:hover {
   color: #fff;
 }
@@ -214,6 +203,11 @@ body::-webkit-scrollbar {
 }
 .navigation .nav-bar .logs a:first-child {
   border-right: 1px solid #ffce76;
+}
+@media (max-width: 600px) {
+  .navigation .nav-bar .logs a:last-child {
+    padding: 0 5px;
+  }
 }
 .fixed {
   width: 96%;
@@ -230,6 +224,7 @@ body::-webkit-scrollbar {
 }
 @media (max-width: 600px) {
   .fixed {
+    width: 92%;
     padding: 15px 20px;
   }
 }
@@ -254,11 +249,6 @@ body::-webkit-scrollbar {
   color: #ffce76;
   transform: translateY(-200%);
   transition: all 1s;
-}
-@media (max-width: 600px) {
-  .logIn {
-    top: 140px;
-  }
 }
 .logIn .input {
   margin-bottom: 20px;
@@ -555,11 +545,16 @@ header .hero-content .hero-text {
   color: #ffce76;
 }
 .feature-section {
-  height: 800px;
+  height: 110vh;
 }
 @media (max-width: 600px) {
   .feature-section {
-    height: 200vh;
+    height: 150vh;
+  }
+}
+@media (max-width: 450px) {
+  .feature-section {
+    margin-top: -80px;
   }
 }
 .feature-section .feature-box {
@@ -682,6 +677,11 @@ header .hero-content .hero-text {
     text-align: justify;
   }
 }
+@media (max-width: 500px) {
+  .feature-section .feature-box.reverse {
+    margin-bottom: 100px;
+  }
+}
 @media (max-width: 900px) {
   .feature-section .feature-box.reverse .heading-secondary {
     margin-top: -50px;
@@ -699,7 +699,6 @@ header .hero-content .hero-text {
 @media (max-width: 600px) {
   .feature-section .feature-box.reverse .featureImg {
     margin-right: 0;
-    margin-bottom: -25px;
   }
 }
 .feature-section .feature-box.reverse .feature-text {
@@ -726,6 +725,11 @@ header .hero-content .hero-text {
     margin-top: 130px;
   }
 }
+@media (max-width: 700px) {
+  .main-section {
+    margin-top: 300px;
+  }
+}
 @media (max-width: 600px) {
   .main-section {
     display: flex;
@@ -733,7 +737,7 @@ header .hero-content .hero-text {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: no-wrap;
-    margin-top: 0;
+    margin-top: 350px;
     margin-bottom: -100px;
   }
 }
@@ -757,6 +761,12 @@ header .hero-content .hero-text {
 @media (max-width: 900px) {
   .main-section .book-section .select-subject {
     width: 25%;
+  }
+}
+@media (max-width: 450px) {
+  .main-section .book-section .select-subject {
+    width: 27%;
+    padding-left: 30px;
   }
 }
 .main-section .book-section .select-subject .main-nav {
@@ -863,12 +873,6 @@ header .hero-content .hero-text {
   z-index: 100;
   padding: 50px 10px;
   color: #ffce76;
-}
-@media (max-width: 600px) {
-  .main-section .book-section .select-subject .menu-newBook {
-    height: 70vh;
-    margin-top: 65px;
-  }
 }
 .main-section .book-section .select-subject .menu-newBook .close-menu {
   font-size: 4rem;
@@ -1062,6 +1066,11 @@ header .hero-content .hero-text {
     margin-top: 30px;
   }
 }
+@media (max-width: 450px) {
+  .main-section .book-section .main-content {
+    width: 60%;
+  }
+}
 .main-section .book-section .main-content::-webkit-scrollbar {
   width: 0;
   height: 0;
@@ -1239,13 +1248,6 @@ header .hero-content .hero-text {
     padding: 40px;
   }
 }
-@media (max-width: 600px) {
-  .popUp-screen {
-    height: 80vh;
-    top: 60%;
-    padding: 10px;
-  }
-}
 .popUp-screen .heading-quaternary {
   text-align: center;
   font-size: 7rem;
@@ -1282,8 +1284,8 @@ header .hero-content .hero-text {
 }
 @media (max-width: 600px) {
   .popUp-screen .closeBtn {
-    top: 3%;
-    right: 3%;
+    top: 5%;
+    right: 7%;
   }
 }
 .popUp-screen .closeBtn:hover {

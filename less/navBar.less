@@ -11,21 +11,11 @@
         border-bottom: 3px solid @colorQuaternary;
     }
 
-    @media @mobile {
-        .flex(column, center, center);
-    }
-
     .logo {
         width: 40%;
    
         .logoImg {
             width: 100px;
-
-            @media @mobile {
-                width: 130px;
-                margin-bottom: 10px;
-                margin-left: 15px;
-            }
         }
 
         &:hover {
@@ -35,7 +25,7 @@
 
     .nav-bar {
         width: 35%;
-        min-width: 400px;
+        min-width: 200px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -52,6 +42,10 @@
             font-size: 1.8rem;
             color: @colorQuaternary;
 
+            @media @mobile {
+                font-size: 1.3rem;
+            }
+
             &:hover {
                 color: @white;
             }
@@ -64,11 +58,19 @@
 
             & a {
                 padding: 0 20px 0 5px;
+
+                &:first-child {    
+                    border-right: 1px solid @colorQuaternary;
+                }
+
+                &:last-child {
+                    @media @mobile { 
+                        padding: 0 5px;
+                    }
+                }
             }
 
-            & a:first-child {    
-                border-right: 1px solid @colorQuaternary;
-            }
+
         }     
     }
 }
@@ -87,6 +89,7 @@
     transition: all 1s;
 
     @media @mobile {
+        width: 92%;
         padding: 15px 20px; 
     }
 }
@@ -110,10 +113,6 @@
     color: @colorQuaternary;
     transform: translateY(-200%);
     transition: all 1s;
-
-    @media @mobile {
-        top: 140px;
-    }
 
     .input {
         margin-bottom: 20px;

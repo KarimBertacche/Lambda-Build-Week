@@ -9,11 +9,19 @@
         margin-top: 130px;
     }
 
+    @media @smallTablet {
+        margin-top: 300px;
+    }
+
     @media @mobile {
         .flex(column);
-        margin-top: 0;
+        margin-top: 350px;
         margin-bottom: -100px;
     }
+
+    // @media @extraSmallTablet {
+    //     margin-top: 500px;
+    // }
 
     .book-section {
         .flex();
@@ -29,6 +37,11 @@
     
             @media @tablet {
                 width: 25%;
+            }
+
+            @media @smallMobile {
+                width: 27%;
+                padding-left: 30px;
             }
         
             .main-nav {
@@ -137,11 +150,6 @@
                 z-index: 100;
                 padding: 50px 10px;
                 color: @colorQuaternary;
-    
-                @media @mobile {
-                    height: 70vh;
-                    margin-top: 65px;
-                }
     
                 .close-menu {
                     font-size: 4rem;
@@ -274,6 +282,11 @@
                 height: 80vh;
                 margin-top: 30px;
             }
+
+            @media @smallMobile {
+                width: 60%;
+            }
+        
     
             &::-webkit-scrollbar{
                 width: 0;
@@ -465,12 +478,6 @@
         padding: 40px;
     }
 
-    @media @mobile {
-        height: 80vh;
-        top: 60%;
-        padding: 10px;
-    }
-
     .heading-quaternary {
         text-align: center;
         font-size: 7rem;
@@ -504,8 +511,8 @@
         }
 
         @media @mobile {
-            top: 3%;
-            right: 3%;
+            top: 5%;
+            right: 7%;
         }
 
         &:hover {
