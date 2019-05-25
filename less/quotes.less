@@ -12,6 +12,14 @@
     background-position: center;
     background-attachment: fixed;
 
+    @media @mediumMobile {
+        padding: 5px;
+    }
+
+    @media @smallMobile {
+        width: 98%;
+    }
+
     .quotes-box {
         position: relative;
         transform: translate(-10%, 0);
@@ -20,6 +28,11 @@
 
         @media @mobile {
             transform: translate(-5%, 0);
+        }
+
+        @media @smallMobile {
+            width: 50vw;
+            height: 130px;
         }
 
         .quote-card {
@@ -39,13 +52,9 @@
             }
 
             @media @mediumMobile {
-                width: 350px; 
+                width: 100%;
             }
-    
-            // @media @smallMobile {
-            //     min-width: 350px; 
-            // }
-            
+
             &.active {
                 position: absolute;
                 top: 0;
@@ -60,19 +69,13 @@
                 transition: all .5s;
                 color: @purple;
     
-                @media @smallTablet {
-                }
-    
-                @media @mobile {
-                }
-    
                 @media @mediumMobile {
                     width: 350px; 
                     margin-left: 6%;
                 }
     
                 @media @smallMobile {
-                    margin-left: 5.5%;
+                    transform: translate(-25%, -50%);
                 }
     
             }
@@ -125,6 +128,10 @@
                 @media @mediumMobile {
                     .absolute-position(130%, 45%);
                 }
+
+                @media @smallMobile {
+                    .absolute-position(110%, 40%);
+                }
             }
     
             &.forward-arrow {
@@ -140,6 +147,10 @@
 
                 @media @mediumMobile {
                     .absolute-position(130%, 60%);
+                }
+
+                @media @smallMobile {
+                    .absolute-position(110%, 65%);
                 }
             }
     

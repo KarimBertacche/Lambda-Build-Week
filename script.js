@@ -12,8 +12,6 @@ icons.forEach(icon => {
 const headingP = document.querySelector('.heading-primary');
 const heroText = document.querySelector('.hero-text');
 
-console.log(headingP);
-
 window.addEventListener('load', () => {
     headingP.style.animationName = 'slideToTop';
     headingP.style.animationDuration = '3s';
@@ -41,7 +39,7 @@ const menuBtn = document.querySelector('.menu-btn');
 const menuBar = document.querySelector('.menu');
 const menuList = document.querySelector('.menu-list');
 
-menuBtn.addEventListener('click', () => {
+menuBar.addEventListener('click', () => {
     menuBar.classList.toggle('clicked');
     if(menuBar.className === 'menu clicked') {
         menuList.style.transform = 'translateX(0)';
