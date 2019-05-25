@@ -824,7 +824,6 @@ submitBtn.addEventListener('click', (event) => {
 const removeRev = document.querySelector('.closeBtn');
 const expandRev = document.querySelector('.expandBtn');
 
-
 //Toggle review page when clicking on messages
 let reviews = document.querySelectorAll('.reviews');
 let h4 = document.querySelectorAll('.heading-quaternary');

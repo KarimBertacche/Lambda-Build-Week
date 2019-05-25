@@ -124,9 +124,10 @@ table {
 }
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 body {
-  box-sizing: border-box;
+  box-sizing: inherit;
   background-color: black;
 }
 body::-webkit-scrollbar {
@@ -747,33 +748,45 @@ header .hero-content .hero-text {
 }
 @media (max-width: 600px) {
   .main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: no-wrap;
     margin-top: 0;
     margin-bottom: -100px;
   }
 }
-.main-section .select-subject {
-  width: 13%;
-  padding-left: 30px;
+.main-section .book-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: no-wrap;
+  width: 88%;
+  height: 100%;
+}
+.main-section .book-section .select-subject {
+  width: 15%;
 }
 @media (max-width: 900px) {
-  .main-section .select-subject {
+  .main-section .book-section .select-subject {
     width: 17%;
   }
 }
 @media (max-width: 600px) {
-  .main-section .select-subject {
+  .main-section .book-section .select-subject {
     width: 25%;
-    padding-left: 5px;
   }
 }
-.main-section .select-subject .main-nav {
-  padding-top: 80px;
+.main-section .book-section .select-subject .main-nav {
+  padding-top: 20px;
 }
-.main-section .select-subject .main-link {
+.main-section .book-section .select-subject .main-link {
   text-decoration: none;
   color: #283149;
 }
-.main-section .select-subject .nav-list {
+.main-section .book-section .select-subject .nav-list {
   padding: 8px 0 8px 10px;
   border: 3px solid transparent;
   font-size: 2rem;
@@ -781,14 +794,14 @@ header .hero-content .hero-text {
   cursor: pointer;
 }
 @media (max-width: 900px) {
-  .main-section .select-subject .nav-list {
+  .main-section .book-section .select-subject .nav-list {
     font-size: 1.7rem;
   }
 }
-.main-section .select-subject .nav-list:hover {
+.main-section .book-section .select-subject .nav-list:hover {
   color: #1d1919;
 }
-.main-section .select-subject .nav-list.active {
+.main-section .book-section .select-subject .nav-list.active {
   background-color: #283149;
   transform: translateX(5px);
   border: 3px solid #900048;
@@ -798,57 +811,45 @@ header .hero-content .hero-text {
   padding-left: 20px;
   color: #ffce76;
 }
-.main-section .select-subject .addBook-box {
-  width: 150px;
-  position: absolute;
-  top: 3%;
-  left: 25px;
+.main-section .book-section .select-subject .addBook-box {
+  width: 80%;
   margin: 0 auto;
 }
-@media (max-width: 900px) {
-  .main-section .select-subject .addBook-box {
-    left: 15px;
-  }
-}
-@media (max-width: 600px) {
-  .main-section .select-subject .addBook-box {
-    left: 5px;
-  }
-}
-.main-section .select-subject .addBook-box .addBook-btn {
+.main-section .book-section .select-subject .addBook-box .addBook-btn {
   background-color: #283149;
-  width: 150px;
+  width: 100%;
   padding: 10px;
+  margin-top: 30px;
   border: 3px solid #900048;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #ffce76;
   transition: all 0.2s;
 }
 @media (max-width: 700px) {
-  .main-section .select-subject .addBook-box .addBook-btn {
+  .main-section .book-section .select-subject .addBook-box .addBook-btn {
     width: 120px;
     font-size: 1.2rem;
   }
 }
 @media (max-width: 450px) {
-  .main-section .select-subject .addBook-box .addBook-btn {
+  .main-section .book-section .select-subject .addBook-box .addBook-btn {
     width: 100px;
     font-size: 1rem;
     padding: 3px 7px;
   }
 }
-.main-section .select-subject .addBook-box .addBook-btn:hover {
+.main-section .book-section .select-subject .addBook-box .addBook-btn:hover {
   transform: translateY(-5px) scale(1.005);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
 }
-.main-section .select-subject .addBook-box .addBook-btn:active {
+.main-section .book-section .select-subject .addBook-box .addBook-btn:active {
   transform: translateY(-2px) scale(1);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
-.main-section .select-subject .menu-newBook {
+.main-section .book-section .select-subject .menu-newBook {
   width: 300px;
   height: 80vh;
   background-color: #900048;
@@ -860,56 +861,56 @@ header .hero-content .hero-text {
   color: #ffce76;
 }
 @media (max-width: 600px) {
-  .main-section .select-subject .menu-newBook {
+  .main-section .book-section .select-subject .menu-newBook {
     height: 70vh;
     margin-top: 65px;
   }
 }
-.main-section .select-subject .menu-newBook .close-menu {
+.main-section .book-section .select-subject .menu-newBook .close-menu {
   font-size: 4rem;
   position: absolute;
   top: 2%;
   right: 2%;
   cursor: pointer;
 }
-.main-section .select-subject .menu-newBook .close-menu:hover {
+.main-section .book-section .select-subject .menu-newBook .close-menu:hover {
   color: #ffce76;
 }
-.main-section .select-subject .menu-newBook .book-title,
-.main-section .select-subject .menu-newBook .book-image,
-.main-section .select-subject .menu-newBook .book-category,
-.main-section .select-subject .menu-newBook .book-intro {
+.main-section .book-section .select-subject .menu-newBook .book-title,
+.main-section .book-section .select-subject .menu-newBook .book-image,
+.main-section .book-section .select-subject .menu-newBook .book-category,
+.main-section .book-section .select-subject .menu-newBook .book-intro {
   width: 100%;
   font-size: 3rem;
 }
 @media (max-width: 900px) {
-  .main-section .select-subject .menu-newBook .book-title,
-  .main-section .select-subject .menu-newBook .book-image,
-  .main-section .select-subject .menu-newBook .book-category,
-  .main-section .select-subject .menu-newBook .book-intro {
+  .main-section .book-section .select-subject .menu-newBook .book-title,
+  .main-section .book-section .select-subject .menu-newBook .book-image,
+  .main-section .book-section .select-subject .menu-newBook .book-category,
+  .main-section .book-section .select-subject .menu-newBook .book-intro {
     font-size: 2.5rem;
   }
 }
 @media (max-width: 600px) {
-  .main-section .select-subject .menu-newBook .book-title,
-  .main-section .select-subject .menu-newBook .book-image,
-  .main-section .select-subject .menu-newBook .book-category,
-  .main-section .select-subject .menu-newBook .book-intro {
+  .main-section .book-section .select-subject .menu-newBook .book-title,
+  .main-section .book-section .select-subject .menu-newBook .book-image,
+  .main-section .book-section .select-subject .menu-newBook .book-category,
+  .main-section .book-section .select-subject .menu-newBook .book-intro {
     font-size: 2rem;
   }
 }
-.main-section .select-subject .menu-newBook .book-title .input-title,
-.main-section .select-subject .menu-newBook .book-image .input-title,
-.main-section .select-subject .menu-newBook .book-category .input-title,
-.main-section .select-subject .menu-newBook .book-intro .input-title,
-.main-section .select-subject .menu-newBook .book-title .input-image,
-.main-section .select-subject .menu-newBook .book-image .input-image,
-.main-section .select-subject .menu-newBook .book-category .input-image,
-.main-section .select-subject .menu-newBook .book-intro .input-image,
-.main-section .select-subject .menu-newBook .book-title .selection,
-.main-section .select-subject .menu-newBook .book-image .selection,
-.main-section .select-subject .menu-newBook .book-category .selection,
-.main-section .select-subject .menu-newBook .book-intro .selection {
+.main-section .book-section .select-subject .menu-newBook .book-title .input-title,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-title,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-title,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-title,
+.main-section .book-section .select-subject .menu-newBook .book-title .input-image,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-image,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-image,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-image,
+.main-section .book-section .select-subject .menu-newBook .book-title .selection,
+.main-section .book-section .select-subject .menu-newBook .book-image .selection,
+.main-section .book-section .select-subject .menu-newBook .book-category .selection,
+.main-section .book-section .select-subject .menu-newBook .book-intro .selection {
   width: 90%;
   height: 30px;
   font-size: 1.8rem;
@@ -918,52 +919,52 @@ header .hero-content .hero-text {
   border: 3px solid #defcfc;
   border-radius: 10px;
 }
-.main-section .select-subject .menu-newBook .book-title .input-title:focus,
-.main-section .select-subject .menu-newBook .book-image .input-title:focus,
-.main-section .select-subject .menu-newBook .book-category .input-title:focus,
-.main-section .select-subject .menu-newBook .book-intro .input-title:focus,
-.main-section .select-subject .menu-newBook .book-title .input-image:focus,
-.main-section .select-subject .menu-newBook .book-image .input-image:focus,
-.main-section .select-subject .menu-newBook .book-category .input-image:focus,
-.main-section .select-subject .menu-newBook .book-intro .input-image:focus,
-.main-section .select-subject .menu-newBook .book-title .selection:focus,
-.main-section .select-subject .menu-newBook .book-image .selection:focus,
-.main-section .select-subject .menu-newBook .book-category .selection:focus,
-.main-section .select-subject .menu-newBook .book-intro .selection:focus {
+.main-section .book-section .select-subject .menu-newBook .book-title .input-title:focus,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-title:focus,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-title:focus,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-title:focus,
+.main-section .book-section .select-subject .menu-newBook .book-title .input-image:focus,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-image:focus,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-image:focus,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-image:focus,
+.main-section .book-section .select-subject .menu-newBook .book-title .selection:focus,
+.main-section .book-section .select-subject .menu-newBook .book-image .selection:focus,
+.main-section .book-section .select-subject .menu-newBook .book-category .selection:focus,
+.main-section .book-section .select-subject .menu-newBook .book-intro .selection:focus {
   outline: none;
 }
-.main-section .select-subject .menu-newBook .book-title .input-title:invalid,
-.main-section .select-subject .menu-newBook .book-image .input-title:invalid,
-.main-section .select-subject .menu-newBook .book-category .input-title:invalid,
-.main-section .select-subject .menu-newBook .book-intro .input-title:invalid,
-.main-section .select-subject .menu-newBook .book-title .input-image:invalid,
-.main-section .select-subject .menu-newBook .book-image .input-image:invalid,
-.main-section .select-subject .menu-newBook .book-category .input-image:invalid,
-.main-section .select-subject .menu-newBook .book-intro .input-image:invalid,
-.main-section .select-subject .menu-newBook .book-title .selection:invalid,
-.main-section .select-subject .menu-newBook .book-image .selection:invalid,
-.main-section .select-subject .menu-newBook .book-category .selection:invalid,
-.main-section .select-subject .menu-newBook .book-intro .selection:invalid {
+.main-section .book-section .select-subject .menu-newBook .book-title .input-title:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-title:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-title:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-title:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-title .input-image:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-image:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-image:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-image:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-title .selection:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-image .selection:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-category .selection:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-intro .selection:invalid {
   border: 3px solid #1d1919;
 }
-.main-section .select-subject .menu-newBook .book-title .input-title:valid,
-.main-section .select-subject .menu-newBook .book-image .input-title:valid,
-.main-section .select-subject .menu-newBook .book-category .input-title:valid,
-.main-section .select-subject .menu-newBook .book-intro .input-title:valid,
-.main-section .select-subject .menu-newBook .book-title .input-image:valid,
-.main-section .select-subject .menu-newBook .book-image .input-image:valid,
-.main-section .select-subject .menu-newBook .book-category .input-image:valid,
-.main-section .select-subject .menu-newBook .book-intro .input-image:valid,
-.main-section .select-subject .menu-newBook .book-title .selection:valid,
-.main-section .select-subject .menu-newBook .book-image .selection:valid,
-.main-section .select-subject .menu-newBook .book-category .selection:valid,
-.main-section .select-subject .menu-newBook .book-intro .selection:valid {
+.main-section .book-section .select-subject .menu-newBook .book-title .input-title:valid,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-title:valid,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-title:valid,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-title:valid,
+.main-section .book-section .select-subject .menu-newBook .book-title .input-image:valid,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-image:valid,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-image:valid,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-image:valid,
+.main-section .book-section .select-subject .menu-newBook .book-title .selection:valid,
+.main-section .book-section .select-subject .menu-newBook .book-image .selection:valid,
+.main-section .book-section .select-subject .menu-newBook .book-category .selection:valid,
+.main-section .book-section .select-subject .menu-newBook .book-intro .selection:valid {
   border: 3px solid #ffce76;
 }
-.main-section .select-subject .menu-newBook .book-title .input-intro,
-.main-section .select-subject .menu-newBook .book-image .input-intro,
-.main-section .select-subject .menu-newBook .book-category .input-intro,
-.main-section .select-subject .menu-newBook .book-intro .input-intro {
+.main-section .book-section .select-subject .menu-newBook .book-title .input-intro,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-intro,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-intro,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-intro {
   width: 90%;
   height: 230px;
   font-size: 1.8rem;
@@ -973,32 +974,32 @@ header .hero-content .hero-text {
   border-radius: 10px;
 }
 @media (max-width: 600px) {
-  .main-section .select-subject .menu-newBook .book-title .input-intro,
-  .main-section .select-subject .menu-newBook .book-image .input-intro,
-  .main-section .select-subject .menu-newBook .book-category .input-intro,
-  .main-section .select-subject .menu-newBook .book-intro .input-intro {
+  .main-section .book-section .select-subject .menu-newBook .book-title .input-intro,
+  .main-section .book-section .select-subject .menu-newBook .book-image .input-intro,
+  .main-section .book-section .select-subject .menu-newBook .book-category .input-intro,
+  .main-section .book-section .select-subject .menu-newBook .book-intro .input-intro {
     height: 200px;
   }
 }
-.main-section .select-subject .menu-newBook .book-title .input-intro:focus,
-.main-section .select-subject .menu-newBook .book-image .input-intro:focus,
-.main-section .select-subject .menu-newBook .book-category .input-intro:focus,
-.main-section .select-subject .menu-newBook .book-intro .input-intro:focus {
+.main-section .book-section .select-subject .menu-newBook .book-title .input-intro:focus,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-intro:focus,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-intro:focus,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-intro:focus {
   outline: none;
 }
-.main-section .select-subject .menu-newBook .book-title .input-intro:invalid,
-.main-section .select-subject .menu-newBook .book-image .input-intro:invalid,
-.main-section .select-subject .menu-newBook .book-category .input-intro:invalid,
-.main-section .select-subject .menu-newBook .book-intro .input-intro:invalid {
+.main-section .book-section .select-subject .menu-newBook .book-title .input-intro:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-intro:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-intro:invalid,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-intro:invalid {
   border: 3px solid #1d1919;
 }
-.main-section .select-subject .menu-newBook .book-title .input-intro:valid,
-.main-section .select-subject .menu-newBook .book-image .input-intro:valid,
-.main-section .select-subject .menu-newBook .book-category .input-intro:valid,
-.main-section .select-subject .menu-newBook .book-intro .input-intro:valid {
+.main-section .book-section .select-subject .menu-newBook .book-title .input-intro:valid,
+.main-section .book-section .select-subject .menu-newBook .book-image .input-intro:valid,
+.main-section .book-section .select-subject .menu-newBook .book-category .input-intro:valid,
+.main-section .book-section .select-subject .menu-newBook .book-intro .input-intro:valid {
   border: 3px solid #ffce76;
 }
-.main-section .select-subject .menu-newBook .submit-btn {
+.main-section .book-section .select-subject .menu-newBook .submit-btn {
   width: 50%;
   padding: 10px;
   margin-left: 60px;
@@ -1010,25 +1011,25 @@ header .hero-content .hero-text {
   cursor: pointer;
 }
 @media (max-width: 600px) {
-  .main-section .select-subject .menu-newBook .submit-btn {
+  .main-section .book-section .select-subject .menu-newBook .submit-btn {
     font-size: 1.5rem;
   }
 }
-.main-section .select-subject .menu-newBook .submit-btn:hover {
+.main-section .book-section .select-subject .menu-newBook .submit-btn:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.4);
 }
-.main-section .select-subject .menu-newBook .submit-btn:active {
+.main-section .book-section .select-subject .menu-newBook .submit-btn:active {
   transform: translateY(-2px) scale(1);
   box-shadow: 0 5px 10px rgba(255, 255, 255, 0.4);
 }
-.main-section .main-content {
+.main-section .book-section .main-content {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: space-evenly;
   flex-wrap: wrap;
-  width: 75%;
+  width: 85%;
   height: 89vh;
   background-image: linear-gradient(135deg, #283149 30%, #defcfc, #ffce76);
   border: 3px solid #900048;
@@ -1037,22 +1038,21 @@ header .hero-content .hero-text {
   overflow-y: scroll;
 }
 @media (max-width: 900px) {
-  .main-section .main-content {
-    width: 55%;
+  .main-section .book-section .main-content {
     background-image: linear-gradient(to right bottom, #283149 40%, #defcfc, #ffce76);
   }
 }
 @media (max-width: 600px) {
-  .main-section .main-content {
+  .main-section .book-section .main-content {
     width: 75%;
     height: 80vh;
   }
 }
-.main-section .main-content::-webkit-scrollbar {
+.main-section .book-section .main-content::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
-.main-section .main-content .book-box {
+.main-section .book-section .main-content .book-box {
   background-color: #900048;
   width: 200px;
   height: 310px;
@@ -1061,7 +1061,7 @@ header .hero-content .hero-text {
   overflow: hidden;
   cursor: pointer;
 }
-.main-section .main-content .book-box .heading-tertiary {
+.main-section .book-section .main-content .book-box .heading-tertiary {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1074,16 +1074,16 @@ header .hero-content .hero-text {
   text-align: center;
   color: #ffce76;
 }
-.main-section .main-content .book-box .book-figure {
+.main-section .book-section .main-content .book-box .book-figure {
   width: 100%;
   height: 225px;
   object-fit: cover;
 }
-.main-section .main-content .book-box .book-figure img {
+.main-section .book-section .main-content .book-box .book-figure img {
   width: 100%;
   height: 225px;
 }
-.main-section .main-content .book-box .rating {
+.main-section .book-section .main-content .book-box .rating {
   background-color: #283149;
   height: 30px;
   border-top: 3px solid #900048;
@@ -1096,20 +1096,20 @@ header .hero-content .hero-text {
   z-index: 100;
   transition: all 0.5s;
 }
-.main-section .main-content .book-box .rating.hidden {
+.main-section .book-section .main-content .book-box .rating.hidden {
   transform: translateY(40px);
   opacity: 0;
 }
-.main-section .main-content .book-box .rating.shown {
+.main-section .book-section .main-content .book-box .rating.shown {
   transform: translateY(-40px);
   opacity: 1;
 }
-.main-section .main-content .book-box .rating .star:hover {
+.main-section .book-section .main-content .book-box .rating .star:hover {
   background-color: gold;
   color: transparent;
   -webkit-background-clip: text;
 }
-.main-section .main-content .book-box .book-info {
+.main-section .book-section .main-content .book-box .book-info {
   display: block;
   height: 30px;
   border-top: 3px solid #1d1919;
@@ -1118,17 +1118,17 @@ header .hero-content .hero-text {
   padding-top: 7px;
   font-size: 2rem;
 }
-.main-section .main-content .book-box .book-info .currentRate {
+.main-section .book-section .main-content .book-box .book-info .currentRate {
   margin: 0 30px 0 50px;
   color: #ffce76;
 }
-.main-section .main-content .book-box .book-info .reviews {
+.main-section .book-section .main-content .book-box .book-info .reviews {
   color: #ffce76;
 }
 .main-section .fav-box {
-  width: 19%;
+  width: 15%;
   overflow-y: scroll;
-  padding-top: 80px;
+  padding-top: 20px;
 }
 @media (max-width: 900px) {
   .main-section .fav-box {
@@ -1144,41 +1144,41 @@ header .hero-content .hero-text {
   width: 0;
   height: 0;
 }
+.main-section .fav-box .fav-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: no-wrap;
+  width: 100%;
+  height: 40px;
+  background-color: #283149;
+  border-right: 3px solid #900048;
+  border-top-right-radius: 20px;
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding: 10px 0;
+  color: #ffce76;
+  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
+}
+@media (max-width: 900px) {
+  .main-section .fav-box .fav-title {
+    width: 70%;
+    font-size: 2.1rem;
+  }
+}
 .main-section .fav-box .fav-list {
   height: 70vh;
   background-image: linear-gradient(to bottom right, #defcfc, #ffce76);
   border-top: 3px solid #900048;
   border-right: 3px solid #900048;
   border-bottom: 3px solid #900048;
-  border-top-right-radius: 40px;
-  border-bottom-right-radius: 40px;
+  border-bottom-right-radius: 10px;
+  overflow: scroll;
 }
-.main-section .fav-box .fav-list .fav-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: no-wrap;
-  width: 80%;
-  height: 40px;
-  background-color: #283149;
-  border-right: 3px solid #900048;
-  border-bottom: 3px solid #900048;
-  border-left: 3px solid #900048;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  font-size: 2.8rem;
-  font-weight: bold;
-  padding: 10px 0;
-  margin: 0 auto;
-  color: #ffce76;
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.6);
-}
-@media (max-width: 900px) {
-  .main-section .fav-box .fav-list .fav-title {
-    width: 70%;
-    font-size: 2.1rem;
-  }
+.main-section .fav-box .fav-list::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 .main-section .fav-box .fav-list .fav-item {
   display: flex;
@@ -1186,9 +1186,8 @@ header .hero-content .hero-text {
   justify-content: center;
   align-items: center;
   flex-wrap: no-wrap;
-  width: 90%;
+  width: 97%;
   height: 45px;
-  margin: 0 auto;
   background-color: #283149;
   border: 3px solid #900048;
   border-radius: 10px;
@@ -1198,13 +1197,7 @@ header .hero-content .hero-text {
   cursor: pointer;
 }
 .main-section .fav-box .fav-list .fav-item:hover {
-  border: 3px solid #fff;
-}
-.main-section .fav-box .drop-zone {
-  width: 97%;
-  height: 61.5vh;
-  border-bottom-right-radius: 40px;
-  overflow: scroll;
+  border: 3px solid #defcfc;
 }
 .popUp-screen {
   display: none;

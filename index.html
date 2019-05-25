@@ -96,61 +96,62 @@
                 </div>
             </section>
             <section class="main-section">
-                <div class="select-subject">
-                    <ul class="main-nav">
-                        <a href="#" class="main-link"><li class="nav-list active" >All</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Fiction</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Psychology</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Growth</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Fantasy</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Mistery</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Thriller</li></a> 
-                        <a href="#" class="main-link"><li class="nav-list">Romance</li></a>
-                        <a href="#" class="main-link"><li class="nav-list">Poetry</li></a>
-                    </ul>
-                    <div class="addBook-box">
-                        <button class="addBook-btn">Add New Book</button>
+                <div class="book-section">
+                    <div class="select-subject">
+                        <div class="addBook-box">
+                            <button class="addBook-btn">Add New Book</button>
+                        </div>
+                        <ul class="main-nav">
+                            <a href="#" class="main-link"><li class="nav-list active" >All</li></a>
+                            <a href="#" class="main-link"><li class="nav-list">Fiction</li></a>
+                            <a href="#" class="main-link"><li class="nav-list">Psychology</li></a>
+                            <a href="#" class="main-link"><li class="nav-list">Growth</li></a>
+                            <a href="#" class="main-link"><li class="nav-list">Fantasy</li></a>
+                            <a href="#" class="main-link"><li class="nav-list">Mistery</li></a>
+                            <a href="#" class="main-link"><li class="nav-list">Thriller</li></a> 
+                            <a href="#" class="main-link"><li class="nav-list">Romance</li></a>
+                            <a href="#" class="main-link"><li class="nav-list">Poetry</li></a>
+                        </ul>
+                        <div class="menu-newBook">
+                            <span class="close-menu">⬅</span>
+                            <div class="book-title">
+                                <label for="title">Book Title</label><br>
+                                <input class="input-title" type="text" id="title" placeholder="Write Title" autofocus="true" required>
+                            </div>
+                            <div class="book-image">
+                                <label for="image">Book Image</label><br>
+                                <input class="input-image" type="text" id="image" placeholder="Insert URL" required>
+                            </div>
+                            <div class="book-category">
+                                <label for="category">Choose Book Category</label><br>
+                                <select class="selection" name="category" id="category">
+                                        <option value="Psychology">Psychology</option>
+                                        <option value="Fiction">Fiction</option>
+                                        <option value="Growth">Growth</option>
+                                        <option value="Poetry">Poetry</option>
+                                        <option value="Mistery">Mistery</option>
+                                        <option value="Thriller">Thriller</option>
+                                        <option value="Romance">Romance</option>
+                                        <option value="Fantasy">Fantasy</option>
+                                </select>
+                            </div>
+                            <div class="book-intro">
+                                <label for="intro">Add Book Intro</label><br>
+                                <textarea class="input-intro" name="intro" id="intro" cols="30" rows="10" placeholder="Book introduction"></textarea required>
+                                <!-- <input  type="text" id="intro" placeholder=""> -->
+                            </div>
+                            <input class="submit-btn" type="submit" value="Generate Book">
+                        </div>
                     </div>
-                    <div class="menu-newBook">
-                        <span class="close-menu">⬅</span>
-                        <div class="book-title">
-                            <label for="title">Book Title</label><br>
-                            <input class="input-title" type="text" id="title" placeholder="Write Title" autofocus="true" required>
-                        </div>
-                        <div class="book-image">
-                            <label for="image">Book Image</label><br>
-                            <input class="input-image" type="text" id="image" placeholder="Insert URL" required>
-                        </div>
-                        <div class="book-category">
-                            <label for="category">Choose Book Category</label><br>
-                            <select class="selection" name="category" id="category">
-                                    <option value="Psychology">Psychology</option>
-                                    <option value="Fiction">Fiction</option>
-                                    <option value="Growth">Growth</option>
-                                    <option value="Poetry">Poetry</option>
-                                    <option value="Mistery">Mistery</option>
-                                    <option value="Thriller">Thriller</option>
-                                    <option value="Romance">Romance</option>
-                                    <option value="Fantasy">Fantasy</option>
-                            </select>
-                        </div>
-                        <div class="book-intro">
-                            <label for="intro">Add Book Intro</label><br>
-                            <textarea class="input-intro" name="intro" id="intro" cols="30" rows="10" placeholder="Book introduction"></textarea required>
-                            <!-- <input  type="text" id="intro" placeholder=""> -->
-                        </div>
-                        <input class="submit-btn" type="submit" value="Generate Book">
+                    <div class="main-content" id="books">
                     </div>
-
-                </div>
-                <div class="main-content" id="books">
-
-                </div>
-                <div class="fav-box">    
+                </div>  
+                <div class="fav-box">  
+                    <div class="fav-title">
+                        <h2 class="heading-secondary">FAVOURITE</h2>
+                    </div>  
                     <div class="fav-list">
-                        <div class="fav-title">
-                            <h2 class="heading-secondary">FAVOURITE</h2>
-                        </div>
+                        
                         <div class="drop-zone">
                         </div>     
                     </div>
@@ -162,9 +163,6 @@
                         <source src="images/forest.mp4" type="video/mp4"/>
                     </video> 
                 </div>
-                        <!-- <source src="" type="video/mp4"/> -->
-                        <!-- This video is not supported by your browser, please upgrade
-                        -->
                 <div class="cta-box" id="signUp">
                     <div class="cta-card">
                         <div class="card-side card-side__front">

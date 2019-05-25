@@ -23,8 +23,8 @@ window.addEventListener('scroll', event => {
         setTimeout(() => {
             cards.style.transform = 'translateY(0)';
             cards.style.transition = 'all 1.3s';
-        }, 1000)   
-    } else if (event.currentTarget.scrollY < 2700) {
+        }, 300)   
+    } else if (event.currentTarget.scrollY < 2300) {
         cards.style.transform = 'translateY(200%)';
         cards.style.transition = 'all 1.3s';
     }
