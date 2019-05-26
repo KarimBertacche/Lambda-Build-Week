@@ -708,7 +708,8 @@ class GenerateReviewPopUpPage extends GenerateBooks {
                 this.reviews.appendChild(this.expandIt);
                 this.reviewsBox.prepend(this.reviews);
                 this.totReviews = this.bookData.reviews;
-                this.spanReview.textContent = `${this.totReviews.length} 💬`;
+                let newTotal = this.evaluateNewTotal(this.totReviews);
+                this.spanReview.textContent = `${newTotal} 💬`;
 
                 this.closeIt.addEventListener('click', (event) => {
                     console.log(event.target.parentNode.textContent);
