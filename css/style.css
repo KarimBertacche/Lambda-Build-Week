@@ -1515,6 +1515,7 @@ header .hero-content .hero-text {
   }
 }
 .popUp-screen .sides .right-side .reviews-box .review {
+  box-sizing: border-box;
   position: relative;
   width: 90%;
   height: 30px;
@@ -1526,6 +1527,7 @@ header .hero-content .hero-text {
   overflow: hidden;
   padding: 5px;
   padding-left: 20px;
+  padding-right: 20px;
 }
 .popUp-screen .sides .right-side .reviews-box .review::-webkit-scrollbar {
   width: 0;
@@ -1533,7 +1535,7 @@ header .hero-content .hero-text {
 }
 .popUp-screen .sides .right-side .reviews-box .review.open {
   height: 100px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .popUp-screen .sides .right-side .reviews-box .review .closeBtn {
   position: absolute;
@@ -1545,6 +1547,8 @@ header .hero-content .hero-text {
   font-size: 20px;
   color: #900048;
   cursor: pointer;
+  margin-left: 5px;
+  margin-bottom: 5px;
 }
 .popUp-screen .sides .right-side .reviews-box .review .closeBtn:hover {
   color: #ff0b55;
