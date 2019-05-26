@@ -13,29 +13,29 @@ quotes.forEach((quote, index) => {
     quoteIdx = quote.dataset.index = index;
 })
 
-// let backwardsCycle = setInterval(() => {
-//     if(counter === 0) {
-//         //Hold previous counter
-//         prevCount = counter;
-//         //Update the counter
-//         counter = quoteLength - 1;
-//     } else {
-//         //Hold previous counter
-//         prevCount = counter;
-//         //Update the counter
-//         --counter;  
-//     }
-//     //Remove Active class & prev/next
-//     removeActive();
-//     //Add active class to current count
-//     addActive();
-//     //Add previous and next class dynamically
-//     addPrev(prevCount);
-//     addNext(prevCount);
-// }, 3000); 
+let backwardsCycle = setInterval(() => {
+    if(counter === 0) {
+        //Hold previous counter
+        prevCount = counter;
+        //Update the counter
+        counter = quoteLength - 1;
+    } else {
+        //Hold previous counter
+        prevCount = counter;
+        //Update the counter
+        --counter;  
+    }
+    //Remove Active class & prev/next
+    removeActive();
+    //Add active class to current count
+    addActive();
+    //Add previous and next class dynamically
+    addPrev(prevCount);
+    addNext(prevCount);
+}, 3000); 
 
 backArrow.addEventListener('click', () => {
-    // clearInterval(backwardsCycle);
+    clearInterval(backwardsCycle);
     if(counter === 0) {
         //Hold previous counter
         prevCount = counter;
@@ -58,7 +58,7 @@ backArrow.addEventListener('click', () => {
 })
 
 forwardArrow.addEventListener('click', () => {
-    // clearInterval(backwardsCycle);
+    clearInterval(backwardsCycle);
     if(counter === quoteLength -1) {
         //Hold previous counter
         prevCount = counter;
@@ -78,8 +78,6 @@ forwardArrow.addEventListener('click', () => {
     //Add previous and next class dynamically
     addPrev(prevCount);
     addNext(prevCount);
-
-    // setInterval(backwardsCycle, 3000);
 })
 
 let removeActive = () => {
