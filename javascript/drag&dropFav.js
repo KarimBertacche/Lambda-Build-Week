@@ -8,14 +8,14 @@ books.forEach(book => {
     });
 });
 
-let favBox = document.querySelector('.fav-list');
-const dropZone = favBox.querySelector('.drop-zone');
+// let favBox = document.querySelector('');
+let dropZone = document.querySelector('.fav-list');
 
 dropZone.addEventListener('dragenter', (event) => {
-    if(event.target.className === "drop-zone"){
-        favBox.style.border = "3px solid #fff";  
+    if(event.target.className === "fav-list"){
+        dropZone.style.border = "3px solid #fff";  
         setTimeout(() => {
-            favBox.style.border = "3px solid #900048";       
+            dropZone.style.border = "3px solid #900048";       
         }, 3000)
     }
 })
@@ -27,7 +27,7 @@ dropZone.addEventListener('dragover', (event) => {
 
 dropZone.addEventListener('dragleave', (event) => {
     event.preventDefault();
-    favBox.style.border = "3px solid #000"; 
+    dropZone.style.border = "3px solid #900048"; 
 })
 
 let favBok;
@@ -48,9 +48,6 @@ dropZone.addEventListener('drop', (event) => {
     //Append favBox to favItem
     favItem.appendChild(favBox);
 
-    //Select dropzone div
-    const dropZone = document.querySelector('.drop-zone');
-
     //Append favItem to dropzone
     dropZone.appendChild(favItem);
 
@@ -61,15 +58,10 @@ dropZone.addEventListener('drop', (event) => {
 let popUpReview = document.querySelectorAll('.popUp-screen');
 let reviewHeading = document.querySelectorAll('.heading-quaternary');
 
-favBox.addEventListener('click', (event) => {
-
+dropZone.addEventListener('click', (event) => {
     reviewHeading.forEach(heading => {
         if(heading.textContent === event.target.textContent){
             heading.parentNode.style.display = 'block';
         }
     });
-    console.log(popUpReview.children[0].textContent);
-    // if(event.target.textContent){
-    //     this.popUpScreen.style.display= 'block';
-    // } === 
 });

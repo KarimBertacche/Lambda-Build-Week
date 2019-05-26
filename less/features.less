@@ -1,8 +1,12 @@
 .feature-section {
-    height: 800px;
+    height: 110vh;
 
     @media @mobile {
-        height: 200vh;
+        height: 150vh;
+    }
+
+    @media @smallMobile {
+        margin-top: -80px;
     }
 
     .feature-box {
@@ -85,7 +89,6 @@
                 color: @black;
                 text-shadow: .5px .5px 0 @colorQuaternary;
                 letter-spacing: 1px;
-                // font-weight: bold;
 
                 &:last-child {
 
@@ -110,7 +113,15 @@
                 text-align: justify;
             }
 
+            @media @mediumMobile {
+                margin-bottom: 100px;
+            }
+
             .heading-secondary {
+
+                @media @tablet {
+                    margin-top: -50px;
+                }
 
                 @media @mobile { 
                     margin-top: 30px;
@@ -123,13 +134,11 @@
 
                 @media @mobile {
                     margin-right: 0;
-                    margin-bottom: -25px;
                 }
             }
 
             .feature-text {
                 .flex(column, center, center);
-                margin-bottom: 100px;
                 line-height: 1.1;
             }
         }

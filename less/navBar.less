@@ -1,5 +1,5 @@
 .navigation {
-    // width: 100%; 
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 15px 30px;
@@ -11,21 +11,11 @@
         border-bottom: 3px solid @colorQuaternary;
     }
 
-    @media @mobile {
-        .flex(column, center, center);
-    }
-
     .logo {
         width: 40%;
    
         .logoImg {
             width: 100px;
-
-            @media @mobile {
-                width: 130px;
-                margin-bottom: 10px;
-                margin-left: 15px;
-            }
         }
 
         &:hover {
@@ -45,12 +35,17 @@
             .flex(row, baseline, space-between);
             width: 100%;
             margin-left: 10px;
+            display: none;
         }
 
         & a {
             text-decoration: none;
             font-size: 1.8rem;
             color: @colorQuaternary;
+
+            @media @mobile {
+                font-size: 1.3rem;
+            }
 
             &:hover {
                 color: @white;
@@ -64,13 +59,119 @@
 
             & a {
                 padding: 0 20px 0 5px;
-            }
 
-            & a:first-child {    
-                border-right: 1px solid @colorQuaternary;
+                &:first-child {    
+                    border-right: 1px solid @colorQuaternary;
+                }
+
+                &:last-child {
+                    @media @mobile { 
+                        padding: 0 5px;
+                    }
+                }
             }
-        }     
+        }    
     }
+}
+
+
+.menu {
+    display: none;
+    cursor: pointer;
+
+    @media @mobile {
+        display: flex;
+    }
+
+
+    .menu-btn {
+        position: absolute;
+        top: 45%;
+        right: 20px;
+        width: 50px;
+        height: 0;
+        border: 3px solid @colorQuaternary;
+        border-radius: 10px;
+        z-index: 200;
+        cursor: pointer;
+        transition: all .4s;
+        
+    
+        &::before,
+        &::after {
+            width: 50px;
+            height: 0;
+            content: "";
+            position: absolute;
+            left: -3px;
+            border: 3px solid @colorQuaternary;
+            border-radius: 10px;
+            transition: all .4s;
+        }
+    
+        &::before {
+            top: -15px;
+        }
+    
+        &::after {
+            top: 10px;
+        }        
+    }
+}
+
+.menu-list {
+    .flex(column, space-around, center);
+    display: none;
+    position: absolute;
+    top: 99.6%;
+    right: 0;
+    background-color: #000;
+    border-bottom: 3px solid @colorQuaternary;
+    border-left: 3px solid @colorQuaternary;
+    border-bottom-left-radius: 20px;
+    height: 200px;
+    width: 200px;
+    transform: translateX(100%);
+    transition: all 1s;
+
+    .menu-links {
+        width: 140px;
+        text-align: center;
+        color: @colorQuaternary;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        font-size: 2.3rem;
+        padding: 3px;
+        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, @purple 50%);
+        background-size: 225%;
+        transition: all .5s;
+
+        &:hover {
+            border-bottom: 2px solid @colorQuaternary;
+            background-position: 100%;
+        }
+    }
+}
+
+.clicked {
+    transition: all .4s;
+
+    .menu-btn {
+        border: 3px solid transparent;
+    }
+    
+    .menu-btn::before {
+        top: 0;
+        transform: rotate(45deg);
+    }
+    
+    .menu-btn::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+
 }
 
 .fixed {
@@ -87,6 +188,7 @@
     transition: all 1s;
 
     @media @mobile {
+        width: 93.5%;
         padding: 15px 20px; 
     }
 }
@@ -102,7 +204,7 @@
     border-left: 3px solid @colorQuaternary;
     border-bottom-left-radius: 20px;
     // border-bottom-right-radius: 20px;
-    z-index: 1;
+    z-index: 500;
     width: 380px;
     padding: 15px 20px 10px;
     font-size: 2rem;
@@ -110,10 +212,6 @@
     color: @colorQuaternary;
     transform: translateY(-200%);
     transition: all 1s;
-
-    @media @mobile {
-        top: 140px;
-    }
 
     .input {
         margin-bottom: 20px;

@@ -461,22 +461,27 @@ class GenerateBooks {
         this.star1.addEventListener('click', () => {
             this.arrRatings.push(1);
             this.calcOverAllRate();  
+            this.rating.className = ' hidden';
         })
         this.star2.addEventListener('click', () => {
             this.arrRatings.push(2);
             this.calcOverAllRate(); 
+            this.rating.className = ' hidden';
         })
         this.star3.addEventListener('click', () => {
             this.arrRatings.push(3);
             this.calcOverAllRate(); 
+            this.rating.className = ' hidden';
         })
         this.star4.addEventListener('click', () => {
             this.arrRatings.push(4);
             this.calcOverAllRate(); 
+            this.rating.className = ' hidden';
         })
         this.star5.addEventListener('click', () => {
             this.arrRatings.push(5);
             this.calcOverAllRate(); 
+            this.rating.className = ' hidden';
         })
     }
 
@@ -508,21 +513,21 @@ class GenerateBooks {
 
     ratingConstructor(bookBox, arrRatings) {
         //Create p tag for current overall rating
-        let rating = document.createElement('p');
+        this.rating = document.createElement('p');
         //Assign class to overall rating p tag
-        rating.classList.add('rating', 'hidden');
+        this.rating.classList.add('rating', 'hidden');
         //Increase font size of rating stars
-        rating.style.fontSize = '3rem';
+        this.rating.style.fontSize = '3rem';
         
         //Append stars to rating p tag
-        rating.append(this.star1);
-        rating.append(this.star2);
-        rating.append(this.star3);
-        rating.append(this.star4);
-        rating.append(this.star5);
+        this.rating.append(this.star1);
+        this.rating.append(this.star2);
+        this.rating.append(this.star3);
+        this.rating.append(this.star4);
+        this.rating.append(this.star5);
 
         //Append overall rating p tag to bookBox div
-        bookBox.append(rating);
+        bookBox.append(this.rating);
     }
 
     mouseOver() {
@@ -702,10 +707,15 @@ class GenerateReviewPopUpPage extends GenerateBooks {
                 this.reviews.appendChild(this.closeIt);
                 this.reviews.appendChild(this.expandIt);
                 this.reviewsBox.prepend(this.reviews);
-                this.spanReview.textContent = `${this.bookData.reviews.length} 💬`;
+                this.totReviews = this.bookData.reviews;
+                let newTotal = this.evaluateNewTotal(this.totReviews);
+                this.spanReview.textContent = `${newTotal} 💬`;
 
                 this.closeIt.addEventListener('click', (event) => {
+                    console.log(event.target.parentNode.textContent);
                     event.target.parentNode.remove();
+                    let newTotal = this.evaluateNewTotal(this.totReviews);
+                    this.spanReview.textContent = `${newTotal} 💬`;
                 });
 
                 this.expandIt.addEventListener('click', (event) => {
@@ -719,9 +729,17 @@ class GenerateReviewPopUpPage extends GenerateBooks {
                 });
             }  
             this.textInput.value = '';   
-        })
+        })   
+    }
 
-        
+    evaluateNewTotal(total) {
+        for(let i = 0; i < total.length; i++) {
+            if(`${total[i]}X⬇` === event.target.parentNode.textContent) {
+                 this.bookData.reviews.splice(i, (i+1));     
+            }
+        }
+
+        return total.length;
     }
 }
 
@@ -809,7 +827,16 @@ submitBtn.addEventListener('click', (event) => {
 const removeRev = document.querySelector('.closeBtn');
 const expandRev = document.querySelector('.expandBtn');
 
+//Toggle review page when clicking on messages
+let reviews = document.querySelectorAll('.reviews');
+let h4 = document.querySelectorAll('.heading-quaternary');
 
-// removeRev.addEventListener('click', (event) => {
-//     console.log(event);
-// });
+reviews.forEach(review => {
+    review.addEventListener('click', (event) => {
+        h4.forEach(heading => {
+            if(event.target.parentNode.parentNode.children[0].textContent === heading.textContent) {
+                heading.parentNode.style.display = 'block';
+            }
+        });
+    });
+});

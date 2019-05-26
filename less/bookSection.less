@@ -9,347 +9,374 @@
         margin-top: 130px;
     }
 
+    @media @smallTablet {
+        margin-top: 300px;
+    }
+
     @media @mobile {
-        margin-top: 0;
+        .flex(column);
+        margin-top: 350px;
         margin-bottom: -100px;
     }
 
-    .select-subject {
-        width: 13%;
-        padding-left: 30px;
-
-        @media @tablet {
-            width: 17%;
-        }
+    .book-section {
+        .flex();
+        width: 85%;
+        height: 100%;
 
         @media @mobile {
-            width: 25%;
-            padding-left: 5px;
+            width: 100%;
         }
+
+        .select-subject {
+            width: 15%;
     
-        .main-nav {
-            padding-top: 80px;
-        }
-
-        .main-link {
-            text-decoration: none;
-            color: @colorPrimary;
-        }
-
-        .nav-list {
-            padding: 8px 0 8px 10px;
-            border: 3px solid transparent;
-            font-size: 2rem;
-            color: @purple;
-            cursor: pointer;
-
             @media @tablet {
-                font-size: 1.7rem;
+                width: 25%;
             }
 
-            &:hover {
-                color: @black;      
+            @media @smallMobile {
+                width: 27%;
+                padding-left: 5px;
             }
-
-            &.active {
-                background-color: @colorPrimary;
-                transform: translateX(5px);
-                border: 3px solid @purple;
-                border-right: 5px solid @colorPrimary;
-                border-top-left-radius: 20px;
-                border-bottom-left-radius: 20px;
-                padding-left: 20px;
-                color: @colorQuaternary;  
+        
+            .main-nav {
+                padding-top: 20px;
             }
-        }
-
-        .addBook-box {
-            width: 150px;
-            position: absolute;
-            top: 3%;
-            left: 25px;
-            margin: 0 auto;
-
-            @media @tablet {
-                left: 15px;
+    
+            .main-link {
+                text-decoration: none;
+                color: @colorPrimary;
             }
-
-            @media @mobile {
-                left: 5px;
-            }
-
-            .addBook-btn {
-                background-color: @colorPrimary; 
-                width: 150px;
-                padding: 10px;
-                border: 3px solid @purple;
-                border-radius: 20px;
+    
+            .nav-list {
+                padding: 8px 0 8px 10px;
+                border: 3px solid transparent;
+                font-size: 2rem;
+                color: @purple;
                 cursor: pointer;
-                font-size: 1.4rem;
-                font-weight: bold;
-                color: @colorQuaternary;
-                transition: all .2s;
-
-                @media @smallTablet {
-                    width: 120px;
-                    font-size: 1.2rem;
-                }
-
-                @media @smallMobile {
-                    width: 100px;
-                    font-size: 1rem;
-                    padding: 3px 7px;
-                }
-
-                &:hover { 
-                    transform: translateY(-5px) scale(1.005); 
-                    box-shadow: 0 5px 10px rgba(0, 0, 0, .4); 
-                }
-
-                &:active {
-                    transform: translateY(-2px) scale(1);
-                    box-shadow: 0 2px 10px rgba(0, 0, 0, .4);  
-                }
-            }
-        }
-
-        .menu-newBook {
-            width: 300px;
-            height: 80vh;
-            background-color: @purple;
-            position: fixed;
-            top: 10vh;
-            left: 0;
-            z-index: 100;
-            padding: 50px 10px;
-            color: @colorQuaternary;
-
-            @media @mobile {
-                height: 70vh;
-                margin-top: 65px;
-            }
-
-            .close-menu {
-                font-size: 4rem;
-                position: absolute;
-                top: 2%;
-                right: 2%;
-                cursor: pointer;
-
-                &:hover {
-                    color: @colorQuaternary;       
-                }
-            }
-
-            .book-title,
-            .book-image,
-            .book-category,
-            .book-intro {
-                width: 100%;
-                font-size: 3rem;
-
+    
                 @media @tablet {
-                    font-size: 2.5rem;
+                    font-size: 1.7rem;
                 }
 
-                @media @mobile {
-                    font-size: 2rem;
+                @media @mediumMobile {
+                    padding-left: 0;
                 }
-
-                .input-title,
-                .input-image,
-                .selection {
-                    width: 90%;
-                    height: 30px;
-                    font-size: 1.8rem;
-                    margin-top: 5px;
-                    margin-bottom: 15px;
-                    border: 3px solid @colorTertiary;
-                    border-radius: 10px;
-
-                    &:focus {
-                        outline: none;
-                    }
-
-                    &:invalid {
-                        border: 3px solid @black;
-                    }
-
-                    &:valid {
-                        border: 3px solid @colorQuaternary;
-                    }
+                
+                &:hover {
+                    color: @black;      
                 }
+    
+                &.active {
+                    background-color: @colorPrimary;
+                    transform: translateX(5px);
+                    border: 3px solid @purple;
+                    border-right: 5px solid @colorPrimary;
+                    border-top-left-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    padding-left: 20px;
+                    color: @colorQuaternary;  
+                }
+            }
+    
+            .addBook-box {
+                width: 100%;
+                margin: 0 auto;
+    
+                .addBook-btn {
+                    background-color: @colorPrimary; 
+                    width: 100%;
+                    padding: 10px;
+                    margin-top: 30px;
+                    border: 3px solid @purple;
+                    border-radius: 20px;
+                    cursor: pointer;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    color: @colorQuaternary;
+                    transition: all .2s;
 
-                .input-intro {
-                    width: 90%;
-                    height: 230px;
-                    font-size: 1.8rem;
-                    margin-top: 5px;
-                    margin-bottom: 10px;  
-                    border: 3px solid @colorTertiary;
-                    border-radius: 10px;
+                    @media @tablet {
+                        // width: 120px;
+                        font-size: 1.5rem;  
+                        padding: 3px;
+                    }
 
                     @media @mobile {
-                        height: 200px;
-                    } 
-
-                    &:focus {
-                        outline: none;
+                        font-size: 1rem;
+                        padding: 3px 7px;
                     }
 
-                    &:invalid {
-                        border: 3px solid @black;
+                    @media @smallMobile {
+                        font-size: .8rem;
+                        padding: 2px 5px;
                     }
-
-                    &:valid {
-                        border: 3px solid @colorQuaternary;
+    
+                    &:hover { 
+                        transform: translateY(-5px) scale(1.005); 
+                        box-shadow: 0 5px 10px rgba(0, 0, 0, .4); 
+                    }
+    
+                    &:active {
+                        transform: translateY(-2px) scale(1);
+                        box-shadow: 0 2px 10px rgba(0, 0, 0, .4);  
                     }
                 }
             }
-
-            .submit-btn {
-                width: 50%;
-                padding: 10px; 
-                margin-left: 60px;  
+    
+            .menu-newBook {
+                width: 300px;
+                height: 80vh;
                 background-color: @purple;
-                border: 3px solid @colorQuaternary;  
-                border-radius: 25px; 
-                color: @colorQuaternary;
-                font-size: 1.8rem;
-                cursor: pointer;
-
-                @media @mobile {
-                    font-size: 1.5rem;
-                } 
-
-                &:hover {
-                    transform: translateY(-5px) scale(1.05);
-                    box-shadow: 0 10px 20px rgba(255, 255, 255, .4);
-                }
-
-                &:active {
-                    transform: translateY(-2px) scale(1);  
-                    box-shadow: 0 5px 10px rgba(255, 255, 255, .4);
-                }
-            }
-
-        }
-    }
-
-    .main-content {
-        .flex(row, space-evenly, space-evenly, wrap);
-        width: 75%;
-        height: 89vh;
-        background-image: linear-gradient( 135deg, @colorPrimary 30%, @colorTertiary, @colorQuaternary);
-        // background-color: @colorPrimary;
-        border: 3px solid @purple;
-        border-radius: 22px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
-        overflow-y: scroll;
-
-        @media @tablet {
-            width: 55%;
-            background-image: linear-gradient( to right bottom, @colorPrimary 40%, @colorTertiary, @colorQuaternary);
-        }
-
-        @media @mobile {
-            width: 75%;
-            height: 80vh;
-        }
-
-        &::-webkit-scrollbar{
-            width: 0;
-            height: 0;
-        }
-
-        .book-box {
-            background-color: @purple;
-            width: 200px;
-            height: 310px;
-            border: 3px solid @purple;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-
-            .heading-tertiary {
-                .flex(row, center, center);
-                background-color: @purple;
-                height: 45px;
-                border-bottom: 3px solid @purple;
-                font-size: 2rem;
-                text-align: center;
-                color: @colorQuaternary;
-            }
-
-            .book-figure {
-                width: 100%;
-                height: 225px;
-                object-fit: cover;
-
-                & img {
-                    width: 100%;
-                    height: 225px;          
-                }
-            }
-
-            .rating {
-                background-color: @colorPrimary;
-                height: 30px;
-                border-top: 3px solid @purple;
-                border-bottom-right-radius: 20px;
-                border-bottom-left-radius: 20px;
-                padding-top: 4px;
-                font-size: 2rem;
-                text-align: center;  
-                cursor: pointer;
+                position: fixed;
+                top: 10vh;
+                left: 0;
                 z-index: 100;
-                transition: all .5s;
-
-                &.hidden {
-                    transform: translateY(40px);
-                    opacity: 0;
-                }
-
-                &.shown {
-                    transform: translateY(-40px);
-                    opacity: 1;   
-                }
-
-                .star {
-
+                padding: 50px 10px;
+                color: @colorQuaternary;
+    
+                .close-menu {
+                    font-size: 4rem;
+                    position: absolute;
+                    top: 2%;
+                    right: 2%;
+                    cursor: pointer;
+    
                     &:hover {
-                        background-color: gold;
-                        color: transparent;
-                        -webkit-background-clip: text;
+                        color: @colorQuaternary;       
                     }
                 }
+    
+                .book-title,
+                .book-image,
+                .book-category,
+                .book-intro {
+                    width: 100%;
+                    font-size: 3rem;
+    
+                    @media @tablet {
+                        font-size: 2.5rem;
+                    }
+    
+                    @media @mobile {
+                        font-size: 2rem;
+                    }
+    
+                    .input-title,
+                    .input-image,
+                    .selection {
+                        width: 90%;
+                        height: 30px;
+                        font-size: 1.8rem;
+                        margin-top: 5px;
+                        margin-bottom: 15px;
+                        border: 3px solid @colorTertiary;
+                        border-radius: 10px;
+    
+                        &:focus {
+                            outline: none;
+                        }
+    
+                        &:invalid {
+                            border: 3px solid @black;
+                        }
+    
+                        &:valid {
+                            border: 3px solid @colorQuaternary;
+                        }
+                    }
+    
+                    .input-intro {
+                        width: 90%;
+                        height: 230px;
+                        font-size: 1.8rem;
+                        margin-top: 5px;
+                        margin-bottom: 10px;  
+                        border: 3px solid @colorTertiary;
+                        border-radius: 10px;
+
+                        @media @smallDesktop {
+                            height: 180px;
+                        }
+    
+                        @media @mobile {
+                            height: 200px;
+                        } 
+    
+                        &:focus {
+                            outline: none;
+                        }
+    
+                        &:invalid {
+                            border: 3px solid @black;
+                        }
+    
+                        &:valid {
+                            border: 3px solid @colorQuaternary;
+                        }
+                    }
+                }
+    
+                .submit-btn {
+                    width: 50%;
+                    padding: 10px; 
+                    margin-left: 60px;  
+                    background-color: @purple;
+                    border: 3px solid @colorQuaternary;  
+                    border-radius: 25px; 
+                    color: @colorQuaternary;
+                    font-size: 1.8rem;
+                    cursor: pointer;
+    
+                    @media @mobile {
+                        font-size: 1.5rem;
+                    } 
+    
+                    &:hover {
+                        transform: translateY(-5px) scale(1.05);
+                        box-shadow: 0 10px 20px rgba(255, 255, 255, .4);
+                    }
+    
+                    &:active {
+                        transform: translateY(-2px) scale(1);  
+                        box-shadow: 0 5px 10px rgba(255, 255, 255, .4);
+                    }
+                }
+    
+            }
+        }
+    
+        .main-content {
+            .flex(row, space-evenly, space-evenly, wrap);
+            width: 85%;
+            height: 89vh;
+            background-image: linear-gradient( 135deg, @colorPrimary 30%, @colorTertiary, @colorQuaternary);
+            border: 3px solid @purple;
+            border-radius: 22px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+            overflow-y: scroll;
+    
+            @media @tablet {
+                width: 75%;
+                background-image: linear-gradient( to right bottom, @colorPrimary 40%, @colorTertiary, @colorQuaternary);
+            }
+    
+            @media @mobile {
+                width: 85%;
+                height: 80vh;
+                margin-top: 30px;
             }
 
-            .book-info {
-                display: block;
-                height: 30px;
-                border-top: 3px solid @black;
-                border-bottom-right-radius: 20px;
-                border-bottom-left-radius: 20px;
-                padding-top: 7px;
-                font-size: 2rem; 
+            @media @smallMobile {
+                width: 60%;
+            }
+        
+    
+            &::-webkit-scrollbar{
+                width: 0;
+                height: 0;
+            }
+    
+            .book-box {
+                background-color: @purple;
+                width: 200px;
+                height: 310px;
+                border: 3px solid @purple;
+                border-radius: 20px;
+                overflow: hidden;
+                cursor: pointer;
 
-                & .currentRate {
-                    margin: 0 30px 0 50px;
+                @media @tablet {
+                    width: 170px;
+                }
+    
+                .heading-tertiary {
+                    .flex(row, center, center);
+                    background-color: @purple;
+                    height: 45px;
+                    border-bottom: 3px solid @purple;
+                    font-size: 2rem;
+                    text-align: center;
                     color: @colorQuaternary;
                 }
+    
+                .book-figure {
+                    width: 100%;
+                    height: 225px;
+                    object-fit: cover;
+    
+                    & img {
+                        width: 100%;
+                        height: 225px;          
+                    }
+                }
+    
+                .rating {
+                    background-color: @colorPrimary;
+                    height: 30px;
+                    border-top: 3px solid @purple;
+                    border-bottom-right-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    padding-top: 4px;
+                    font-size: 2rem;
+                    text-align: center;  
+                    cursor: pointer;
+                    z-index: 100;
+                    transition: all .5s;
+    
+                    &.hidden {
+                        transform: translateY(40px);
+                        opacity: 0;
+                    }
+    
+                    &.shown {
+                        transform: translateY(-40px);
+                        opacity: 1;   
+                    }
+    
+                    .star {
+    
+                        &:hover {
+                            background-color: gold;
+                            color: transparent;
+                            -webkit-background-clip: text;
+                        }
+                    }
+                }
+    
+                .book-info {
+                    display: block;
+                    height: 30px;
+                    border-top: 3px solid @black;
+                    border-bottom-right-radius: 20px;
+                    border-bottom-left-radius: 20px;
+                    padding-top: 7px;
+                    font-size: 2rem; 
+    
+                    & .currentRate {
+                        margin: 0 30px 0 50px;
+                        color: @colorQuaternary;
 
-                & .reviews {
-                    color: @colorQuaternary;
+                        @media @tablet {
+                            margin: 0 30px 0 30px;
+                        }
+                    }
+    
+                    & .reviews {
+                        color: @colorQuaternary;
+                    }
                 }
             }
         }
     }
+
+   
 
     .fav-box {
-        width: 19%;
+        width: 15%;
         overflow-y: scroll;
-        padding-top: 80px;
+        padding-top: 20px;
 
         @media @tablet {
             width: 30%;
@@ -364,44 +391,43 @@
             height: 0;
         }
 
+        .fav-title {
+            .flex(row, center, center);
+            width: 100%;
+            height: 40px;
+            background-color: @colorPrimary;
+            border-right: 3px solid @purple;
+            border-top-right-radius: 20px;
+            font-size: 2.2rem;
+            font-weight: bold;
+            padding: 10px 0;
+            color: @colorQuaternary;
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, .6);
+
+            @media @tablet {
+                font-size: 2.1rem;
+            }
+        }
+
         .fav-list {
             height: 70vh;
             background-image: linear-gradient(to bottom right, @colorTertiary, @colorQuaternary);
             border-top: 3px solid @purple;
             border-right: 3px solid @purple;
             border-bottom: 3px solid @purple;
-            border-top-right-radius: 40px;
-            border-bottom-right-radius: 40px;
-            
+            border-bottom-right-radius: 10px;
+            overflow: scroll;
 
-            .fav-title {
-                .flex(row, center, center);
-                width: 80%;
-                height: 40px;
-                background-color: @colorPrimary;
-                border-right: 3px solid @purple;
-                border-bottom: 3px solid @purple;
-                border-left: 3px solid @purple;
-                border-bottom-right-radius: 20px;
-                border-bottom-left-radius: 20px;
-                font-size: 2.8rem;
-                font-weight: bold;
-                padding: 10px 0;
-                margin: 0 auto;
-                color: @colorQuaternary;
-                text-shadow: 1px 1px 0 rgba(255, 255, 255, .6);
-
-                @media @tablet {
-                    width: 70%;
-                    font-size: 2.1rem;
-                }
+            &::-webkit-scrollbar{
+                width: 0;
+                height: 0;
             }
 
             .fav-item {
                 .flex(row, center, center);
-                width: 90%;
+                width: 97%;
                 height: 45px;
-                margin: 0 auto;
+                // margin: 0 auto;
                 background-color: @colorPrimary;
                 border: 3px solid @purple;
                 border-radius: 10px;
@@ -411,19 +437,11 @@
                 cursor: pointer;
                 
                 &:hover {
-                    border: 3px solid @white; 
+                    border: 3px solid @colorTertiary; 
                 }
                 
             }
         }
-
-        .drop-zone {
-            width: 97%;
-            height: 61.5vh;
-            border-bottom-right-radius: 40px;
-            overflow: scroll;
-        }
-        
     }
 }
 
@@ -443,12 +461,6 @@
 
     @media @tablet {
         padding: 40px;
-    }
-
-    @media @mobile {
-        height: 80vh;
-        top: 60%;
-        padding: 10px;
     }
 
     .heading-quaternary {
@@ -484,8 +496,8 @@
         }
 
         @media @mobile {
-            top: 3%;
-            right: 3%;
+            top: 5%;
+            right: 7%;
         }
 
         &:hover {
@@ -516,6 +528,7 @@
             border-right: 3px solid @purple;
             padding: 10px;
             overflow: scroll;
+            line-height: 1.3;
 
             @media @mobile {
                 width: 100%;
@@ -551,6 +564,8 @@
             .book-content {
                 font-size: 2.2rem;
                 padding-bottom: 20px;
+                color: #000;
+                font-weight: lighter;
 
                 @media @mobile {
                     padding: 5px 10px;
@@ -594,6 +609,7 @@
                 }
 
                 .review {
+                    box-sizing: border-box;
                     position: relative;
                     width: 90%;
                     height: 30px;
@@ -605,6 +621,8 @@
                     overflow: hidden;
                     padding: 5px;
                     padding-left: 20px;
+                    padding-right: 20px;
+
 
                     &::-webkit-scrollbar{
                         width: 0;
@@ -613,7 +631,7 @@
     
                     &.open {
                         height: 100px;
-                        overflow: scroll;
+                        overflow-y: scroll;
                     }
 
                     .closeBtn {
@@ -626,6 +644,8 @@
                         font-size: 20px;
                         color: @purple;
                         cursor: pointer;
+                        margin-left: 5px;
+                        margin-bottom: 5px;
 
                         &:hover {
                             color: @red;
